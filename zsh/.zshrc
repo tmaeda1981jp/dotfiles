@@ -89,7 +89,6 @@ function _update_vcs_info_msg() {
 add-zsh-hook precmd _update_vcs_info_msg
 PROMPT="%{$fg_bold[green]%}%n %{$fg_bold[cyan]%}%~ %1(v|%F{yellow}%1v%f|) %{$reset_color%}
 %{$fg[yellow]%}⚡%{$reset_color%} : "
-#RPROMPT="%1(v|%F{green}%1v%f|) [%{$fg[yellow]%}%~%{$reset_color%}]"
 SPROMPT="correct: %R -> %r ? "
 
 #
@@ -121,10 +120,6 @@ setopt auto_cd
 setopt correct
 setopt list_packed
 setopt nolistbeep
-
-# if [[ -f ~/.zshenv ]]; then
-#   source ~/.zshenv
-# fi
 
 # zaw
 source /Users/tmaeda/zaw/zaw.zsh
