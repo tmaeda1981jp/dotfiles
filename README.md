@@ -10,12 +10,12 @@
 - percol
 
 ## TODO
+
 ### emacs
 
 - js2-refector
 - scss
 - org
-- typescript
 - openjunk
 - rst
 - tags
