@@ -1,6 +1,6 @@
 # dotfiles
 
-## 自分用のdotfiles
+## my dotfiles
 
 - zsh
 - emacs
