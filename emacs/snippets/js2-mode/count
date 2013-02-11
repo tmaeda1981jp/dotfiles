@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: console.count
+# --
+console.count($1);$0

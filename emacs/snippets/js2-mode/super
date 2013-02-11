@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: super
+# --
+$1.prototype.${2:constructor}.${3:call}($0);

@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: lint
+# --
+/*jslint white: false, nomen: false, */
+/*global _: false, $: false, define: false, require: false, */
+'use strict';
