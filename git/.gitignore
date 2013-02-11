@@ -1,0 +1,55 @@
+# emacs
+*~
+\#*\#
+.elc
+tramp
+auto-save-list
+.org-id-locations
+*_archive
+
+# OS X
+.DS_Store
+
+# python
+*.bak
+*.py[cod]
+*.egg
+*.egg-info
+*.log
+dist
+build
+eggs
+__pycache__
+pip-log.txt
+local_settings.py
+
+# ruby
+*.gem
+*.rbc
+.bundle
+.config
+coverage
+InstalledFiles
+lib/bundler/man
+pkg
+rdoc
+spec/reports
+test/tmp
+test/version_tmp
+tmp
+
+# sass
+*.sassc
+.sass-cache
+
+# java
+*.class
+*.jar
+*.war
+*.ear
+
+# other
+*.mo
+*.swp
+.project
+.pydevproject
