@@ -1,8 +1,8 @@
 # -*- mode: snippet -*-
 # name: tlint
 # --
-/*jslint white: false, nomen: false, */
-/*global describe: false, it: false, before: false, beforeEach: false, require: false, */
+/*jslint white: true, nomen: true, maxlen: 120, plusplus: true, */
+/*global _:false, $:false, define:false, require:false, describe:false,
+  it:false, before:false, after:false, beforeEach:false, afterEach:false, 
+  sinon:false, */
 'use strict';
-
-var should = require('should');
