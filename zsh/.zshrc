@@ -40,6 +40,7 @@ alias pbv='pythonbrew venv'
 alias pbvc='pythonbrew venv create'
 alias pbvu='pythonbrew venv use'
 alias pbvd='pythonbrew venv delete'
+alias pf='pip freeze'
 
 # git/svn
 export EDITOR='e'
