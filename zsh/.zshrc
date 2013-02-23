@@ -42,6 +42,11 @@ alias pbvu='pythonbrew venv use'
 alias pbvd='pythonbrew venv delete'
 alias pf='pip freeze'
 alias pm='python manage.py'
+alias pmsdb='python manage.py syncdb'
+alias pms='python manage.py shell'
+
+# node
+alias n='node'
 
 # git/svn
 export EDITOR='e'
