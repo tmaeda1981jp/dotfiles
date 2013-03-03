@@ -1,0 +1,18 @@
+# -*- mode: snippet -*-
+# name: jquery
+# --
+(function($) {
+  'use strict';
+  $.fn.$1 = function(config) {
+    var defaults, options;
+    defaults = {
+      $2
+    };
+    $0
+    options = $.extend(defaults, config);
+
+    return this.each(function(i) {
+      $3
+    });
+  };
+}(jQuery));
