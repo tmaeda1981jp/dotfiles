@@ -35,7 +35,6 @@
           (lambda ()
             (local-set-key "\C-cr" 'js-console-execute-region)
             (local-set-key "\C-ci" 'js-doc-insert-function-doc)
-            (local-set-key "@" 'js-doc-insert-tag)
             (imenu-add-menubar-index)
             (setq js2-basic-offset 2)
             (hs-minor-mode 1)))
