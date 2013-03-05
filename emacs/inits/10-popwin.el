@@ -5,3 +5,4 @@
 (require 'popwin)
 (setq display-buffer-function 'popwin:display-buffer)
 (push '("*quickrun*") popwin:special-display-config)
+(push '("*Backtrace*") popwin:special-display-config)
