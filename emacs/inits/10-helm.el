@@ -16,8 +16,7 @@
      )
    " *helm*"))
 (global-set-key (kbd "C-l") 'my:helm)
-(setq recentf-max-saved-items 10)
-(setq recentf-max-saved-items 100)
+(setq recentf-max-saved-items 15)
 
 ;; ---------------------------------------------------------------
 ;; helm-c-color-moccur
