@@ -28,7 +28,10 @@
 (setq moccur-split-word t)
 ;; helm-c-moccurの設定
 (require 'helm-c-moccur)
-
+(setq helm-c-moccur-helm-idle-delay 0.2
+      helm-c-moccur-higligt-info-line-flag t
+      helm-c-moccur-enable-initial-pattern t
+      helm-c-moccur-enable-auto-look-flag t)
 (global-set-key (kbd "C-s") 'helm-c-moccur-occur-by-moccur)
 (global-set-key (kbd "C-M-s") 'helm-c-moccur-dmoccur)
 (add-hook 'dired-mode-hook
@@ -49,3 +52,17 @@
 ;; mini-bufferでもC-hが使えるようにする設定
 ;; refs: https://github.com/emacs-helm/helm/issues/24#issuecomment-4686806
 (define-key key-translation-map [?\C-h] [?\C-?])
+
+;;
+;; helm-M-x
+;;
+(global-set-key (kbd "M-x") 'helm-M-x)
+
+;; 
+;; bufferを常に画面右側に表示させる為の設定
+;; refs: http://stackoverflow.com/questions/9992475/how-to-show-anything-buffers-always-in-new-window
+(setq helm-display-function (lambda (buf)
+                             (split-window-horizontally)
+                             (other-window 1)
+                             (switch-to-buffer buf)
+                             ))
