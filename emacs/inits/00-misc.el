@@ -257,4 +257,4 @@
 ;; multiple-cursol
 (require 'multiple-cursors)
 (global-set-key (kbd "C-c C-b") 'mc/mark-all-like-this)
-(global-set-key (kbd "C-c C-s") 'mc/mark-all-in-region)
+(global-set-key (kbd "C-c C-r") 'mc/mark-all-in-region)
