@@ -31,7 +31,7 @@
 
 ;; auto-complete
 (require 'auto-complete)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20121203.832")
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/elpa/auto-complete-20130209.651")
 (require 'auto-complete-config)
 (ac-config-default)
 

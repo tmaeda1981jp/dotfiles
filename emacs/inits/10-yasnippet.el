@@ -6,7 +6,7 @@
 (require 'yasnippet)
 (setq yas-snippet-dirs
       '("~/.emacs.d/snippets" ;; personal collection
-        "~/.emacs.d/elpa/yasnippet-20121225.430/snippets" ;; default collection
+        "~/.emacs.d/elpa/yasnippet-20130218.2229/snippets" ;; default collection
         ))
 (yas-global-mode 1)
 (custom-set-variables '(yas-trigger-key "TAB"))
