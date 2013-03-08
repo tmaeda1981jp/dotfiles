@@ -25,6 +25,9 @@ alias emacs="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
 alias e='emacs'
 alias ctags='/usr/local/bin/ctags'
 alias gcc='nocorrect gcc'
+alias ff='open -a Firefox'
+alias ch='open -a Google\ Chrome'
+alias sf='open -a Safari'
 
 # ruby
 alias rspec='rspec -c'
