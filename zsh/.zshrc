@@ -28,6 +28,7 @@ alias gcc='nocorrect gcc'
 alias ff='open -a Firefox'
 alias ch='open -a Google\ Chrome'
 alias sf='open -a Safari'
+alias pv='open -a Preview'
 
 # ruby
 alias rspec='rspec -c'
