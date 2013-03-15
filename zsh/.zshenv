@@ -11,7 +11,7 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 # js(node)
 [[ -s "$HOME/nvm/nvm.sh" ]] && source "$HOME/nvm/nvm.sh"
-export NODE_VERSION=0.9.0
+export NODE_VERSION=0.10.0
 export NODE_PATH=${NVM_PATH}_modules${NODE_PATH:+:}${NODE_PATH}
 export PATH=$NODE_PATH/bin:$PATH
 
