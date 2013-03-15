@@ -18,13 +18,18 @@ alias grep='grep -n --color'
 alias egrep='egrep -n --color'
 alias fgrep='fgrep -n --color'
 alias hisgrep='his | grep'
-alias js='nocorrect js'
+alias del='find . \( -name "*~" -o -name "#*" \) -print | xargs rm'
+
 alias less='/usr/share/vim/vim73/macros/less.sh'
+alias ctags='/usr/local/bin/ctags'
+
 alias emacssv="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 alias emacs="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
 alias e='emacs'
-alias ctags='/usr/local/bin/ctags'
+
 alias gcc='nocorrect gcc'
+alias js='nocorrect js'
+
 alias ff='open -a Firefox'
 alias ch='open -a Google\ Chrome'
 alias sf='open -a Safari'
