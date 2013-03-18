@@ -17,7 +17,6 @@
 - scss
 - org
 - openjunk
-- rst
 - tags
 - for Linux(debian/mint/ubuntu/centos)
 - for Windows
