@@ -54,8 +54,11 @@ alias pm='python manage.py'
 alias pmsdb='python manage.py syncdb'
 alias pms='python manage.py shell'
 
-# node
+# js
+alias node='nocorrect node'
 alias n='node'
+alias nb='nodebrew'
+alias b='bower'
 
 # git/svn
 export EDITOR='e'

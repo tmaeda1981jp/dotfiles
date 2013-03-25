@@ -10,10 +10,12 @@ export PATH=$JAVA_HOME/bin:$PATH
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
 # js(node)
-[[ -s "$HOME/nvm/nvm.sh" ]] && source "$HOME/nvm/nvm.sh"
+export NODEBREW_ROOT=$HOME/.nodebrew
+export PATH=$NODEBREW_ROOT/current/bin:$PATH
+#[[ -s "$HOME/nvm/nvm.sh" ]] && source "$HOME/nvm/nvm.sh"
 # export NODE_VERSION=0.10.0
-export NODE_PATH=${NVM_PATH}_modules${NODE_PATH:+:}${NODE_PATH}
-export PATH=$NODE_PATH:$PATH
+# export NODE_PATH=${NVM_PATH}_modules${NODE_PATH:+:}${NODE_PATH}
+# export PATH=$NODE_PATH:$PATH
 
 # haskell
 export HASKELL_HOME=$HOME/Library/Haskell
