@@ -8,6 +8,7 @@
 - git
 - tmux
 - percol
+- bower
 
 ## TODO
 

@@ -19,3 +19,6 @@ ln -s `PWD`/git/.gitconfig $HOME/.gitconfig
 
 # tmux
 ln -s `PWD`/tmux/.tmux.conf $HOME/.tmux.conf
+
+# bower
+ln -s `PWD`/bower/.bowerrc $HOME/.bowerrc
