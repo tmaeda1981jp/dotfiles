@@ -265,5 +265,4 @@
 (setq key-chord-two-keys-delay 0.05)
 
 (key-chord-define-global "gl" 'goto-line)
-(key-chord-define-global "re" 'replace-string)
-
+(key-chord-define-global "rt" 'replace-string)
