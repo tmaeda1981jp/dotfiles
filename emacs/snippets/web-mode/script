@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: script template
+# --
+<script type="text/javascript" src="$1"></script>
+$0
