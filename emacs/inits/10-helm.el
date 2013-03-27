@@ -61,7 +61,7 @@
 ;; bufferを常に画面右側に表示させる為の設定
 ;; refs: http://stackoverflow.com/questions/9992475/how-to-show-anything-buffers-always-in-new-window
 (setq helm-display-function (lambda (buf)
-                             (split-window-horizontally)
-                             (other-window 1)
-                             (switch-to-buffer buf)
-                             ))
+                              (split-window-horizontally)
+                              (other-window 1)
+                              (switch-to-buffer buf)
+                              ))
