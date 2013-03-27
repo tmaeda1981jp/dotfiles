@@ -78,6 +78,10 @@ alias gst='g st'
 alias tls='tmux ls'
 alias ta='tmux attach-session -t'
 
+# vagrant
+alias vagrant='nocorrect vagrant'
+alias v='vagrant'
+
 # other
 alias fu='nocorrect fu'
 
