@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: action
+# --
+action="$1"$0

@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: data-*
+# --
+data-$1="$2"$0

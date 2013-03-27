@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: itemtype
+# --
+itemtype="http://schema.org/$1"$0

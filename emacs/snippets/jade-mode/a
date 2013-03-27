@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: a tag
+# --
+a(href="http://$1", target="_blank")$0

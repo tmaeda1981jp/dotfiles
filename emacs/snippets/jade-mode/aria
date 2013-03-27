@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: aria-*
+# --
+aria-$1="$2"$0

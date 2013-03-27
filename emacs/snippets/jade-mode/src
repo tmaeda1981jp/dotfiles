@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: src
+# --
+src="$1"$0

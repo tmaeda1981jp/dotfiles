@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: placeholder
+# --
+placeholder="$1"$0

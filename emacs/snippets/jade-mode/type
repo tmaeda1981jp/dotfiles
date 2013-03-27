@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: type
+# --
+type="$1"$0

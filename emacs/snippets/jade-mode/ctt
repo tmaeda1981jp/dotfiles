@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: content
+# --
+content="$1"$0
