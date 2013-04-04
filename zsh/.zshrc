@@ -61,11 +61,12 @@ alias nb='nodebrew'
 alias b='bower'
 
 # git/svn
-export EDITOR='e'
+export EDITOR='emacs'
 
 # git
 alias g='git'
 alias glog='g log1'
+alias giff='git diff'
 alias gff='g flow feature'
 alias gfr='g flow release'
 alias ga='g add .'
