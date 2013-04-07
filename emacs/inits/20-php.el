@@ -1,1 +1,1 @@
-k(require 'php-mode)
+(require 'php-mode)
