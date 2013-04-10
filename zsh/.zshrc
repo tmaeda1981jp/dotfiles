@@ -1,3 +1,5 @@
+# for memocol
+export export PROJECT_ROOT=~/memocoll/devtest
 #
 # lang and colors
 #
@@ -61,12 +63,14 @@ alias nb='nodebrew'
 alias b='bower'
 
 # git/svn
-export EDITOR='e'
+export EDITOR='emacs'
 
 # git
 alias g='git'
-alias glog='g log1'
+alias glog='g log1 --decorate'
 alias gff='g flow feature'
+alias giff='git diff'
+alias giffw='git diff --word-diff'
 alias gfr='g flow release'
 alias ga='g add .'
 alias gc='g ci -m'
@@ -81,6 +85,9 @@ alias ta='tmux attach-session -t'
 # vagrant
 alias vagrant='nocorrect vagrant'
 alias v='vagrant'
+
+# ios
+alias iphone='open -a /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 
 # other
 alias fu='nocorrect fu'
@@ -149,10 +156,11 @@ setopt list_packed
 setopt nolistbeep
 
 # zaw
-source /Users/tmaeda/zaw/zaw.zsh
+# source /Users/tmaeda/zaw/zaw.zsh
 
 # z
-. /Users/tmaeda/z/z.sh
+#. /Users/tmaeda/.z/z.sh
+. `brew --prefix`/etc/profile.d/z.sh
 function precmd () {
   _z --add "$(pwd -P)"
 }
@@ -172,3 +180,5 @@ if exists percol; then
     zle -N percol_select_history
     bindkey '^R' percol_select_history
 fi
+
+launchctl limit maxfiles 10480 10480
