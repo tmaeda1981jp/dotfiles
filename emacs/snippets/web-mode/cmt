@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: comments
+# --
+<!-- $1 -->
+$0
