@@ -170,10 +170,17 @@
 (setq windmove-wrap-around t)
 (windmove-default-keybindings)
 
-;; copy & paste
-;;
-;; C-x M-w copy
-;; C-x C-y paste
+;; copy
+;; Emacsでcopy(M-w)したものをclickboardに送る
+(defun paste-to-osx (text &optional push)
+ (let ((process-connection-type nil))
+     (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+       (process-send-string proc text)
+       (process-send-eof proc))))
+(setq interprogram-cut-function 'paste-to-osx)
+
+;; paste
+;; clipboardの内容をC-x C-yでyankする．
 (defun pt-pbpaste ()
   "Paste data from pasteboard."
   (interactive)
@@ -181,18 +188,8 @@
    (point)
    (if mark-active (mark) (point))
    "pbpaste" nil t))
+(global-set-key (kbd "C-x C-y") 'pt-pbpaste)
 
-(defun pt-pbcopy ()
-  "Copy region to pasteboard."
-  (interactive)
-  (print (mark))
-  (when mark-active
-    (shell-command-on-region
-     (point) (mark) "pbcopy")
-    (kill-buffer "*Shell Command Output*")))
-
-(global-set-key [?\C-x ?\C-y] 'pt-pbpaste)
-(global-set-key [?\C-x ?\M-w] 'pt-pbcopy)
 (global-set-key "\M-n" 'next-buffer)
 (global-set-key "\M-p" 'previous-buffer)
 
