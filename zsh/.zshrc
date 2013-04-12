@@ -1,5 +1,3 @@
-# for memocol
-export export PROJECT_ROOT=~/memocoll/devtest
 #
 # lang and colors
 #

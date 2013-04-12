@@ -48,10 +48,6 @@
 ;; ---------------------------------------------------------------
 (global-set-key (kbd "C-c C-l") 'helm-ls-git-ls)
 
-;; mini-bufferでもC-hが使えるようにする設定
-;; refs: https://github.com/emacs-helm/helm/issues/24#issuecomment-4686806
-(define-key key-translation-map [?\C-h] [?\C-?])
-
 ;;
 ;; helm-M-x
 ;;
@@ -65,3 +61,13 @@
                               (other-window 1)
                               (switch-to-buffer buf)
                               ))
+
+;; mini-bufferでもC-hが使えるようにする設定
+;; refs: http://mikio.github.io/article/2013/01/31_helmc-h.html
+;; refs: http://blog.handlena.me/entry/2013/02/21/110818
+(eval-after-load 'helm
+  '(progn
+     (define-key helm-map (kbd "C-h") 'delete-backward-char)))
+(eval-after-load 'helm-c-moccur
+  '(progn
+     (define-key helm-c-moccur-helm-map (kbd "C-h") 'delete-backward-char)))
