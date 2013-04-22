@@ -4,7 +4,7 @@
 
 (require 'eshell-pop)
 (global-set-key (kbd "C-x C-z") 'shell-pop)
-(setq shell-pop-window-height 50)
+(setq shell-pop-window-height 30)
 
 (defun eshell/e (arg)
   (eval (read (format "%s" arg))))
