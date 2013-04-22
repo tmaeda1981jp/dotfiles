@@ -159,9 +159,6 @@ setopt nolistbeep
 # z
 #. /Users/tmaeda/.z/z.sh
 . `brew --prefix`/etc/profile.d/z.sh
-function precmd () {
-  _z --add "$(pwd -P)"
-}
 
 # percol
 function exists { which $1 &> /dev/null }
