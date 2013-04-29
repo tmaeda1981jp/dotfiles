@@ -3,6 +3,8 @@
 ;;;
 (require 'org)
 (add-to-list 'auto-mode-alist '("¥¥.org$" . org-mode))
+;; ~/todoが存在しない場合は以下を評価
+;; (mkdir "~/todo" t)
 (setq org-default-notes-file "~/todo/mytodo.org")
 (setq org-agenda-files '("~/todo/mytodo.org"))
 (define-key global-map "\C-cc" 'org-capture)
