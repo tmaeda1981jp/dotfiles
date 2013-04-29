@@ -16,7 +16,6 @@
 
 - js2-refector
 - scss
-- org
 - openjunk
 - tags
 - for Linux(debian/mint/ubuntu/centos)
