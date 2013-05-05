@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: code
+# --
+.. code-block:: $1
+     
+   $0
