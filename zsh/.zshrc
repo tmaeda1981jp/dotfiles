@@ -52,6 +52,8 @@ alias pbvd='pythonbrew venv delete'
 alias pbvl='pythonbrew venv list'
 alias pf='pip freeze'
 alias pm='python manage.py'
+alias pmsm='python manage.py schemamigration'
+alias pmm='python manage.py migrate'
 alias pmsdb='python manage.py syncdb'
 alias pms='python manage.py shell'
 
