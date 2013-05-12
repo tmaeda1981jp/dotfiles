@@ -71,3 +71,10 @@
 (eval-after-load 'helm-c-moccur
   '(progn
      (define-key helm-c-moccur-helm-map (kbd "C-h") 'delete-backward-char)))
+
+
+(setq helm-google-suggest-use-curl-p (executable-find "curl"))
+(setq helm-google-suggest-search-url
+      "http://www.google.co.jp/search?hl=ja&num=100&as_qdr=y5&lr=lang_ja&ie=utf-8&oe=utf-8&q=")
+(setq helm-google-suggest-url
+      "http://google.co.jp/complete/search?ie=utf-8&oe=utf-8&hl=ja&output=toolbar&q=")
