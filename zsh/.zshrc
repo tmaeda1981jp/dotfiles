@@ -92,6 +92,7 @@ alias iphone='open -a /Applications/Xcode.app/Contents/Developer/Platforms/iPhon
 
 # other
 alias fu='nocorrect fu'
+alias jq='nocorrect jq'
 
 autoload -Uz add-zsh-hook
 autoload -Uz colors
