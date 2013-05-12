@@ -17,5 +17,7 @@
 ;; CLOSEの時にtimestamp
 (setq org-log-done 'time)
 
+;; 優先度の設定はC-c , [a,b,c]
+
 ;; S-upの設定
 (define-key input-decode-map "\e[1;2A" [S-up])
