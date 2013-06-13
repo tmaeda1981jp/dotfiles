@@ -13,6 +13,9 @@
 (global-set-key (kbd "C-l") 'my:helm)
 (setq recentf-max-saved-items 15)
 
+(require 'helm-anything)
+(helm-anything-set-keys)
+
 ;; ---------------------------------------------------------------
 ;; helm-imenu
 ;; ---------------------------------------------------------------
@@ -63,8 +66,6 @@
 (require 'migemo)
 (setq migemo-command "cmigemo")
 (setq migemo-options '("-q" "--emacs" "-i" "\g"))
-
-;; Set your installed path
 (setq migemo-dictionary "/usr/local/share/migemo/utf-8/migemo-dict")
 (setq migemo-user-dictionary nil)
 (setq migemo-regex-dictionary nil)
@@ -76,3 +77,4 @@
 ;; (require 'helm-migemo)
 ;; (define-key global-map [(control ?:)] 'helm-migemo)
 (global-set-key (kbd "C-s") 'helm-occur)
+

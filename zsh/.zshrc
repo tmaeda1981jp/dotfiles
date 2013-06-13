@@ -69,6 +69,7 @@ export EDITOR='emacs'
 # git
 alias g='git'
 alias glog='g log1 --decorate'
+alias glogn='glog --numstat'
 alias gff='g flow feature'
 alias giff='git diff'
 alias giffw='git diff --word-diff'
