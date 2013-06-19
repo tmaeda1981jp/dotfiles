@@ -5,9 +5,9 @@
   (interactive)
   (helm-other-buffer
    '(
-     helm-c-source-files-in-current-dir
      helm-c-source-recentf
      helm-c-source-buffers-list
+     helm-c-source-files-in-current-dir
      )
    " *helm*"))
 (global-set-key (kbd "C-l") 'my:helm)
