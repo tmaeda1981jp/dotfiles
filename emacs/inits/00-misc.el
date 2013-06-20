@@ -264,4 +264,4 @@
 (key-chord-define-global "gl" 'goto-line)
 (key-chord-define-global "rt" 'replace-string)
 
-(global-set-key (kbd "C-c C-l") 'recenter)
+(global-set-key (kbd "C-c l") 'recenter)
