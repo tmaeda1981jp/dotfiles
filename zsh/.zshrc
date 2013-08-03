@@ -60,6 +60,7 @@ alias pms='python manage.py shell'
 # js
 alias node='nocorrect node'
 alias n='node'
+alias nodebrew='nocorrect nodebrew'
 alias nb='nodebrew'
 alias b='bower'
 
