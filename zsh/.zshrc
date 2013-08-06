@@ -63,6 +63,7 @@ alias n='node'
 alias nodebrew='nocorrect nodebrew'
 alias nb='nodebrew'
 alias b='bower'
+alias volo='nocorrect volo'
 
 # git/svn
 export EDITOR='emacs'
