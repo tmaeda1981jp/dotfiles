@@ -65,6 +65,7 @@ alias nodebrew='nocorrect nodebrew'
 alias npm='nocorrect npm'
 alias nb='nodebrew'
 alias b='bower'
+alias volo='nocorrect volo'
 
 # git/svn
 export EDITOR='emacs'
@@ -77,6 +78,7 @@ alias gff='g flow feature'
 alias giff='git diff'
 alias giffw='git diff --word-diff'
 alias gfr='g flow release'
+alias gfh='g flow hotfix'
 alias ga='g add .'
 alias gc='g ci -m'
 alias gp='g push'
@@ -97,6 +99,13 @@ alias iphone='open -a /Applications/Xcode.app/Contents/Developer/Platforms/iPhon
 # other
 alias fu='nocorrect fu'
 alias jq='nocorrect jq'
+
+b2o() { echo "obase=10;ibase=2; $1" | bc }; alias b2o=b2o;
+b2h() { echo "obase=16;ibase=2; $1" | bc }; alias b2h=b2h;
+o2b() { echo "obase=2;ibase=10; $1" | bc }; alias o2b=o2b;
+o2h() { echo "obase=16;ibase=10; $1"| bc }; alias o2h=o2h;
+h2b() { echo "obase=2;ibase=16; $1" | bc }; alias h2b=h2b;
+h2o() { echo "obase=10;ibase=16; $1"| bc }; alias h2o=h2o;
 
 autoload -Uz add-zsh-hook
 autoload -Uz colors

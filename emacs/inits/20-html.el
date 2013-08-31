@@ -3,11 +3,15 @@
 ;; http://web-mode.org/
 ;; ----------------------------------------
 (require 'web-mode)
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.\\(html\\|xhtml\\|ctp\\|php\\)\\'" . web-mode))
 
 (defun my-web-mode-hook ()
   "Hooks for web mode."
-  (setq web-mode-code-indent-offset 2)
+
+  (setq web-mode-markup-indent-offset 2) ;; html
+  (setq web-mode-css-indent-offset 2)    ;; css
+  (setq web-mode-code-indent-offset 2)   ;; script indent(js,php,etc..)
+
   (setq web-mode-disable-autocompletion t)
   (setq web-mode-disable-css-colorization t)
   )
