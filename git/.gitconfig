@@ -31,3 +31,5 @@
 [core]
   excludesfile = /Users/tmaeda/.gitignore
   autocrlf = input # CRLFを自動変換
+[http]
+	sslVerify = false
