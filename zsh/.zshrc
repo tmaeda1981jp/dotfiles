@@ -82,6 +82,8 @@ alias gc='g ci -m'
 alias gp='g push'
 alias gpm='g push origin master'
 alias gst='g st'
+alias gss='g stash'
+alias gsl='g stash list'
 
 # tmux
 alias tls='tmux ls'
