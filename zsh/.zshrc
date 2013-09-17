@@ -92,6 +92,7 @@ alias ta='tmux attach-session -t'
 # vagrant
 alias vagrant='nocorrect vagrant'
 alias v='vagrant'
+alias vst='vagrant status'
 
 # ios
 alias iphone='open -a /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
