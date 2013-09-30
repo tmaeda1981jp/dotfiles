@@ -44,7 +44,6 @@ tmp
 
 # java
 *.class
-*.jar
 *.war
 *.ear
 
