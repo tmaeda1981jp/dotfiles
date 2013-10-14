@@ -23,3 +23,8 @@
 ;; 履歴で重複を無視する
 (setq eshell-hist-ignoredups t)
 
+(let ((zshpath (shell-command-to-string "/bin/zsh -c 'printenv PATH'")))
+  (let ((pathlst (split-string zshpath ":")))
+    (setq exec-path pathlst))
+  (setq eshell-path-env zshpath)
+  (setenv "PATH" zshpath))
