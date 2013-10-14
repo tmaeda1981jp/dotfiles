@@ -22,3 +22,6 @@ ln -s `PWD`/tmux/.tmux.conf $HOME/.tmux.conf
 
 # bower
 ln -s `PWD`/bower/.bowerrc $HOME/.bowerrc
+
+# bpython
+ln -s `PWD`/bpython/config $HOME/.config/bpython/config
