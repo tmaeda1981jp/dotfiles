@@ -21,6 +21,7 @@ alias hisgrep='his | grep'
 alias del='find . \( -name "*~" -o -name "#*" \) -print | xargs rm'
 alias ag='nocorrect ag'
 alias o='open'
+alias o.='open .'
 
 alias less='/usr/share/vim/vim73/macros/less.sh'
 alias ctags='/usr/local/bin/ctags'
