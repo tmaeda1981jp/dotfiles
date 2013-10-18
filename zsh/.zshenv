@@ -8,17 +8,12 @@ export PATH=$JAVA_HOME/bin:$PATH
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
 
 # ruby
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
 
 # js(node)
 export NODEBREW_ROOT=$HOME/.nodebrew
 export PATH=$NODEBREW_ROOT/current/bin:$PATH
-#[[ -s "$HOME/nvm/nvm.sh" ]] && source "$HOME/nvm/nvm.sh"
-# export NODE_VERSION=0.10.0
-# export NODE_PATH=${NVM_PATH}_modules${NODE_PATH:+:}${NODE_PATH}
-# export PATH=$NODE_PATH:$PATH
 
 # haskell
 export HASKELL_HOME=$HOME/Library/Haskell
@@ -26,11 +21,14 @@ export PATH=$HASKELL_HOME/bin:$PATH
 
 # android
 #export ANDROID_HOME=/Developer/android-sdk-mac_x86/tools:/Developer/android-sdk-mac_x86/platform-tools
-export ANDROID_HOME=$HOME/adt-bundle-mac-x86_64-20130917/sdk/tools:$HOME/adt-bundle-mac-x86_64-20130917/sdk/platform-tools
+#export ANDROID_HOME=$HOME/adt-bundle-mac-x86_64-20130917/sdk/tools:$HOME/adt-bundle-mac-x86_64-20130917/sdk/platform-tools
+#=======
+export ANDROID_HOME=$HOME/adt-bundle-mac-x86_64/sdk/tools:$HOME/adt-bundle-mac-x86-64/sdk/platform-tools
+#>>>>>>> d8633c29d5c8c7e83f49914f02854419a534f3b1
 export PATH=$ANDROID_HOME:$PATH
 
 # tex
 export TEXPATH=/usr/local/texlive/2012/bin/universal-darwin
 export PATH=$TEXPATH:$PATH
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$PATH:/usr/local/bin
