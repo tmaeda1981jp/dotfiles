@@ -25,7 +25,8 @@ export HASKELL_HOME=$HOME/Library/Haskell
 export PATH=$HASKELL_HOME/bin:$PATH
 
 # android
-export ANDROID_HOME=/Developer/android-sdk-mac_x86/tools:/Developer/android-sdk-mac_x86/platform-tools
+#export ANDROID_HOME=/Developer/android-sdk-mac_x86/tools:/Developer/android-sdk-mac_x86/platform-tools
+export ANDROID_HOME=$HOME/adt-bundle-mac-x86_64-20130917/sdk/tools:$HOME/adt-bundle-mac-x86_64-20130917/sdk/platform-tools
 export PATH=$ANDROID_HOME:$PATH
 
 # tex

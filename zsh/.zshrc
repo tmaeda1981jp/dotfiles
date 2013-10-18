@@ -20,6 +20,7 @@ alias fgrep='fgrep -n --color'
 alias hisgrep='his | grep'
 alias del='find . \( -name "*~" -o -name "#*" \) -print | xargs rm'
 alias ag='nocorrect ag'
+alias s='source'
 
 alias less='/usr/share/vim/vim73/macros/less.sh'
 alias ctags='/usr/local/bin/ctags'
@@ -45,6 +46,8 @@ alias rc='r c'
 alias rgs='r g scaffold'
 
 # python
+alias bpython='nocorrect bpython'
+alias bp='bpython'
 alias pb='pythonbrew'
 alias pbv='pythonbrew venv'
 alias pbvc='pythonbrew venv create'
