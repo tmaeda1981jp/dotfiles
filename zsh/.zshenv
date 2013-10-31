@@ -20,15 +20,11 @@ export HASKELL_HOME=$HOME/Library/Haskell
 export PATH=$HASKELL_HOME/bin:$PATH
 
 # android
-#export ANDROID_HOME=/Developer/android-sdk-mac_x86/tools:/Developer/android-sdk-mac_x86/platform-tools
-#export ANDROID_HOME=$HOME/adt-bundle-mac-x86_64-20130917/sdk/tools:$HOME/adt-bundle-mac-x86_64-20130917/sdk/platform-tools
-#=======
 export ANDROID_HOME=$HOME/adt-bundle-mac-x86_64/sdk/tools:$HOME/adt-bundle-mac-x86-64/sdk/platform-tools
-#>>>>>>> d8633c29d5c8c7e83f49914f02854419a534f3b1
 export PATH=$ANDROID_HOME:$PATH
 
 # tex
 export TEXPATH=/usr/local/texlive/2012/bin/universal-darwin
 export PATH=$TEXPATH:$PATH
 
-export PATH=$HOME/bin:$PATH:/usr/local/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:
