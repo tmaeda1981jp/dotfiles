@@ -1,8 +1,9 @@
 # java
 #export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
 export JAVA_HOME=$(/usr/libexec/java_home)
-export _JAVA_OPTIONS=-Dfile.encoding=UTF-8
-export PATH=$JAVA_HOME/bin:$PATH
+#export _JAVA_OPTIONS=-Dfile.encoding=UTF-8
+export ANT_HOME=/Users/tmaeda/ant
+export PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$PATH
 
 # python
 [[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
@@ -20,12 +21,8 @@ export HASKELL_HOME=$HOME/Library/Haskell
 export PATH=$HASKELL_HOME/bin:$PATH
 
 # android
-#export ANDROID_HOME=/Developer/android-sdk-mac_x86/tools:/Developer/android-sdk-mac_x86/platform-tools
-#export ANDROID_HOME=$HOME/adt-bundle-mac-x86_64-20130917/sdk/tools:$HOME/adt-bundle-mac-x86_64-20130917/sdk/platform-tools
-#=======
-export ANDROID_HOME=$HOME/adt-bundle-mac-x86_64/sdk/tools:$HOME/adt-bundle-mac-x86-64/sdk/platform-tools
-#>>>>>>> d8633c29d5c8c7e83f49914f02854419a534f3b1
-export PATH=$ANDROID_HOME:$PATH
+export ANDROID_HOME=$HOME/adt-bundle-mac-x86_64/sdk
+export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
 
 # tex
 export TEXPATH=/usr/local/texlive/2012/bin/universal-darwin

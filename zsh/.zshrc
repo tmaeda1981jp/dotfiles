@@ -71,6 +71,7 @@ alias npm='nocorrect npm'
 alias nb='nodebrew'
 alias b='bower'
 alias volo='nocorrect volo'
+alias grunt='nocorrect grunt'
 
 # git/svn
 export EDITOR='emacs'
