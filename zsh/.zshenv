@@ -21,8 +21,8 @@ export HASKELL_HOME=$HOME/Library/Haskell
 export PATH=$HASKELL_HOME/bin:$PATH
 
 # android
-export ANDROID_HOME=$HOME/adt-bundle-mac-x86_64/sdk/tools:$HOME/adt-bundle-mac-x86-64/sdk/platform-tools
-export PATH=$ANDROID_HOME:$PATH
+export ANDROID_HOME=$HOME/adt-bundle-mac-x86_64/sdk
+export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
 
 # tex
 export TEXPATH=/usr/local/texlive/2012/bin/universal-darwin
