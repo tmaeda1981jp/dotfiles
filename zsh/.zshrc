@@ -64,7 +64,7 @@ alias pmsdb='python manage.py syncdb'
 alias pms='python manage.py shell'
 
 # js
-alias node='nocorrect node'
+#alias node='nocorrect node'
 alias n='node'
 alias nodebrew='nocorrect nodebrew'
 alias npm='nocorrect npm'

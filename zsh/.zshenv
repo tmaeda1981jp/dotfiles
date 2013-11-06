@@ -31,4 +31,4 @@ export PATH=$ANDROID_HOME:$PATH
 export TEXPATH=/usr/local/texlive/2012/bin/universal-darwin
 export PATH=$TEXPATH:$PATH
 
-export PATH=$HOME/bin:$PATH:/usr/local/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH
