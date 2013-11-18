@@ -106,6 +106,24 @@ alias vst='vagrant status'
 # ios
 alias iphone='open -a /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 
+# appium
+function change_xcode {
+  varsion=""
+  if [ $1 -eq 5 ]; then;
+    version=""
+  elif [ $1 -eq 4 ]; then;
+    version="46"
+  else;
+    echo "No such version."
+    return 1
+  fi
+  sudo xcode-select -switch /Applications/Xcode$version.app/Contents/Developer/
+  echo "Change XCode version..."
+  xcode-select --print-path
+}
+alias xc4='change_xcode 4'
+alias xc5='change_xcode 5'
+
 # other
 alias fu='nocorrect fu'
 alias jq='nocorrect jq'

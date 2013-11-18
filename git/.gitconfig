@@ -34,7 +34,3 @@
 
 [http]
 	sslVerify = false
-
-[github]
-  user = tmaeda1981jp
-  token = 16fbcc73be41b73fe96aa5baacbd30bf55d061eb
