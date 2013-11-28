@@ -9,8 +9,9 @@
     ;; npm install -g jslint
     (list "/usr/local/bin/jslint" (list "--terse" local-file))))
 
+;; node v0.11でinstallされるjslintはformatが微妙に変わっているので修正が必要．
 (setq flymake-err-line-patterns
-      (cons '("^\\(.*\\)(\\([[:digit:]]+\\)):\\(.*\\)$"
+    (cons '("^\\(.*\\)(\\([[:digit:]]+\\)):\\(.*\\)$"
               1 2 nil 3)
             flymake-err-line-patterns))
 
