@@ -15,3 +15,5 @@
                 ) auto-insert-alist))
 (add-hook 'python-mode-hook 'auto-insert)
 (add-hook 'js2-mode-hook 'auto-insert)
+(add-hook 'ruby-mode-hook 'auto-insert)
+(add-hook 'feature-mode-hook 'auto-insert)
