@@ -9,6 +9,7 @@
 - tmux
 - percol
 - bower
+- ag
 
 ## TODO
 

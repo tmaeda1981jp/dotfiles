@@ -25,3 +25,6 @@ ln -s `PWD`/bower/.bowerrc $HOME/.bowerrc
 
 # bpython
 ln -s `PWD`/bpython/config $HOME/.config/bpython/config
+
+# ag
+ln -s `PWD`/ag/.agignore $HOME/.agignore
