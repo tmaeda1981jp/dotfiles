@@ -1,5 +1,10 @@
 ;; Rakefileもruby-modeで起動
-(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
+;; (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
+(setq auto-mode-alist
+      (append (list
+               '("Rakefile$" . ruby-mode)
+               '("Gemfile$" . ruby-mode)
+               ) auto-mode-alist))
 
 ;; ruby-electric.el
 ;; refs: https://raw.github.com/ruby/ruby/trunk/misc/ruby-electric.el

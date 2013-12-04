@@ -10,6 +10,8 @@
 (setq auto-insert-alist
       (nconc '((".py$" . "python_header.txt")
                (".js$" . "js_header.txt")
+               (".rb$" . "ruby_header.txt")
+               (".feature$" . "feature_header.txt")
                 ) auto-insert-alist))
 (add-hook 'python-mode-hook 'auto-insert)
 (add-hook 'js2-mode-hook 'auto-insert)
