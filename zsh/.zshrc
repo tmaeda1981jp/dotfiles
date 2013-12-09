@@ -94,6 +94,9 @@ alias gst='g st'
 alias gss='g stash'
 alias gsl='g stash list'
 
+# svn
+alias sst='svn status'
+
 # tmux
 alias tls='tmux ls'
 alias ta='tmux attach-session -t'
