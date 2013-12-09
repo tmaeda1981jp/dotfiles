@@ -33,4 +33,7 @@
   autocrlf = input # CRLFを自動変換
 
 [http]
-	sslVerify = false
+  sslVerify = false
+
+[include]
+  path = ~/.gitconfig.local
