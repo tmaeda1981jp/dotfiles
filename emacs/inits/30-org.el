@@ -14,6 +14,12 @@
 (setq org-todo-keywords
       '((sequence "TODO(t)" "WAIT(w)" "|" "DONE(d)" "SOMEDAY(s)")))
 
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/todo/mytodo.org" "Tasks")
+         "** TODO %?\n   %i\n")
+        ("m" "Memo" entry (file+headline "~/memo/memo.org" "Memo")
+         "** %?\n   %i\n")))
+
 ;; CLOSEの時にtimestamp
 (setq org-log-done 'time)
 
