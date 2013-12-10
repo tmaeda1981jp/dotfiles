@@ -8,15 +8,16 @@
 
 ;; ruby-electric.el
 ;; refs: https://raw.github.com/ruby/ruby/trunk/misc/ruby-electric.el
-(require 'ruby-electric nil t)
+;; (require 'ruby-electric nil t)
 ;; end の自動挿入
 ;; refs: https://groups.google.com/forum/?fromgroups#!msg/emacs-on-rails/Cuh_x5eCK_M/KDwjY4K6X1YJ
-(defun ruby-insert-end ()
-  "Insert \"end\" at point and reindent current line."
-  (interactive)
-  (insert "end")
-  (ruby-indent-line t)
-  (end-of-line))
+;; (defun ruby-insert-end ()
+;;   "Insert \"end\" at point and reindent current line."
+;;   (interactive)
+;;   (insert "end")
+;;   (ruby-indent-line t)
+;;   (end-of-line))
+(require 'ruby-end)
 
 ;; ruby-block.el
 ;; endに対応する行のハイライト
