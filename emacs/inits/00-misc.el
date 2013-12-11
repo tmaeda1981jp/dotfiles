@@ -265,3 +265,19 @@
 (key-chord-define-global "rt" 'replace-string)
 
 (global-set-key (kbd "C-c l") 'recenter)
+
+
+;; 行の入れ替え
+;; refs: http://qiita.com/ShingoFukuyama/items/fc51a32e84fd84261565
+(defun move-line (arg)
+  (let ((col (current-column)))
+    (save-excursion
+      (forward-line)
+      (transpose-lines arg))
+    (when (> arg 0)
+      (forward-line arg))
+    (move-to-column col)))
+
+(global-set-key (kbd "M-N") (lambda () (interactive) (move-line 1)))
+(global-set-key (kbd "M-P") (lambda () (interactive) (move-line -1)))
+
