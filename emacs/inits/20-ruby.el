@@ -97,7 +97,7 @@
 ;; cucumber
 ;; https://github.com/michaelklishin/cucumber.el
 (setq feature-default-language "ja")
-(setq feature-default-i18n-file "~/.emacs.d/site-lisp/cucumber.el/i18n.yml")
+(setq feature-default-i18n-file "~/.emacs.d/elpa/feature-mode-20130714.1319/i18n.yml")
 
 (require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
@@ -119,3 +119,6 @@
     (when indent
       (indent-line-to indent)
       (when (> offset 0) (forward-char offset)))))
+
+(require 'rcodetools)
+(define-key ruby-mode-map (kbd "C-c C-d") 'xmp)
