@@ -5,9 +5,9 @@
 (add-to-list 'auto-mode-alist '("¥¥.org$" . org-mode))
 ;; ~/todoが存在しない場合は以下を評価
 ;; (mkdir "~/todo" t)
-(setq org-default-notes-file "~/notes/mytodo.org")
+(setq org-default-notes-file "~/wiki/notes/mytodo.org")
 ;(setq org-agenda-files '("~/todo/mytodo.org"))
-(setq org-directory "~/notes")
+(setq org-directory "~/wiki/notes")
 (setq org-agenda-files (list org-directory))
 (define-key global-map "\C-cc" 'org-capture)
 (define-key global-map "\C-ca" 'org-agenda)
@@ -17,11 +17,11 @@
       '((sequence "TODO(t)" "WAIT(w)" "|" "DONE(d)" "SOMEDAY(s)")))
 
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/notes/mytodo.org" "Tasks")
+      '(("t" "Todo" entry (file+headline "~/wiki/notes/mytodo.org" "Tasks")
          "** TODO %?\n   %i\n  %t\n")
-        ("m" "Memo" entry (file+datetree "~/notes/memo.org" "Memo")
+        ("m" "Memo" entry (file+datetree "~/wiki/notes/memo.org" "Memo")
          "** %?\n  %i\n  %t\n")
-        ("d" "Diary" entry (file+datetree "~/notes/diary.org" "Dialy")
+        ("d" "Diary" entry (file+datetree "~/wiki/notes/diary.org" "Dialy")
          "** %U - %^{Activity}  :Diary:")))
 
 ;; CLOSEの時にtimestamp
