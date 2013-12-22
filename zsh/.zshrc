@@ -103,6 +103,7 @@ alias sst='svn status'
 # tmux
 alias tls='tmux ls'
 alias ta='tmux attach-session -t'
+alias tn='tmux new -s'
 
 # vagrant
 alias vagrant='nocorrect vagrant'
