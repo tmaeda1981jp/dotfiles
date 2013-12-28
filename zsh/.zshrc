@@ -134,6 +134,7 @@ alias xc5='change_xcode 5'
 # other
 alias fu='nocorrect fu'
 alias jq='nocorrect jq'
+alias figlet='nocorrect figlet'
 
 b2o() { echo "obase=10;ibase=2; $1" | bc }; alias b2o=b2o;
 b2h() { echo "obase=16;ibase=2; $1" | bc }; alias b2h=b2h;
