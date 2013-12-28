@@ -281,3 +281,12 @@
 (global-set-key (kbd "M-N") (lambda () (interactive) (move-line 1)))
 (global-set-key (kbd "M-P") (lambda () (interactive) (move-line -1)))
 
+
+(require 'wrap-region)
+(wrap-region-global-mode t)
+;; (wrap-region-add-wrapper "`" "`" nil '(markdown-mode))
+;; (wrap-region-add-wrapper "```" "```" "#" '(markdown-mode))
+
+(wrap-region-add-wrappers
+ '(("`" "`" nil '(markdown-mode))
+   ("```" "```" "#" '(markdown-mode))))
