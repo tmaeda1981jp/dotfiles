@@ -284,9 +284,6 @@
 
 (require 'wrap-region)
 (wrap-region-global-mode t)
-;; (wrap-region-add-wrapper "`" "`" nil '(markdown-mode))
-;; (wrap-region-add-wrapper "```" "```" "#" '(markdown-mode))
-
 (wrap-region-add-wrappers
  '(("`" "`" nil '(markdown-mode))
    ("```" "```" "#" '(markdown-mode))))
