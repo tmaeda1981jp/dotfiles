@@ -99,6 +99,10 @@ alias gst='g st'
 
 # svn
 alias sst='svn status'
+svn_oneline() {
+    svn log $1 | perl -l40pe 's/^-+/\n/'
+}
+alias slog=svn_oneline
 
 # tmux
 alias tls='tmux ls'
