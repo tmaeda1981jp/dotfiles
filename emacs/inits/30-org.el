@@ -22,7 +22,7 @@
       '(("t" "Todo" entry (file+headline "~/wiki/notes/mytodo.org" "Tasks")
          "** TODO %?\n   %i\n  %t\n")
         ("m" "Memo" entry (file+datetree "~/wiki/notes/memo.org" "Memo")
-         "** %?\n  %i\n  %t\n" :prepend t)
+         "** %?\n  %i\n" :prepend t)
         ("d" "Diary" entry (file+datetree "~/wiki/notes/diary.org" "Dialy")
          "** %U - %^{Activity} :Diary:\n" :prepend t)
         ("b" "Book" entry (file+datetree "~/wiki/notes/books.org" "Dialy")
