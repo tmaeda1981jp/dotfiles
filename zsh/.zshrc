@@ -99,6 +99,10 @@ alias gst='g st'
 
 # svn
 alias sst='svn status'
+svn_oneline() {
+    svn log $1 | perl -l40pe 's/^-+/\n/'
+}
+alias slog=svn_oneline
 
 # tmux
 alias tls='tmux ls'
@@ -136,12 +140,12 @@ alias fu='nocorrect fu'
 alias jq='nocorrect jq'
 alias figlet='nocorrect figlet'
 
-b2o() { echo "obase=10;ibase=2; $1" | bc }; alias b2o=b2o;
+b2d() { echo "obase=10;ibase=2; $1" | bc }; alias b2d=b2d;
 b2h() { echo "obase=16;ibase=2; $1" | bc }; alias b2h=b2h;
-o2b() { echo "obase=2;ibase=10; $1" | bc }; alias o2b=o2b;
-o2h() { echo "obase=16;ibase=10; $1"| bc }; alias o2h=o2h;
+d2b() { echo "obase=2;ibase=10; $1" | bc }; alias d2b=d2b;
+d2h() { echo "obase=16;ibase=10; $1"| bc }; alias d2h=d2h;
 h2b() { echo "obase=2;ibase=16; $1" | bc }; alias h2b=h2b;
-h2o() { echo "obase=10;ibase=16; $1"| bc }; alias h2o=h2o;
+h2d() { echo "obase=10;ibase=16; $1"| bc }; alias h2d=h2d;
 
 autoload -Uz add-zsh-hook
 autoload -Uz colors
