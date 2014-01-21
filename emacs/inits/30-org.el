@@ -20,15 +20,15 @@
 
 (setq org-capture-templates
       '(("t" "Todo" entry (file+headline "~/wiki/notes/mytodo.org" "Tasks")
-         "** TODO %?\n   %i\n  %t\n")
-        ("m" "Memo" entry (file+datetree "~/wiki/notes/memo.org" "Memo")
-         "** %?\n  %i\n" :prepend t)
-        ("d" "Diary" entry (file+datetree "~/wiki/notes/diary.org" "Dialy")
-         "** %U - %^{Activity} :Diary:\n" :prepend t)
-        ("b" "Book" entry (file+datetree "~/wiki/notes/books.org" "Dialy")
-         "** %U - %^{Activity} :Books:\n" :prepend t)
-        ("v" "Movie" entry (file+datetree "~/wiki/notes/movies.org" "Dialy")
-         "** %U - %^{Activity} :Movies:\n" :prepend t)))
+         "**** TODO %?\n   %i\n  %t\n")
+        ("m" "Memo" entry (file+headline "~/wiki/notes/memo.org" "Memo")
+         "**** %U - %?\n  %i\n" :prepend t :empty-lines 1)
+        ("d" "Diary" entry (file+headline "~/wiki/notes/diary.org" "Dialy")
+         "**** %U - %^{Title} :Diary:\n" :prepend t :empty-lines 1)
+        ("b" "Book" entry (file+headline "~/wiki/notes/books.org" "Books")
+         "**** %U - %^{Title} :Books:\n" :prepend t :empty-lines 1)
+        ("v" "Movie" entry (file+headline "~/wiki/notes/movies.org" "Movies")
+         "**** %U - %^{Title} :Movies:\n" :prepend t :empty-lines 1)))
 
 ;; CLOSEの時にtimestamp
 (setq org-log-done 'time)
