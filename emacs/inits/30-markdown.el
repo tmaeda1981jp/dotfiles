@@ -20,7 +20,8 @@
             (local-set-key "\C-c\C-s@" 'markdown-insert-header-setext-2)
             (local-set-key "\C-c\C-st" 'markdown-insert-header-setext-1)
             (local-set-key "\C-c\C-ss" 'markdown-insert-header-setext-2)
-            (local-set-key "\C-c\C-sh" 'markdown-insert-header-dwim)))
+            (local-set-key "\C-c\C-sh" 'markdown-insert-header-dwim)
+            (local-set-key "\C-c," 'markdown-cycle)))
 
 (setq markdown-css-path
       "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css")
