@@ -17,6 +17,9 @@ ln -s `PWD`/vim/.vimrc $HOME/.vimrc
 ln -s `PWD`/git/.gitignore $HOME/.gitignore
 ln -s `PWD`/git/.gitconfig $HOME/.gitconfig
 
+# gem
+ln -s `PWD`/gem/.gemrc $HOME/.gemrc
+
 # tmux
 ln -s `PWD`/tmux/.tmux.conf $HOME/.tmux.conf
 
