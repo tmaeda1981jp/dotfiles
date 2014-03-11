@@ -6,7 +6,9 @@ export ANT_HOME=/Users/tmaeda/ant
 export PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$PATH
 
 # python
-[[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
+#[[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
+export PATH=$HOME/.pyenv/shims:$PATH
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # ruby
 export PATH=$HOME/.rbenv/bin:$PATH
