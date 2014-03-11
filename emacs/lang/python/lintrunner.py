@@ -1,9 +1,10 @@
 #!/usr/bin/env python
+# -*- encoding: utf-8 -*-
 
 import os
 import re
 import sys
-import ast
+import compiler
 
 from subprocess import Popen, PIPE
 
@@ -53,7 +54,7 @@ class LintRunner(object):
 
     @classmethod
     def process_output(cls, line):
-        print(line)
+        print line
         m = cls.output_matcher.match(line)
         if m:
             fixed_data = dict.fromkeys(('level', 'error_type',
@@ -63,9 +64,9 @@ class LintRunner(object):
             fixed_data.update(cls.fixup_data(line, m.groupdict()))
             fixed_data['description'] = (
                 cls.__name__ + ' ' + fixed_data['description'])
-            print(cls.output_format % fixed_data)
+            print cls.output_format % fixed_data
         else:
-            print(sys.stderr, "Line is broken: %s %s" % (cls, line))
+            print >> sys.stderr, "Line is broken: %s %s" % (cls, line)
 
     def run(self, filename):
         args = [self.command]
@@ -80,8 +81,8 @@ class CompilerRunner(LintRunner):
     def run(self, filename):
         error_args = None
         try:
-            ast.parse(filename=filename)
-        except (SyntaxError, Exception) as e:
+            compiler.parseFile(filename)
+        except (SyntaxError, Exception),  e:
             error_args = e.args
         if error_args:
             self.process_output(filename, error_args)
@@ -97,7 +98,7 @@ class CompilerRunner(LintRunner):
         fixed_data['filename'] = filename
         fixed_data['description'] = args[0]
 
-        print(cls.output_format % fixed_data)
+        print cls.output_format % fixed_data
 
 
 class PylintRunner(LintRunner):
@@ -231,6 +232,8 @@ class PyflakesRunner(LintRunner):
 
 
 def main():
+
+    import traceback
     from optparse import OptionParser
     parser = OptionParser()
     parser.add_option("-e", "--virtualenv",
@@ -252,10 +255,12 @@ def main():
                              ignore_codes=options.ignore_codes)
         try:
             runner.run(args[0])
-        except Exception:
+        except Exception as e:
+            print(traceback.format_exc())
+            print(e)
             #print >> sys.stdout, '{0} FAILED'.format(runner)
-            print('ERROR : {0} failed to run at {1} line 1.'.format(
-                runner.__class__.__name__, args[0]))
+            print 'ERROR : {0} failed to run at {1} line 1.'.format(
+                runner.__class__.__name__, args[0])
 
 
 if __name__ == '__main__':

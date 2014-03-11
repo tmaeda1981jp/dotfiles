@@ -1,4 +1,5 @@
-#!/Users/tmaeda/.pythonbrew/pythons/Python-2.7.3/bin/python
+#!/usr/bin/env python
+# -*- encoding: utf-8 -*-
 
 from pyflakes.scripts.pyflakes import main
 main()
