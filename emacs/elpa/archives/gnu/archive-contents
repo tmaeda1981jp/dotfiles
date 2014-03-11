@@ -6,7 +6,7 @@
 		   ("tools" "processes" "convenience"))
 	(:url . "https://github.com/leoliu/ack-el"))])
  (ada-mode .
-	   [(5 0)
+	   [(5 0 1)
 	    ((wisi
 	      (1 0)))
 	    "major-mode for editing Ada sources" tar
@@ -50,7 +50,7 @@
 		(:keywords quote
 			   ("coffeescript" "major" "mode")))])
  (company .
-	  [(0 6 14)
+	  [(0 7)
 	   nil "Modular in-buffer completion framework" tar
 	   ((:keywords quote
 		       ("abbrev" "convenience" "matching"))
@@ -80,7 +80,7 @@
 	      (:keywords quote
 			 ("extensions" "matching" "data structures trie" "tree" "dictionary" "completion" "regexp")))])
  (diff-hl .
-	  [(1 5 1)
+	  [(1 5 3)
 	   ((cl-lib
 	     (0 2)))
 	   "Highlight uncommitted changes" tar
@@ -140,7 +140,7 @@
 	   ((:url . "http://elpa.gnu.org/packages/flylisp.html")
 	    (:keywords quote nil))])
  (ggtags .
-	 [(0 7 8)
+	 [(0 7 10)
 	  ((emacs
 	    (24)))
 	  "emacs frontend to GNU Global source code tagging system" single
@@ -249,7 +249,7 @@
 	    ((:url . "http://elpa.gnu.org/packages/omn-mode.html")
 	     (:keywords quote nil))])
  (org .
-      [(20140130)
+      [(20140217)
        nil "Outline-based notes management and organizer" tar nil])
  (quarter-plane .
 		[(0 1)
@@ -319,7 +319,7 @@
 	 (:keywords quote
 		    ("extensions" "matching" "data structures tnfa" "nfa" "dfa" "finite state automata" "automata" "regexp")))])
  (temp-buffer-browse .
-		     [(1 1)
+		     [(1 2)
 		      nil "temp buffer browse mode" single
 		      ((:url . "http://elpa.gnu.org/packages/temp-buffer-browse.html")
 		       (:keywords quote
@@ -346,11 +346,11 @@
 		   ((:keywords quote nil)
 		    (:url . "http://elpa.gnu.org/packages/uni-confusables.html"))])
  (vlf .
-      [(1 2)
-       nil "View Large Files" single
-       ((:url . "https://github.com/m00natic/vlfi")
-	(:keywords quote
-		   ("large files" "utilities")))])
+      [(1 4)
+       nil "View Large Files" tar
+       ((:keywords quote
+		   ("large files" "utilities"))
+	(:url . "https://github.com/m00natic/vlfi"))])
  (w3 .
      [(4 0 49)
       nil "Fully customizable, largely undocumented web browser for Emacs" tar
