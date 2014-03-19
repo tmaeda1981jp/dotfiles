@@ -11,8 +11,10 @@
 ;(setq org-agenda-files '("~/todo/mytodo.org"))
 (setq org-directory "~/wiki/notes")
 (setq org-agenda-files (list org-directory))
+
 (define-key global-map "\C-cc" 'org-capture)
 (define-key global-map "\C-ca" 'org-agenda)
+(define-key global-map "\C-ct" 'org-todo)
 
 ;; TODO設定
 (setq org-todo-keywords
