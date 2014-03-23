@@ -64,7 +64,6 @@ alias pmsdb='python manage.py syncdb'
 alias pms='python manage.py shell'
 
 # js
-#alias node='nocorrect node'
 alias n='node'
 alias nodebrew='nocorrect nodebrew'
 alias npm='nocorrect npm'
@@ -210,9 +209,6 @@ setopt auto_cd
 setopt correct
 setopt list_packed
 setopt nolistbeep
-
-# zaw
-# source /Users/tmaeda/zaw/zaw.zsh
 
 # z
 #. /Users/tmaeda/.z/z.sh

@@ -1,12 +1,10 @@
 # java
-#export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
 export JAVA_HOME=$(/usr/libexec/java_home)
 #export _JAVA_OPTIONS=-Dfile.encoding=UTF-8
 export ANT_HOME=/Users/tmaeda/ant
 export PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$PATH
 
 # python
-#[[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
 export PATH=$HOME/.pyenv/shims:$PATH
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
