@@ -141,10 +141,15 @@ alias jq='nocorrect jq'
 alias figlet='nocorrect figlet'
 
 b2d() { echo "obase=10;ibase=2; $1" | bc }; alias b2d=b2d;
+b2o() { echo "obase=8;ibase=2; $1"  | bc }; alias b2o=b2o;
 b2h() { echo "obase=16;ibase=2; $1" | bc }; alias b2h=b2h;
+
 d2b() { echo "obase=2;ibase=10; $1" | bc }; alias d2b=d2b;
+d2o() { echo "obase=8;ibase=10; $1" | bc }; alias d2o=d2o;
 d2h() { echo "obase=16;ibase=10; $1"| bc }; alias d2h=d2h;
+
 h2b() { echo "obase=2;ibase=16; $1" | bc }; alias h2b=h2b;
+h2o() { echo "obase=8;ibase=16; $1" | bc }; alias h2o=h2o;
 h2d() { echo "obase=10;ibase=16; $1"| bc }; alias h2d=h2d;
 
 autoload -Uz add-zsh-hook
