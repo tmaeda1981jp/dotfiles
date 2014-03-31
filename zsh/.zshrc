@@ -148,6 +148,10 @@ d2b() { echo "obase=2;ibase=10; $1" | bc }; alias d2b=d2b;
 d2o() { echo "obase=8;ibase=10; $1" | bc }; alias d2o=d2o;
 d2h() { echo "obase=16;ibase=10; $1"| bc }; alias d2h=d2h;
 
+o2b() { echo "obase=2;ibase=8; $1"  | bc}; alias o2b=o2b;
+o2d() { echo "obase=10;ibase=8; $1" | bc}; alias o2d=o2d;
+o2h() { echo "obase=16;ibase=8; $1" | bc}; alias o2h=o2h;
+
 h2b() { echo "obase=2;ibase=16; $1" | bc }; alias h2b=h2b;
 h2o() { echo "obase=8;ibase=16; $1" | bc }; alias h2o=h2o;
 h2d() { echo "obase=10;ibase=16; $1"| bc }; alias h2d=h2d;
