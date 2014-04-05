@@ -103,6 +103,10 @@ svn_oneline() {
     svn log $1 | perl -l40pe 's/^-+/\n/'
 }
 alias slog=svn_oneline
+delete_all_dot_svn() {
+    find . -type d -name .svn -exec rm -rf {} +
+}
+alias delsvn=delete_all_dot_svn
 
 # tmux
 alias tls='tmux ls'
