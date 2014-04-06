@@ -118,6 +118,9 @@ alias vagrant='nocorrect vagrant'
 alias v='vagrant'
 alias vst='vagrant status'
 
+# mac
+alias pong='perl -nle '\''print "display notification \"$_\" with title \"Terminal\""'\'' | osascript'
+
 # ios
 alias iphone='open -a /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app'
 
