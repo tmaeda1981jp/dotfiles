@@ -1,4 +1,5 @@
 (require 'php-mode)
+(scroll-bar-mode -1)
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
 (add-hook 'php-mode-hook
           (lambda ()
