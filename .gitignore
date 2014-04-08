@@ -2,3 +2,8 @@ emacs/url
 emacs/ac-comphist.dat
 emacs/.mc-lists.el
 emacs/eshell
+*.elc
+tramp
+.org-id-locations
+*_archive
+*_flymake.*
