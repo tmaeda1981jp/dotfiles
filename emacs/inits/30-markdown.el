@@ -29,5 +29,6 @@
 
 ;; https://github.com/gongo/emacs-realtime-markdown-viewer
 ;; site-lisp配下にsubmoduleとして配置
-;; bundle install --path=vender/bundler
+;; $ cd site-lisp/emacs-realtime-markdown-viewer
+;; $ bundle install
 (require 'realtime-markdown-viewer)
