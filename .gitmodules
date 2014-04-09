@@ -1,0 +1,3 @@
+[submodule "emacs/site-lisp/emacs-realtime-markdown-viewer"]
+	path = emacs/site-lisp/emacs-realtime-markdown-viewer
+	url = https://github.com/gongo/emacs-realtime-markdown-viewer.git

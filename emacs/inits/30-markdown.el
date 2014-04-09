@@ -25,3 +25,7 @@
 
 (setq markdown-css-path
       "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css")
+
+
+;; https://github.com/gongo/emacs-realtime-markdown-viewer
+(require 'realtime-markdown-viewer)
