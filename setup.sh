@@ -31,3 +31,6 @@ ln -s `PWD`/bpython/config $HOME/.config/bpython/config
 
 # ag
 ln -s `PWD`/ag/.agignore $HOME/.agignore
+
+# ghci
+ln -s `PWD`/ghci/.ghci $HOME/.ghci
