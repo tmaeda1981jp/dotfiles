@@ -1,9 +1,15 @@
 #!/bin/bash
 
 # emacs
+if [ -e $HOME/.emacs.d ]; then
+    rm -f $HOME/.emacs.d
+fi
 ln -s `PWD`/emacs $HOME/.emacs.d
 
 # percol
+if [ -e $HOME/.percol.d ]; then
+    rm -f $HOME/.percol.d
+fi
 ln -s `PWD`/percol $HOME/.percol.d
 
 # zsh
