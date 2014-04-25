@@ -118,6 +118,10 @@ alias vagrant='nocorrect vagrant'
 alias v='vagrant'
 alias vst='vagrant status'
 
+# sphinx
+alias mh='make html'
+alias mp='make latexpdfja'
+
 # mac
 alias pong='perl -nle '\''print "display notification \"$_\" with title \"Terminal\""'\'' | osascript'
 
