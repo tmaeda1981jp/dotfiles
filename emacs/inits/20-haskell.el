@@ -24,7 +24,6 @@
   (setq haskell-interactive-prompt ">>> ")
 
   ;; Use simple indentation.
-  ;; (turn-on-haskell-simple-indent)
   (turn-on-haskell-indentation)
   (define-key haskell-mode-map (kbd "<return>") 'haskell-simple-indent-newline-same-col)
   (define-key haskell-mode-map (kbd "C-<return>") 'haskell-simple-indent-newline-indent)
@@ -35,30 +34,10 @@
 
   ;; Switch to the REPL.
   (define-key haskell-mode-map [?\C-c ?\C-z] 'haskell-interactive-switch)
-  ;; “Bring” the REPL, hiding all other windows apart from the source
-  ;; and the REPL.
-
-  ;; TODO change
-  (define-key haskell-mode-map (kbd "C-`") 'haskell-interactive-bring)
-
-  ;; Build the Cabal project.
-  ;; TODO change
-  (define-key haskell-mode-map (kbd "C-c C-c") 'haskell-process-cabal-build)
-  ;; Interactively choose the Cabal command to run.
-  ;; TODO change
-  (define-key haskell-mode-map (kbd "C-c c") 'haskell-process-cabal)
-
-  ;; Contextually do clever things on the space key, in particular:
-  ;;   1. Complete imports, letting you choose the module name.
-  ;;   2. Show the type of the symbol after the space.
-  (define-key haskell-mode-map (kbd "SPC") 'haskell-mode-contextual-space)
 
   ;; Jump to the imports. Keep tapping to jump between import
   ;; groups. C-u f8 to jump back again.
-  (define-key haskell-mode-map [f8] 'haskell-navigate-imports)
-
-  ;; Jump to the definition of the current symbol.
-  (define-key haskell-mode-map (kbd "M-.") 'haskell-mode-tag-find)
+  (define-key haskell-mode-map [f8] 'haskell-navigate-imports))
 
 ;; Useful to have these keybindings for .cabal files, too.
 (defun haskell-cabal-hook ()
