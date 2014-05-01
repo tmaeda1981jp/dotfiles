@@ -11,4 +11,4 @@
 - bower
 - ag
 - bpython
-
+- ghci
