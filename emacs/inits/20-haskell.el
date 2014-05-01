@@ -24,7 +24,8 @@
   (setq haskell-interactive-prompt ">>> ")
 
   ;; Use simple indentation.
-  (turn-on-haskell-simple-indent)
+  ;; (turn-on-haskell-simple-indent)
+  (turn-on-haskell-indentation)
   (define-key haskell-mode-map (kbd "<return>") 'haskell-simple-indent-newline-same-col)
   (define-key haskell-mode-map (kbd "C-<return>") 'haskell-simple-indent-newline-indent)
 
@@ -47,12 +48,6 @@
   ;; TODO change
   (define-key haskell-mode-map (kbd "C-c c") 'haskell-process-cabal)
 
-  ;; Get the type and info of the symbol at point, print it in the
-  ;; message buffer.
-  ;; TODO change
-  (define-key haskell-mode-map (kbd "C-c C-t") 'haskell-process-do-type)
-  (define-key haskell-mode-map (kbd "C-c C-i") 'haskell-process-do-info)
-
   ;; Contextually do clever things on the space key, in particular:
   ;;   1. Complete imports, letting you choose the module name.
   ;;   2. Show the type of the symbol after the space.
@@ -64,17 +59,6 @@
 
   ;; Jump to the definition of the current symbol.
   (define-key haskell-mode-map (kbd "M-.") 'haskell-mode-tag-find)
-
-  ;; indent the below lines on columns after the current column.
-  (define-key haskell-mode-map (kbd "C-<right>")
-    (lambda ()
-      (interactive)
-      (haskell-move-nested 1)))
-  ;; Same as above but backwards.
-  (define-key haskell-mode-map (kbd "C-<left>")
-    (lambda ()
-      (interactive)
-      (haskell-move-nested -1))))
 
 ;; Useful to have these keybindings for .cabal files, too.
 (defun haskell-cabal-hook ()
