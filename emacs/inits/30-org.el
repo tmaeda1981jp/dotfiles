@@ -14,6 +14,8 @@
 
 (define-key global-map "\C-cc" 'org-capture)
 (define-key global-map "\C-ca" 'org-agenda)
+
+;; todo状態変更(org-agendaではtのみでok)
 (define-key global-map "\C-ct" 'org-todo)
 
 ;; TODO設定
