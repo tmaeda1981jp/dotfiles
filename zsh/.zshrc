@@ -112,6 +112,7 @@ alias delsvn=delete_all_dot_svn
 alias tls='tmux ls'
 alias ta='tmux attach-session -t'
 alias tn='tmux new -s'
+alias tkill='tmux kill-session -t'
 
 # vagrant
 alias vagrant='nocorrect vagrant'
