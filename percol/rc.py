@@ -3,8 +3,8 @@ from percol.finder import FinderMultiQueryMigemo, FinderMultiQueryRegex
 
 percol.view.__class__.PROMPT = property(
     lambda self:
-    ur"<bold>Q:</bold> %q" if percol.model.finder.case_insensitive
-    else ur"<bold><green>Q </green>:</bold> %q"
+    ur"<bold>pattern:</bold> %q" if percol.model.finder.case_insensitive
+    else ur"<bold><green>pattern:</green></bold> %q"
 )
 # Display finder name in RPROMPT
 percol.view.prompt_replacees["F"] = lambda self, **args: self.model.finder.get_name()
