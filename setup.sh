@@ -2,19 +2,15 @@
 
 # emacs
 if [ -e $HOME/.emacs.d ]; then
-    rm -f $HOME/.emacs.d
+    rm -rf $HOME/.emacs.d
 fi
 ln -s `PWD`/emacs $HOME/.emacs.d
 
 # percol
 if [ -e $HOME/.percol.d ]; then
-    rm -f $HOME/.percol.d
+    rm -rf $HOME/.percol.d
 fi
 ln -s `PWD`/percol $HOME/.percol.d
-
-# zsh
-ln -s `PWD`/zsh/.zshrc $HOME/.zshrc
-ln -s `PWD`/zsh/.zshenv $HOME/.zshenv
 
 # vim
 ln -s `PWD`/vim/.vimrc $HOME/.vimrc
@@ -40,3 +36,13 @@ ln -s `PWD`/ag/.agignore $HOME/.agignore
 
 # ghci
 ln -s `PWD`/ghci/.ghci $HOME/.ghci
+
+# zsh
+ln -s `PWD`/zsh/.zshrc $HOME/.zshrc
+ln -s `PWD`/zsh/.zshenv $HOME/.zshenv
+
+# percol
+if [ -e $HOME/.zsh ]; then
+    rm -rf $HOME/.zsh
+fi
+ln -s `PWD`/zsh/.zsh $HOME/.zsh
