@@ -216,10 +216,14 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 HISTFILE=~/.zsh_history
-HISTSIZE=1000000
+HISTSIZE=5000000
 SAVEHIST=1000000
-setopt hist_ignore_dups     # ignore duplication command history list
 setopt share_history        # share command history data
+setopt hist_ignore_dups     # ignore duplication command history list
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_find_no_dups
+setopt hist_expire_dups_first
 
 autoload -U compinit
 compinit
