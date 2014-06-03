@@ -266,7 +266,6 @@
 
 (global-set-key (kbd "C-c l") 'recenter)
 
-
 ;; 行の入れ替え
 ;; refs: http://qiita.com/ShingoFukuyama/items/fc51a32e84fd84261565
 (defun move-line (arg)
