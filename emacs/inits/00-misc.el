@@ -288,3 +288,6 @@
  '(("`" "`" nil '(markdown-mode))
    ("```" "```" "#" '(markdown-mode))))
 
+;; 自動バックアップを無効にする
+(setq make-backup-files nil)
+(setq auto-save-default nil)
