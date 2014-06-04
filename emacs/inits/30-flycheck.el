@@ -12,6 +12,7 @@
 (setq flycheck-display-errors-delay 0.3)
 
 ;; setting for js
+;; http://www.emacswiki.org/emacs/Flycheck
 (require 'flycheck)
 (flycheck-define-checker javascript-jslint-reporter
   "A JavaScript syntax and style checker based on JSLint Reporter.
