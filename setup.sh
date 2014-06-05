@@ -34,6 +34,9 @@ ln -s `PWD`/bpython/config $HOME/.config/bpython/config
 # rubocop
 ln -s `PWD`/ruby/rubocop/.rubocop.yml $HOME/.rubocop.yml
 
+# htmltidy
+ln -s `PWD`/html/.tidyrc $HOME/.tidyrc
+
 # ag
 ln -s `PWD`/ag/.agignore $HOME/.agignore
 

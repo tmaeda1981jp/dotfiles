@@ -12,3 +12,5 @@
 - ag
 - bpython
 - ghci
+- rubocop
+- html-tidy
