@@ -290,3 +290,7 @@
 ;; 自動バックアップを無効にする
 (setq make-backup-files nil)
 (setq auto-save-default nil)
+
+;; ediff
+(setq ediff-window-setup-function 'ediff-setup-windows-plain)
+(setq ediff-split-window-function 'split-window-horizontally)
