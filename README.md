@@ -11,6 +11,7 @@
 - bower
 - ag
 - bpython
+- pyilnt
 - ghci
 - rubocop
 - html-tidy
