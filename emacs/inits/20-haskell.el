@@ -24,6 +24,8 @@
             (define-key haskell-mode-map [?\C-c ?\C-l] 'haskell-process-load-file)
             (define-key haskell-mode-map [f5] 'haskell-process-load-file)
 
+            ;; hoogle search
+            (define-key haskell-mode-map "\C-ch" 'haskell-hoogle)
             ;; Switch to the REPL.
             (define-key haskell-mode-map [?\C-c ?\C-z] 'haskell-interactive-switch)
 
