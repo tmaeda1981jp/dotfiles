@@ -31,6 +31,7 @@
   excludesfile = /Users/tmaeda/.gitignore
   autocrlf = input # CRLFを自動変換
   editor = "/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t"
+  quotepath = false # 日本語名ファイルを表示
 
 [http]
   sslVerify = false
