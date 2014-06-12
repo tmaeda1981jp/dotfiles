@@ -3477,7 +3477,10 @@ You can tell the quote type by looking at the first character."
 
 (defun js2-print-array-node (n i)
   (insert (js2-make-pad i) "[")
-  (js2-print-list (js2-array-node-elems n))
+  (let ((elems (js2-array-node-elems n)))
+    (js2-print-list elems)
+    (when (and elems (null (car (last elems))))
+      (insert ",")))
   (insert "]"))
 
 (defstruct (js2-object-node
@@ -3628,8 +3631,9 @@ property `GETTER_SETTER' set to js2-GET or js2-SET. ")
             (:constructor nil)
             (:constructor make-js2-yield-node (&key (type js2-YIELD)
                                                     (pos js2-ts-cursor)
-                                                    len value)))
+                                                    len value star-p)))
   "AST node for yield statement or expression."
+  star-p ; whether it's yield*
   value) ; optional:  value to be yielded
 
 (put 'cl-struct-js2-yield-node 'js2-visitor 'js2-visit-yield-node)
@@ -3641,6 +3645,8 @@ property `GETTER_SETTER' set to js2-GET or js2-SET. ")
 (defun js2-print-yield-node (n i)
   (insert (js2-make-pad i))
   (insert "yield")
+  (when (js2-yield-node-star-p n)
+    (insert "*"))
   (when (js2-yield-node-value n)
     (insert " ")
     (js2-print-ast (js2-yield-node-value n) 0)))
@@ -8117,11 +8123,16 @@ but not BEFORE."
         (end (js2-current-token-end))
         (before js2-end-flags)
         (inside-function (js2-inside-function))
-        e ret name)
+        e ret name yield-star-p)
     (unless inside-function
       (js2-report-error (if (eq tt js2-RETURN)
                             "msg.bad.return"
                           "msg.bad.yield")))
+    (when (and inside-function
+               (eq (js2-function-node-generator-type js2-current-script-or-fn)
+                   'STAR)
+               (js2-match-token js2-MUL))
+      (setq yield-star-p t))
     ;; This is ugly, but we don't want to require a semicolon.
     (unless (memq (js2-peek-token-or-eol) js2-parse-return-stmt-enders)
       (setq e (js2-parse-expr)
@@ -8148,11 +8159,10 @@ but not BEFORE."
                                 (logior js2-end-returns js2-end-returns-value)))
           (js2-add-strict-warning "msg.return.inconsistent" nil pos end)))
      (t
-      (unless (js2-inside-function)
-        (js2-report-error "msg.bad.yield"))
       (setq ret (make-js2-yield-node :pos pos
                                      :len (- end pos)
-                                     :value e))
+                                     :value e
+                                     :star-p yield-star-p))
       (js2-node-add-children ret e)
       (unless expr-context
         (setq e ret
@@ -9257,14 +9267,14 @@ array-literals, array comprehensions and regular expressions."
             (= tt js2-EOF))  ; prevent infinite loop
         (if (= tt js2-EOF)
             (js2-report-error "msg.no.bracket.arg" nil pos))
+        (when (and after-comma (< js2-language-version 170))
+          (js2-parse-warn-trailing-comma "msg.array.trailing.comma"
+                                         pos (remove nil elems) after-comma))
         (setq continue nil
               pn (make-js2-array-node :pos pos
                                       :len (- js2-ts-cursor pos)
                                       :elems (nreverse elems)))
-        (apply #'js2-node-add-children pn (js2-array-node-elems pn))
-        (when (and after-comma (not js2-is-in-destructuring))
-          (js2-parse-warn-trailing-comma "msg.array.trailing.comma"
-                                         pos elems after-comma)))
+        (apply #'js2-node-add-children pn (js2-array-node-elems pn)))
        ;; destructuring binding
        (js2-is-in-destructuring
         (push (if (or (= tt js2-LC)
@@ -10188,7 +10198,7 @@ If so, we don't ever want to use bounce-indent."
 (define-minor-mode js2-minor-mode
   "Minor mode for running js2 as a background linter.
 This allows you to use a different major mode for JavaScript editing,
-such as `espresso-mode', while retaining the asynchronous error/warning
+such as `js-mode', while retaining the asynchronous error/warning
 highlighting features of `js2-mode'."
   :group 'js2-mode
   :lighter " js-lint"

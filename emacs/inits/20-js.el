@@ -30,10 +30,26 @@
 ;;   (display-error-message))
 ;; (ad-activate 'flymake-goto-prev-error 'flymake-goto-prev-error-display-message)
 ;; (ad-activate 'flymake-goto-next-error 'flymake-goto-next-error-display-message)
+
+
+;; setting for js
+;; http://www.emacswiki.org/emacs/Flycheck
+(require 'flycheck)
+(flycheck-define-checker javascript-jslint-reporter
+  "A JavaScript syntax and style checker based on JSLint Reporter.
+
+See URL `https://github.com/FND/jslint-reporter'."
+  :command ("~/.emacs.d/lang/js/jslint-reporter/jslint-reporter" source)
+  :error-patterns
+  ((error line-start (1+ nonl) ":" line ":" column ":" (message) line-end))
+  :modes (js-mode js2-mode js3-mode))
+
 (add-hook 'js2-mode-hook
           (lambda ()
             (local-set-key "\C-cr" 'js-console-execute-region)
             (local-set-key "\C-ci" 'js-doc-insert-function-doc)
             (imenu-add-menubar-index)
             (setq js2-basic-offset 2)
+            (flycheck-select-checker 'javascript-jslint-reporter)
+            (flycheck-mode)
             (hs-minor-mode 1)))
