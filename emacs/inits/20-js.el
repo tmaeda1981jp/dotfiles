@@ -40,8 +40,9 @@
 
 See URL `https://github.com/FND/jslint-reporter'."
   :command ("~/.emacs.d/lang/js/jslint-reporter/jslint-reporter" source)
-  :error-patterns
-  ((error line-start (1+ nonl) ":" line ":" column ":" (message) line-end))
+  :error-patterns ((error line-start
+                          (1+ nonl) ":" line ":" column ":" (message)
+                          line-end))
   :modes (js-mode js2-mode js3-mode))
 
 (add-hook 'js2-mode-hook
