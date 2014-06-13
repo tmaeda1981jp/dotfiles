@@ -9,7 +9,7 @@
 (global-set-key "\M-E" 'flycheck-prev-error)
 (global-set-key "\C-c\C-y" 'list-flycheck-errors)
 
-;; (setq flycheck-display-errors-delay 0.3)
+(setq flycheck-display-errors-delay 0.3)
 
 ;; ;; setting for js
 ;; ;; http://www.emacswiki.org/emacs/Flycheck
