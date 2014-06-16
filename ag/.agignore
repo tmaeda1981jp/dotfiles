@@ -1,6 +1,7 @@
 *~
 *#
 *.swp
+*.bak
 autom4te.cache
 blib
 _build
@@ -25,3 +26,6 @@ _sgbak
 *.o
 TAGS
 tags
+.class
+*.min.*
+node_modules
