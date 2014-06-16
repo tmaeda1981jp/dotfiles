@@ -13,7 +13,7 @@ eval "$(rbenv init -)"
 
 # php
 export PATH=$HOME/.phpenv/bin:$PATH
-eval "$(phpenv init -)"
+if which phpenv > /dev/null; then eval "$(phpenv init -)"; fi
 
 # js(node)
 export NODEBREW_ROOT=$HOME/.nodebrew
