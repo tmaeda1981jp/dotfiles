@@ -168,7 +168,7 @@ h2b() { echo "obase=2;ibase=16; $1" | bc }; alias h2b=h2b;
 h2o() { echo "obase=8;ibase=16; $1" | bc }; alias h2o=h2o;
 h2d() { echo "obase=10;ibase=16; $1"| bc }; alias h2d=h2d;
 
-mkdcd() { mkdir -p $1 && cd $1 }; alias mkdcd=mkdcd
+mkd() { mkdir -p $1 && cd $1 }; alias mkd=mkd
 
 autoload -Uz add-zsh-hook
 autoload -Uz colors
