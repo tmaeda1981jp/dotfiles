@@ -1,6 +1,5 @@
 # java
 export JAVA_HOME=$(/usr/libexec/java_home)
-#export _JAVA_OPTIONS=-Dfile.encoding=UTF-8
 export ANT_HOME=/Users/tmaeda/ant
 export PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$PATH
 
@@ -11,6 +10,10 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 # ruby
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)"
+
+# php
+export PATH=$HOME/.phpenv/bin:$PATH
+eval "$(phpenv init -)"
 
 # js(node)
 export NODEBREW_ROOT=$HOME/.nodebrew
