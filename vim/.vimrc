@@ -14,4 +14,5 @@ set smartcase "大文字 -> 大文字のみで検索
 set wrapscan "検索ループ
 set noincsearch
 set nohlsearch
+set ambiwidth=double
 syntax on "syntax color
