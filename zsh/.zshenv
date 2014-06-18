@@ -9,7 +9,7 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 
 # ruby
 export PATH=$HOME/.rbenv/bin:$PATH
-eval "$(rbenv init -)"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # php
 export PATH=$HOME/.phpenv/bin:$PATH
