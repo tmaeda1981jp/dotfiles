@@ -5,9 +5,9 @@
   (interactive)
   (helm-other-buffer
    '(
+     helm-c-source-files-in-current-dir
      helm-c-source-recentf
      helm-c-source-buffers-list
-     helm-c-source-files-in-current-dir
      )
    " *helm*"))
 (global-set-key (kbd "C-l") 'my:helm)
@@ -50,6 +50,15 @@
 (eval-after-load 'helm
   '(progn
      (define-key helm-map (kbd "C-h") 'delete-backward-char)))
+
+;; ---------------------------------------------------------------
+;; mini-bufferでC-kを押すと先頭から削除される問題の対処
+;; refs: http://d.hatena.ne.jp/a_bicky/20140104/1388822688
+;; ---------------------------------------------------------------
+(setq helm-delete-minibuffer-contents-from-point t)
+(defadvice helm-delete-minibuffer-contents (before helm-emulate-kill-line activate)
+  "Emulate `kill-line' in helm minibuffer"
+  (kill-new (buffer-substring (point) (field-end))))
 
 ;; ---------------------------------------------------------------
 ;; google
