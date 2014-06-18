@@ -27,6 +27,9 @@
   gr = grep
   gn = grep -n
 
+[merge]
+  ff = false
+
 [core]
   excludesfile = /Users/tmaeda/.gitignore
   autocrlf = input # CRLFを自動変換
