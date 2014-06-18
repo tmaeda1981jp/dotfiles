@@ -3,13 +3,18 @@
 
 (defun my:helm ()
   (interactive)
-  (helm-other-buffer
-   '(
-     helm-c-source-files-in-current-dir
-     helm-c-source-recentf
-     helm-c-source-buffers-list
-     )
-   " *helm*"))
+  (helm :sources '(helm-c-source-files-in-current-dir
+                   helm-c-source-recentf
+                   helm-c-source-buffers-list
+                   helm-source-locate)
+        :buffer "*helm*"))
+  ;; (helm-other-buffer
+  ;;  '(
+  ;;    helm-c-source-files-in-current-dir
+  ;;    helm-c-source-recentf
+  ;;    helm-c-source-buffers-list
+  ;;    )
+  ;;  " *helm*"))
 (global-set-key (kbd "C-l") 'my:helm)
 (setq recentf-max-saved-items 15)
 
@@ -86,32 +91,6 @@
 ;; (require 'helm-migemo)
 ;; (define-key global-map [(control ?:)] 'helm-migemo)
 (global-set-key (kbd "C-s") 'helm-occur)
-
-;; ---------------------------------------------------------------
-;; 半角スペース，全角スペース，タブの見える化
-;; refs: http://qiita.com/catatsuy/items/55d50d13ebc965e5f31e
-;; ---------------------------------------------------------------
-(require 'whitespace)
-
-(setq whitespace-style '(face tabs tab-mark spaces space-mark lines-tail trailing space-before-tab space-after-tab::space))
-(setq whitespace-space-regexp "\\(\x3000+\\)")
-(setq whitespace-display-mappings
-;;      '((space-mark ?\x3000 [?\□])
-      '((space-mark ?\x3000 [?\❏])
-        (tab-mark   ?\t   [?\xBB ?\t])
-        ))
-(global-whitespace-mode t)
-
-(set-face-attribute 'whitespace-trailing nil
-                    :foreground "DeepPink"
-                    :underline t)
-(set-face-attribute 'whitespace-tab nil
-                    :foreground "LightSkyBlue"
-                    :underline t)
-(set-face-attribute 'whitespace-space nil
-                    :foreground "red"
-                    :weight 'bold)
-
 
 (require 'helm-ag-r)
 ;; Specify your favorite ag's configuration
