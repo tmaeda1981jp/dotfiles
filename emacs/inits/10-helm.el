@@ -115,3 +115,12 @@
                  (case major-mode
                    (term-mode (term-send-raw-string line))
                    (t (insert line))))))))
+
+;; markdownの見出し一覧(TODO あとで消す)
+(defun helm-markdown-headlines ()
+  "Display headlines for the current markdown file."
+  (interactive)
+  (helm :sources '(((name . "Markdown Headlines")
+                    (volatile)
+                    (headline "^#")))))
+
