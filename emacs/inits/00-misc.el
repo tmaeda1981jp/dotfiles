@@ -328,6 +328,7 @@
 (defun reindent-whole-buffer ()
   "Reindent the whole buffer."
   (interactive)
+  (delete-trailing-whitespace)
   (indent-region (point-min) (point-max)))
 
-(global-set-key (kbd "C-c C-f") 'reindent-whole-buffer)
+(global-set-key (kbd "C-q C-f") 'reindent-whole-buffer)
