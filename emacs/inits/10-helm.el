@@ -3,13 +3,18 @@
 
 (defun my:helm ()
   (interactive)
-  (helm-other-buffer
-   '(
-     helm-c-source-recentf
-     helm-c-source-buffers-list
-     helm-c-source-files-in-current-dir
-     )
-   " *helm*"))
+  (helm :sources '(helm-c-source-files-in-current-dir
+                   helm-c-source-recentf
+                   helm-c-source-buffers-list
+                   helm-source-locate)
+        :buffer "*helm*"))
+  ;; (helm-other-buffer
+  ;;  '(
+  ;;    helm-c-source-files-in-current-dir
+  ;;    helm-c-source-recentf
+  ;;    helm-c-source-buffers-list
+  ;;    )
+  ;;  " *helm*"))
 (global-set-key (kbd "C-l") 'my:helm)
 (setq recentf-max-saved-items 15)
 
@@ -52,6 +57,15 @@
      (define-key helm-map (kbd "C-h") 'delete-backward-char)))
 
 ;; ---------------------------------------------------------------
+;; mini-bufferでC-kを押すと先頭から削除される問題の対処
+;; refs: http://d.hatena.ne.jp/a_bicky/20140104/1388822688
+;; ---------------------------------------------------------------
+(setq helm-delete-minibuffer-contents-from-point t)
+(defadvice helm-delete-minibuffer-contents (before helm-emulate-kill-line activate)
+  "Emulate `kill-line' in helm minibuffer"
+  (kill-new (buffer-substring (point) (field-end))))
+
+;; ---------------------------------------------------------------
 ;; google
 ;; ---------------------------------------------------------------
 (setq helm-google-suggest-use-curl-p (executable-find "curl"))
@@ -78,32 +92,6 @@
 ;; (define-key global-map [(control ?:)] 'helm-migemo)
 (global-set-key (kbd "C-s") 'helm-occur)
 
-;; ---------------------------------------------------------------
-;; 半角スペース，全角スペース，タブの見える化
-;; refs: http://qiita.com/catatsuy/items/55d50d13ebc965e5f31e
-;; ---------------------------------------------------------------
-(require 'whitespace)
-
-(setq whitespace-style '(face tabs tab-mark spaces space-mark lines-tail trailing space-before-tab space-after-tab::space))
-(setq whitespace-space-regexp "\\(\x3000+\\)")
-(setq whitespace-display-mappings
-;;      '((space-mark ?\x3000 [?\□])
-      '((space-mark ?\x3000 [?\❏])
-        (tab-mark   ?\t   [?\xBB ?\t])
-        ))
-(global-whitespace-mode t)
-
-(set-face-attribute 'whitespace-trailing nil
-                    :foreground "DeepPink"
-                    :underline t)
-(set-face-attribute 'whitespace-tab nil
-                    :foreground "LightSkyBlue"
-                    :underline t)
-(set-face-attribute 'whitespace-space nil
-                    :foreground "red"
-                    :weight 'bold)
-
-
 (require 'helm-ag-r)
 ;; Specify your favorite ag's configuration
 ;; You can change below option by pushing C-o on helm-ag-r's minibuffer.
@@ -127,3 +115,12 @@
                  (case major-mode
                    (term-mode (term-send-raw-string line))
                    (t (insert line))))))))
+
+;; markdownの見出し一覧(TODO あとで消す)
+(defun helm-markdown-headlines ()
+  "Display headlines for the current markdown file."
+  (interactive)
+  (helm :sources '(((name . "Markdown Headlines")
+                    (volatile)
+                    (headline "^#")))))
+
