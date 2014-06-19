@@ -173,10 +173,10 @@
 ;; copy
 ;; Emacsでcopy(M-w)したものをclickboardに送る
 (defun paste-to-osx (text &optional push)
- (let ((process-connection-type nil))
-     (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
-       (process-send-string proc text)
-       (process-send-eof proc))))
+  (let ((process-connection-type nil))
+    (let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+      (process-send-string proc text)
+      (process-send-eof proc))))
 (setq interprogram-cut-function 'paste-to-osx)
 
 ;; paste
@@ -308,7 +308,7 @@
 (setq whitespace-style '(face tabs tab-mark spaces space-mark lines-tail trailing space-before-tab space-after-tab::space))
 (setq whitespace-space-regexp "\\(\x3000+\\)")
 (setq whitespace-display-mappings
-;;      '((space-mark ?\x3000 [?\□])
+      ;;      '((space-mark ?\x3000 [?\□])
       '((space-mark ?\x3000 [?\❏])
         (tab-mark   ?\t   [?\xBB ?\t])
         ))
@@ -323,3 +323,11 @@
 (set-face-attribute 'whitespace-space nil
                     :foreground "red"
                     :weight 'bold)
+
+;; indent修正
+(defun reindent-whole-buffer ()
+  "Reindent the whole buffer."
+  (interactive)
+  (indent-region (point-min) (point-max)))
+
+(global-set-key (kbd "C-c C-f") 'reindent-whole-buffer)
