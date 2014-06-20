@@ -52,3 +52,7 @@ tmp
 *.swp
 .project
 .pydevproject
+
+
+# js
+node_modules
