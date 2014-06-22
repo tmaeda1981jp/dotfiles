@@ -118,7 +118,7 @@
 
 ;;; helm-c-ysanippet
 ;;; (from mail magazine vol134)
-(setq 'helm-c-yasnippet)
+(require 'helm-c-yasnippet)
 (setq helm-yas-display-key-on-candidte t)
 (global-set-key (kbd "C-c y") 'helm-yas-complete)
 (yas-global-mode 1)
