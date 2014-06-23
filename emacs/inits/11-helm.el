@@ -116,6 +116,13 @@
                    (term-mode (term-send-raw-string line))
                    (t (insert line))))))))
 
+;;; helm-c-ysanippet
+;;; (from mail magazine vol134)
+(require 'helm-c-yasnippet)
+(setq helm-yas-display-key-on-candidte t)
+(global-set-key (kbd "C-c y") 'helm-yas-complete)
+(yas-global-mode 1)
+
 ;; markdownの見出し一覧(TODO あとで消す)
 (defun helm-markdown-headlines ()
   "Display headlines for the current markdown file."

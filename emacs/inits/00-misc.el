@@ -331,4 +331,4 @@
   (delete-trailing-whitespace)
   (indent-region (point-min) (point-max)))
 
-(global-set-key (kbd "C-q C-f") 'reindent-whole-buffer)
+(global-set-key (kbd "C-x j") 'reindent-whole-buffer)
