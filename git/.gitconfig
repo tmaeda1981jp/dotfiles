@@ -27,8 +27,11 @@
   gr = grep
   gn = grep -n
 
-[merge]
-  ff = false
+#[merge]
+#  ff = false
+
+#[pull]
+#  ff = only # git v2.0.0-
 
 [core]
   excludesfile = /Users/tmaeda/.gitignore
