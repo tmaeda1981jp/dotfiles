@@ -332,3 +332,12 @@
   (indent-region (point-min) (point-max)))
 
 (global-set-key (kbd "C-x j") 'reindent-whole-buffer)
+
+
+;; 他のbufferを全て削除
+(defun kill-other-buffers ()
+  "Kill all other buffers."
+  (interactive)
+  (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
+
+(global-set-key (kbd "C-x a k") 'kill-other-buffers)
