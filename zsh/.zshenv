@@ -27,6 +27,9 @@ export PATH=$HASKELL_HOME/bin:$PATH
 export ANDROID_HOME=$HOME/adt-bundle-mac-x86_64/sdk
 export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH
 
+# genymotion
+export PATH=/Applications/Genymotion.app/Contents/MacOS/:$PATH
+
 # tex
 export TEXPATH=/usr/local/texlive/2012/bin/universal-darwin
 export PATH=$TEXPATH:$PATH
