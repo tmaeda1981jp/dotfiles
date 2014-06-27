@@ -13,9 +13,12 @@
   (setq web-mode-code-indent-offset 2)   ;; script indent(js,php,etc..)
 
   (setq web-mode-disable-autocompletion t)
-  (setq web-mode-disable-css-colorization t)
-  )
+  (setq web-mode-disable-css-colorization t))
 (add-hook 'web-mode-hook 'my-web-mode-hook)
+
+;; 現在のファイルをブラウザでopenする
+(define-key web-mode-map "\C-co" 'open-current-file-on-browser)
+
 ;; 保存時にwhitespaceを自動削除
 (add-hook 'local-write-file-hooks (lambda () (delete-trailing-whitespace) nil))
 
