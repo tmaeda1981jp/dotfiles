@@ -341,3 +341,9 @@
   (mapc 'kill-buffer (delq (current-buffer) (buffer-list))))
 
 (global-set-key (kbd "C-x a k") 'kill-other-buffers)
+
+;; 現在のファイルをchromeでopenする
+(defun open-current-file-on-browser ()
+  "Open current file on browser."
+  (interactive)
+  (shell-command-to-string (concatenate 'string "open -a Google\\ Chrome " (buffer-file-name))))
