@@ -347,3 +347,18 @@
   "Open current file on browser."
   (interactive)
   (shell-command-to-string (concatenate 'string "open -a Google\\ Chrome " (buffer-file-name))))
+
+;; 現在chromeで開いているタブをreloadする
+(defun reload-current-tab-on-browser ()
+  "Reload current tab on browser."
+  (interactive)
+  (when is_mac
+    (shell-command-to-string
+     (concatenate 'string
+                  "osascript -e "
+                  (mapconcat 'identity
+                             '("\'tell application \"Google Chrome\"'"
+                               "\'tell active tab of first window\'"
+                               "\'execute javascript \"window.location.reload()\"\'"
+                               "\'end tell\'"
+                               "\'end tell\'") " -e ")))))
