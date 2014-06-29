@@ -357,8 +357,22 @@
      (concatenate 'string
                   "osascript -e "
                   (mapconcat 'identity
-                             '("\'tell application \"Google Chrome\"'"
+                             '("\'tell application \"Google Chrome\"\'"
                                "\'tell active tab of first window\'"
                                "\'execute javascript \"window.location.reload()\"\'"
                                "\'end tell\'"
                                "\'end tell\'") " -e ")))))
+
+;; 現在chromeで開いているタブのURLをクリップボードにコピーする
+(defun copy-current-url-on-browser ()
+  "Copy current URL on browser"
+  (interactive)
+  (when is_mac
+    (shell-command-to-string
+     (format "%s%s%s"
+             "osascript -e "
+             (mapconcat 'identity
+                        '("\'tell application \"Google Chrome\"\'"
+                          "\'get URL of active tab of first window\'"
+                          "\'end tell\'") " -e ")
+             " | pbcopy"))))
