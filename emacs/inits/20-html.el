@@ -18,8 +18,6 @@
 
 ;; 現在のファイルをブラウザでopenする
 (define-key web-mode-map "\C-co" 'open-current-file-on-browser)
-;; 現在のタブをreloadする
-(define-key web-mode-map "\C-cr" 'reload-current-tab-on-browser)
 
 ;; 保存時にwhitespaceを自動削除
 (add-hook 'local-write-file-hooks (lambda () (delete-trailing-whitespace) nil))

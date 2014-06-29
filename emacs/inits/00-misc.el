@@ -376,3 +376,9 @@
                           "\'get URL of active tab of first window\'"
                           "\'end tell\'") " -e ")
              " | pbcopy"))))
+
+;; 現在Chromeで開いているタブをreloadする
+(global-set-key (kbd "C-c r") 'reload-current-tab-on-browser)
+
+;; 現在Chromeで開いているタブのURLをコピーする
+(global-set-key (kbd "C-c u") 'copy-current-url-on-browser)
