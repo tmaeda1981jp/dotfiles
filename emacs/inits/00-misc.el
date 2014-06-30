@@ -354,14 +354,15 @@
   (interactive)
   (when is_mac
     (shell-command-to-string
-     (concatenate 'string
-                  "osascript -e "
-                  (mapconcat 'identity
-                             '("\'tell application \"Google Chrome\"\'"
-                               "\'tell active tab of first window\'"
-                               "\'execute javascript \"window.location.reload()\"\'"
-                               "\'end tell\'"
-                               "\'end tell\'") " -e ")))))
+     (format "%s%s%s"
+             "osascript -e "
+             (mapconcat 'identity
+                        '("\'tell application \"Google Chrome\"\'"
+                          "\'tell active tab of first window\'"
+                          "\'execute javascript \"window.location.reload()\"\'"
+                          "\'end tell\'"
+                          "\'end tell\'") " -e ")
+             " &"))))
 
 ;; 現在chromeで開いているタブのURLをクリップボードにコピーする
 (defun copy-current-url-on-browser ()
