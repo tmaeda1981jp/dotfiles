@@ -180,6 +180,9 @@ alias clia='cli activate -t '
 alias clib='cli back'
 alias clin='cli forward'
 
+# sed
+alias sed='gsed'
+
 autoload -Uz add-zsh-hook
 autoload -Uz colors
 colors
