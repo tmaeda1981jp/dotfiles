@@ -172,6 +172,14 @@ h2d() { echo "obase=10;ibase=16; $1"| bc }; alias h2d=h2d;
 
 mkd() { mkdir -p $1 && cd $1 }; alias mkd=mkd
 
+# chrome-cli
+# brew install chrome-cli
+alias cli='chrome-cli'
+alias clils='cli list tabs'
+alias clia='cli activate -t '
+alias clib='cli back'
+alias clin='cli forward'
+
 autoload -Uz add-zsh-hook
 autoload -Uz colors
 colors
