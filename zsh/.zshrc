@@ -174,12 +174,12 @@ mkd() { mkdir -p $1 && cd $1 }; alias mkd=mkd
 
 # chrome-cli
 # brew install chrome-cli
-alias cli='chrome-cli'
-alias clia='cli activate -t '
-alias clib='cli back'
-alias clin='cli forward'
-alias clih='cli --help'
-alias clils='cli list tabs'
+alias cli='nocorrect chrome-cli'
+alias clia='nocorrect chrome-cli activate -t '
+alias clib='nocorrect chrome-cli back'
+alias clin='nocorrect chrome-cli forward'
+alias clih='nocorrect chrome-cli --help'
+alias clils='nocorrect chrome-cli list tabs'
 
 # sed
 alias sed='gsed'
