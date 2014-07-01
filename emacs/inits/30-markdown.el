@@ -1,34 +1,18 @@
-;; brew install markdownしておく．
-(autoload 'markdown-mode "markdown-mode"
-   "Major mode for editing Markdown files" t)
-(add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
-
-;; C-tがtmuxと重なるのでC-sに変更する
-(add-hook 'markdown-mode-hook
-          (lambda()
-            (local-set-key "\C-c\C-sh" 'markdown-insert-header-dwim)
-            (local-set-key "\C-c\C-sH" 'markdown-insert-header-setext-dwim)
-            (local-set-key "\C-c\C-s1" 'markdown-insert-header-atx-1)
-            (local-set-key "\C-c\C-s2" 'markdown-insert-header-atx-2)
-            (local-set-key "\C-c\C-s3" 'markdown-insert-header-atx-3)
-            (local-set-key "\C-c\C-s4" 'markdown-insert-header-atx-4)
-            (local-set-key "\C-c\C-s5" 'markdown-insert-header-atx-5)
-            (local-set-key "\C-c\C-s6" 'markdown-insert-header-atx-6)
-            (local-set-key "\C-c\C-s!" 'markdown-insert-header-setext-1)
-            (local-set-key "\C-c\C-s@" 'markdown-insert-header-setext-2)
-            (local-set-key "\C-c\C-st" 'markdown-insert-header-setext-1)
-            (local-set-key "\C-c\C-ss" 'markdown-insert-header-setext-2)
-            (local-set-key "\C-c\C-sh" 'markdown-insert-header-dwim)
-            (local-set-key "\C-c," 'markdown-cycle)))
-
-(setq markdown-css-path
-      "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css")
-
-
-;; https://github.com/gongo/emacs-realtime-markdown-viewer
-;; site-lisp配下にsubmoduleとして配置
-;; $ cd site-lisp/emacs-realtime-markdown-viewer
-;; $ bundle install
-(require 'realtime-markdown-viewer)
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+  <link rel="stylesheet" href="/Users/tmaeda/.emacs.d/lang/css/github.css">
+</head>
+<body>
+<p>(defvar css-file-path &quot;~/.emacs.d/lang/css/github.css&quot;) (defun gfm-to-html () &quot;Convert GFM(Github Flavored Markdown) to HTML.&quot; (let ((gfm buffer-file-name) (html (replace-regexp-in-string &quot;.md$&quot; &quot;.html&quot; buffer-file-name))) (shell-command-to-string (concat &quot;pandoc &quot; &quot;-s &quot; &quot;-t &quot; &quot;html5 &quot; &quot;-c &quot; css-file-path &quot; -o &quot; html &quot; &quot; gfm))))</p>
+<p>(add-hook 'markdown-mode-hook '(lambda () (add-hook 'after-save-hook 'gfm-to-html)))</p>
+</body>
+</html>
