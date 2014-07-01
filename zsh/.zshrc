@@ -178,6 +178,7 @@ alias cli='nocorrect chrome-cli'
 alias clia='nocorrect chrome-cli activate -t '
 alias clib='nocorrect chrome-cli back'
 alias clin='nocorrect chrome-cli forward'
+alias clir='nocorrect chrome-cli reload'
 alias clih='nocorrect chrome-cli --help'
 alias clils='nocorrect chrome-cli list tabs'
 
