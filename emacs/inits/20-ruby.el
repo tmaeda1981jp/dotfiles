@@ -4,6 +4,7 @@
       (append (list
                '("Rakefile$" . ruby-mode)
                '("Gemfile$" . ruby-mode)
+               '("gemspec$" . ruby-mode)
                ) auto-mode-alist))
 
 ;; ruby-electric.el
