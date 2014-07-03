@@ -13,5 +13,6 @@
 - bpython
 - pylint
 - ghci
+- gem
 - rubocop
 - html-tidy

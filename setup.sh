@@ -19,9 +19,6 @@ ln -sf `PWD`/vim/.vimrc $HOME/.vimrc
 ln -sf `PWD`/git/.gitignore $HOME/.gitignore
 ln -sf `PWD`/git/.gitconfig $HOME/.gitconfig
 
-# gem
-ln -sf `PWD`/gem/.gemrc $HOME/.gemrc
-
 # tmux
 ln -sf `PWD`/tmux/.tmux.conf $HOME/.tmux.conf
 
@@ -34,6 +31,9 @@ if [ ! -d $HOME/.config/bpython ]; then
 fi
 ln -sf `PWD`/python/bpython/config $HOME/.config/bpython/config
 ln -sf `PWD`/python/pylint/.pylintrc $HOME/.pylintrc
+
+# gem
+ln -sf `PWD`/ruby/gem/.gemrc $HOME/.gemrc
 
 # rubocop
 ln -sf `PWD`/ruby/rubocop/.rubocop.yml $HOME/.rubocop.yml
