@@ -74,11 +74,11 @@
 (ad-activate 'rspec-compile)
 
 ;; rvm
-(require 'rvm)
-(defadvice ido-completing-read (around invaild-ido-completing-read activate)
-  "ido-completing-read -> completing-read"
-  (complete-read))
-(rvm-use-default)
+;; (require 'rvm)
+;; (defadvice ido-completing-read (around invaild-ido-completing-read activate)
+;;   "ido-completing-read -> completing-read"
+;;   (complete-read))
+;; (rvm-use-default)
 
 ;; rsense
 (setq rsense-home "/Users/tmaeda/.emacs.d/lang/ruby/rsense-0.3")
@@ -101,7 +101,7 @@
 ;; cucumber
 ;; https://github.com/michaelklishin/cucumber.el
 (setq feature-default-language "ja")
-(setq feature-default-i18n-file "~/.emacs.d/elpa/feature-mode-20130714.1319/i18n.yml")
+(setq feature-default-i18n-file "~/.emacs.d/lang/gherkin/i18n.yml")
 
 (require 'feature-mode)
 (add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
