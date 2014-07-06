@@ -333,6 +333,17 @@
 
 (global-set-key (kbd "C-x j") 'reindent-whole-buffer)
 
+;; Carriage Retrun 一括置換
+(defun replace-cr-to-lf ()
+  "Replace cr to lf"
+  (interactive)
+    (save-excursion
+      (beginning-of-buffer)
+      (while (re-search-forward "" nil t)
+        (replace-match "
+"))))
+
+(global-set-key (kbd "C-x w") 'replace-cr-to-lf)
 
 ;; 他のbufferを全て削除
 (defun kill-other-buffers ()
