@@ -355,11 +355,21 @@
 
 ;; 指定のURLを開く
 (defun open-specified-url ()
-  "Open specified-url "
+  "Open specified-url"
   ;; (interactive "sURL: ")
   (interactive)
   (let* ((url (read-string "URL: " "http://")))
     ;; (message url)
     (shell-command-to-string (format "open %s &" url))))
 
-(global-set-key (kbd "C-x g") 'open-specified-url)
+(global-set-key (kbd "C-x p") 'open-specified-url)
+
+;; google search
+(defun google-search ()
+  "Google Search"
+  (interactive)
+  (let* ((keyword (read-string "Search: ")))
+    (message keyword)
+    (shell-command-to-string (format "open 'https://www.google.co.jp/search?q=%s'" keyword))))
+
+(global-set-key (kbd "C-x g") 'google-search)
