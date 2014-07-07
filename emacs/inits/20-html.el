@@ -17,7 +17,7 @@
 (add-hook 'web-mode-hook 'my-web-mode-hook)
 
 ;; 現在のファイルをブラウザでopenする
-(define-key web-mode-map "\C-co" 'open-current-file-on-browser)
+(define-key web-mode-map "\C-co" 'open-current-file-on-browser) ;; 11-chrome.el
 
 ;; 保存時にwhitespaceを自動削除
 (add-hook 'local-write-file-hooks (lambda () (delete-trailing-whitespace) nil))
