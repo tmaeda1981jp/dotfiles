@@ -68,7 +68,7 @@
   (kill-new (buffer-substring (point) (field-end))))
 
 ;; ---------------------------------------------------------------
-;; google
+;; google suggest
 ;; ---------------------------------------------------------------
 (setq helm-google-suggest-use-curl-p (executable-find "curl"))
 (setq helm-google-suggest-search-url
@@ -107,7 +107,6 @@
 
 (global-set-key (kbd "C-c C-s") 'helm-ag-r)
 
-
 (defun helm-ag-r-shell-history ()
   "Search shell history(I don't make sure without zsh)"
   (interactive)
@@ -125,7 +124,7 @@
 (global-set-key (kbd "C-c y") 'helm-yas-complete)
 (yas-global-mode 1)
 
-;; markdownの見出し一覧(TODO あとで消す)
+;; markdownの見出し一覧
 (defun helm-markdown-headlines ()
   "Display headlines for the current markdown file."
   (interactive)
