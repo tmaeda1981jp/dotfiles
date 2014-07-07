@@ -353,3 +353,13 @@
 
 (global-set-key (kbd "C-x a k") 'kill-other-buffers)
 
+;; Google検索
+(defun google-search ()
+  "Google Search"
+  ;; (interactive "sURL: ")
+  (interactive)
+  (let* ((url (read-string "URL: " "http://")))
+    ;; (message url)
+    (shell-command-to-string (format "open %s &" url))))
+
+(global-set-key (kbd "C-x g") 'google-search)
