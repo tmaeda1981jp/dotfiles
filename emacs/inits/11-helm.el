@@ -3,10 +3,12 @@
 
 (defun my:helm ()
   (interactive)
-  (helm :sources '(helm-c-source-files-in-current-dir
+  (helm :sources '(
                    helm-c-source-recentf
+                   helm-c-source-files-in-current-dir
                    helm-c-source-buffers-list
-                   helm-source-locate)
+                   helm-source-locate
+                   )
         :buffer "*helm*"))
   ;; (helm-other-buffer
   ;;  '(
