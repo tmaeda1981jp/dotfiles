@@ -374,3 +374,7 @@
     (shell-command-to-string (format "open 'https://www.google.co.jp/search?q=%s'" keyword))))
 
 (global-set-key (kbd "C-x g") 'google-search)
+
+;; git-gutter
+(global-git-gutter-mode +1)
+(git-gutter:linum-setup)
