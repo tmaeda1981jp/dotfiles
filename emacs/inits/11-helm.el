@@ -132,3 +132,6 @@
                     (volatile)
                     (headline "^#")))))
 
+;; helpをhelmで表示
+(require 'helm-descbinds)
+(helm-descbinds-mode)
