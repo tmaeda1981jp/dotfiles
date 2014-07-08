@@ -81,12 +81,13 @@
 ;; yes -> y / no -> n
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;; cua-modeで複数行入力する時にcua-modeが解除されてしまって不便なのでとりあえずコメントアウト．
 ;; カッコの補完
-(global-set-key (kbd "(") 'skeleton-pair-insert-maybe)
-(global-set-key (kbd "{") 'skeleton-pair-insert-maybe)
-(global-set-key (kbd "[") 'skeleton-pair-insert-maybe)
-(global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
-(setq skeleton-pair 1)
+;; (global-set-key (kbd "(") 'skeleton-pair-insert-maybe)
+;; (global-set-key (kbd "{") 'skeleton-pair-insert-maybe)
+;; (global-set-key (kbd "[") 'skeleton-pair-insert-maybe)
+;; (global-set-key (kbd "\"") 'skeleton-pair-insert-maybe)
+;;(setq skeleton-pair 1)
 
 ;; ログの記録行数を増やす
 (setq message-log-max 10000)
@@ -373,3 +374,7 @@
     (shell-command-to-string (format "open 'https://www.google.co.jp/search?q=%s'" keyword))))
 
 (global-set-key (kbd "C-x g") 'google-search)
+
+;; git-gutter
+(global-git-gutter-mode +1)
+(git-gutter:linum-setup)
