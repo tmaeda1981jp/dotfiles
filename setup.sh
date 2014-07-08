@@ -21,6 +21,10 @@ ln -sf `PWD`/git/.gitconfig $HOME/.gitconfig
 
 # tmux
 ln -sf `PWD`/tmux/.tmux.conf $HOME/.tmux.conf
+if [ -e $HOME/.tmuxinator ]; then
+    rm -rf $HOME/.tmuxinator
+fi
+ln -sf `PWD`/tmux/tmuxinator $HOME/.tmuxinator
 
 # bower
 ln -sf `PWD`/bower/.bowerrc $HOME/.bowerrc

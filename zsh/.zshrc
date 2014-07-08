@@ -73,7 +73,7 @@ alias volo='nocorrect volo'
 alias grunt='nocorrect grunt'
 
 # git/svn
-export EDITOR='emacs'
+export EDITOR="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
 
 # git
 alias g='git'
@@ -256,7 +256,7 @@ setopt nolistbeep
 #. /Users/tmaeda/.z/z.sh
 . `brew --prefix`/etc/profile.d/z.sh
 
-# percol
 source ~/.zsh/percol.zsh
+source ~/.zsh/tmuxinator.zsh
 
 launchctl limit maxfiles 10480 10480
