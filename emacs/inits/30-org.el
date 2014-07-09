@@ -48,6 +48,23 @@
          "* :Blog:\n\n%U" :append t :empty-lines 1)
         ))
 
+
+;; ↑でやっていた処理を切り出してみた．
+(defun org-add-blog-entry ()
+  (interactive)
+  (let* ((basedir "~/blog/")
+         (date (read-string "DATE: " (format-time-string "%Y/%m/%d")))
+         (file-name (read-string "FILE_NAME: "))
+         (file (format "%s/%s/%s.%s.org" basedir date file-name (format-time-string "%Y%m%d%H%M%S"))))
+    (shell-command-to-string (format "mkdir -p %s/%s" basedir date))
+    (find-file-other-window file)
+    (unless (save-excursion
+              (goto-char 1)
+              (search-forward "* test\n" nil t))
+      (insert (format "#+TITLE: %s\n#+AUTHOR: tmaeda1981jp\n\n* test :blog:" file-name))
+    )))
+
+
 ;; http://orgmode.org/manual/Publishing.html#Publishing
 ;; 1. org-modeで書く
 ;; 2. C-c C-e P x(or p or f)
