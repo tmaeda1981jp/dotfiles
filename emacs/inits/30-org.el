@@ -61,7 +61,7 @@
       '(("blog"
         :base-directory "~/blog/"
         :base-extension "org"
-        :publishing-directory "~/tmp/html/" ;; ~/blog/YYYY/MM/DD/NN_article.orgを返す関数
+        :publishing-directory "~/tmp/html/"
         :publishing-function org-html-publish-to-html
         ;; :exclude "PrivatePage.org"
         :headline-levels 3
