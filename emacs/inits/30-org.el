@@ -61,7 +61,7 @@
     (unless (save-excursion
               (goto-char 1)
               (search-forward "* test\n" nil t))
-      (insert (format "#+TITLE: %s\n#+AUTHOR: tmaeda1981jp\n\n* test :blog:" file-name))
+      (insert (format "#+TITLE: %s\n#+AUTHOR: tmaeda1981jp\n\n* test :blog:\n" file-name))
     )))
 
 
