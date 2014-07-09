@@ -33,17 +33,22 @@
          "**** %U - %^{Title} :Books:\n" :prepend t :empty-lines 1)
         ("v" "Movie" entry (file+headline "~/wiki/notes/movies.org" "Movies")
          "**** %U - %^{Title} :Movies:\n" :prepend t :empty-lines 1)
+
+        ;; TODO
+        ;; blogはorg-captureでやる必要ないかも？
+        ;; template選択なしに1keyですぐに起動させたいのと，
+        ;; #+TITLEなどのヘッダをファイルの先頭に挿入したい為
+        ;; (org-captureは1file=1記事の前提がない)
         ("b" "Blog" entry (file ((lambda ()
                                    (let ((basedir "~/blog/")
                                          (date (read-string "DATE: " (format-time-string "%Y/%m/%d")))
                                          (title (read-string "FILE_NAME: ")))
                                      (shell-command-to-string (format "mkdir -p %s/%s" basedir date))
-                                     (format "%s/%s/%s.notes.org" basedir date title)))) "Blog")
+                                     (format "%s/%s/%s.%s.org" basedir date title (format-time-string "%Y%m%d%H%M%S"))))) "Blog")
          "* :Blog:\n\n%U" :append t :empty-lines 1)
         ))
 
 ;; http://orgmode.org/manual/Publishing.html#Publishing
-;; TODO html出力までの手順が少し面倒なのでカスタマイズしたい
 ;; 1. org-modeで書く
 ;; 2. C-c C-e P x(or p or f)
 (setq org-publish-project-alist
@@ -59,7 +64,10 @@
         :with-toc t
         :html-head "<link rel=\"stylesheet\" href=\"/Users/tmaeda/.emacs.d/lang/css/github.css\" type=\"text/css\" />"
         :html-preamble t
-        :auto-sitemap t)
+        :auto-sitemap t
+        :sitemap-title "Sitemap"
+        :export-creater-info nil ;; 動いていない？
+        :export-author-info nil) ;; 動いていない？
         ("website" :components ("orgfiles"))))
 
 ;; CLOSEの時にtimestamp
