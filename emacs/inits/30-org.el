@@ -52,3 +52,23 @@
 
 ;; コードブロックをその言語のモードでハイライトする
 (setq org-src-fontify-natively t)
+
+;; http://orgmode.org/manual/Publishing.html#Publishing
+;; TODO html出力までの手順が少し面倒なのでカスタマイズしたい
+;; 1. org-modeで書く
+;; 2. C-c C-e P x(or p or f)
+(setq org-publish-project-alist
+      '(("blog"
+        :base-directory "~/blog/"
+        :base-extension "org"
+        :publishing-directory "~/tmp/html/" ;; ~/blog/YYYY/MM/DD/NN_article.orgを返す関数
+        :publishing-function org-html-publish-to-html
+        ;; :exclude "PrivatePage.org"
+        :headline-levels 3
+        :section-numbers nil
+        :with-toc t
+        :html-head "<link rel=\"stylesheet\" href=\"/Users/tmaeda/.emacs.d/lang/css/github.css\" type=\"text/css\" />"
+        :html-preamble t
+        :auto-sitemap t)
+        ("website" :components ("orgfiles"))))
+
