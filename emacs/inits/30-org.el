@@ -8,7 +8,7 @@
 ;; ~/todoが存在しない場合は以下を評価
 ;; (mkdir "~/todo" t)
 (setq org-default-notes-file "~/wiki/notes/mytodo.org")
-;(setq org-agenda-files '("~/todo/mytodo.org"))
+                                        ;(setq org-agenda-files '("~/todo/mytodo.org"))
 (setq org-directory "~/wiki/notes")
 (setq org-agenda-files (list org-directory))
 
@@ -27,12 +27,20 @@
          "**** TODO %?\n   %i\n  %t\n")
         ("m" "Memo" entry (file+headline "~/wiki/notes/memo.org" "Memo")
          "**** %U - %?\n  %i\n" :prepend t :empty-lines 1)
-        ("d" "Diary" entry (file+headline "~/wiki/notes/diary.org" "Dialy")
-         "**** %U - %^{Title} :Diary:\n" :prepend t :empty-lines 1)
-        ("b" "Book" entry (file+headline "~/wiki/notes/books.org" "Books")
+        ;; ("d" "Diary" entry (file+headline "~/wiki/notes/diary.org" "Dialy")
+        ;;  "**** %U - %^{Title} :Diary:\n" :prepend t :empty-lines 1)
+        ("k" "Book" entry (file+headline "~/wiki/notes/books.org" "Books")
          "**** %U - %^{Title} :Books:\n" :prepend t :empty-lines 1)
         ("v" "Movie" entry (file+headline "~/wiki/notes/movies.org" "Movies")
-         "**** %U - %^{Title} :Movies:\n" :prepend t :empty-lines 1)))
+         "**** %U - %^{Title} :Movies:\n" :prepend t :empty-lines 1)
+        ("b" "Blog" entry (file+headline ((lambda ()
+                                            (let ((basedir "~/blog/")
+                                                  (date (read-string "DATE: " (format-time-string "%Y/%m/%d")))
+                                                  (title (read-string "FILE_NAME: ")))
+                                              (shell-command-to-string (format "mkdir -p %s/%s" basedir date))
+                                              (format "%s/%s/%s.notes.org" basedir date title)))) "Blog")
+         "* :Blog:\n\n%U" :append t :empty-lines 1)
+        ))
 
 ;; CLOSEの時にtimestamp
 (setq org-log-done 'time)
