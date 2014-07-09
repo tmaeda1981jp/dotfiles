@@ -41,3 +41,6 @@
 
 ;; S-upの設定
 (define-key input-decode-map "\e[1;2A" [S-up])
+
+;; コードブロックをその言語のモードでハイライトする
+(setq org-src-fontify-natively t)
