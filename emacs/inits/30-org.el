@@ -53,21 +53,21 @@
 ;; 2. C-c C-e P x(or p or f)
 (setq org-publish-project-alist
       '(("blog"
-        :base-directory "~/blog/"
-        :base-extension "org"
-        :publishing-directory "~/tmp/html/"
-        :recursive t
-        :publishing-function org-html-publish-to-html
-        ;; :exclude "PrivatePage.org"
-        :headline-levels 3
-        :section-numbers nil
-        :with-toc t
-        :html-head "<link rel=\"stylesheet\" href=\"/Users/tmaeda/.emacs.d/lang/css/github.css\" type=\"text/css\" />"
-        :html-preamble t
-        :auto-sitemap t
-        :sitemap-title "Sitemap"
-        :export-creater-info nil ;; 動いていない？
-        :export-author-info nil) ;; 動いていない？
+         :base-directory "~/blog/"
+         :base-extension "org"
+         :publishing-directory "~/tmp/html/"
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         ;; :exclude "PrivatePage.org"
+         :headline-levels 3
+         :section-numbers nil
+         :with-toc t
+         :html-head "<link rel=\"stylesheet\" href=\"/Users/tmaeda/.emacs.d/lang/css/github.css\" type=\"text/css\" />"
+         :html-preamble t
+         :auto-sitemap t
+         :sitemap-title "Sitemap"
+         :export-creater-info nil ;; 動いていない？
+         :export-author-info nil) ;; 動いていない？
         ("website" :components ("orgfiles"))))
 
 ;; CLOSEの時にtimestamp
