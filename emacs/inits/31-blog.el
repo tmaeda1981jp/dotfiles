@@ -14,29 +14,45 @@
     (unless (save-excursion
               (goto-char 1)
               (search-forward "* test\n" nil t))
-      (insert (format "#+TITLE: %s\n#+AUTHOR: tmaeda1981jp\n\n* test :blog:\n" file-name))
-      )))
+      (insert (format "#+TITLE: %s\n#+AUTHOR: tmaeda1981jp\n\n* test :blog:\n" file-name)))))
+
+;; refs: http://orgmode.org/worg/org-tutorials/org-jekyll.html
+;;
+;; '|blog
+;; '|   |org
+;; '|      |_posts
+;; '|      |-- 2009-11-26-my-first-post.org
+;; '|   |index.org
+;; '|   |jekyll
+;; '|   -- _config.yml
+;; '|   -- _layouts
+;; '|      |-- default.html
+;; '|      `-- post.html
+;; '|   -- _posts
+;; '|      |-- 2009-11-26-my-first-post.html
+;; '|
+;; '|   -- |_site
+;; '|   -- |_includes
+;; `    -- index.html
 
 ;; http://orgmode.org/manual/Publishing.html#Publishing
-;; 1. org-modeで書く
-;; 2. C-c C-e P x(or p or f)
 (setq org-publish-project-alist
-      '(("blog"
-         :base-directory "~/blog/"
+      '(("org"
+         ;; Path to my org files
+         :base-directory "~/blog/org/"
          :base-extension "org"
-         :publishing-directory "~/tmp/html/"
+
+         ;; Path to my jekyll project
+         :publishing-directory "~/blog/jekyll/"
          :recursive t
          :publishing-function org-html-publish-to-html
-         ;; :exclude "PrivatePage.org"
-         :headline-levels 3
-         :section-numbers nil
-         :with-toc nil
-         :html-head "<link rel=\"stylesheet\" href=\"/Users/tmaeda/.emacs.d/lang/css/github.css\" type=\"text/css\" />"
-         :html-preamble t
-         :auto-sitemap t
-         :sitemap-title "Sitemap"
-         ;; :export-creater-info nil ;; 動いていない？
-         ;; :export-author-info nil;; 動いていない？
+         :html-extension "html"
+         :body-only t
          )
-        ("website" :components ("orgfiles"))))
-
+        ("static"
+         :base-directory "~/blog/org/"
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf"
+         :publishing-directory "~/blog/"
+         :recursive t
+         :publishing-function org-publish-attachment)
+        ("myblog" :components ("org" "static"))))
