@@ -128,6 +128,7 @@ alias mp='make latexpdfja'
 # jekyll
 alias j='jekyll'
 alias jb='jekyll build'
+alias jw='jekyll serve --watch'
 
 # mac
 alias pong='perl -nle '\''print "display notification \"$_\" with title \"Terminal\""'\'' | osascript'
