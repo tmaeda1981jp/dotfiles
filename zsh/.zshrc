@@ -125,6 +125,10 @@ alias vst='vagrant status'
 alias mh='make html'
 alias mp='make latexpdfja'
 
+# jekyll
+alias j='jekyll'
+alias jb='jekyll build'
+
 # mac
 alias pong='perl -nle '\''print "display notification \"$_\" with title \"Terminal\""'\'' | osascript'
 
