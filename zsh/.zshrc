@@ -190,6 +190,8 @@ alias clils='nocorrect chrome-cli list tabs'
 # sed
 alias sed='gsed'
 
+alias tree='nocorrect tree'
+
 autoload -Uz add-zsh-hook
 autoload -Uz colors
 colors
