@@ -5,11 +5,11 @@
 
 (defun org-add-blog-entry ()
   (interactive)
-  (let* ((basedir "~/blog/")
-         (date (read-string "DATE: " (format-time-string "%Y/%m/%d")))
+  (let* ((basedir "~/blog/org/_posts")
+         (date (read-string "DATE: " (format-time-string "%Y-%m-%d")))
          (file-name (read-string "FILE_NAME: "))
-         (file (format "%s/%s/%s.%s.org" basedir date file-name (format-time-string "%Y%m%d%H%M%S"))))
-    (shell-command-to-string (format "mkdir -p %s/%s" basedir date))
+         (file (format "%s/%s-%s.org" basedir date file-name)))
+    (shell-command-to-string (format "mkdir -p %s" basedir))
     (find-file-other-window file)
     (unless (save-excursion
               (goto-char 1)
