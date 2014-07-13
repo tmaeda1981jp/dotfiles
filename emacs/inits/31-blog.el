@@ -1,4 +1,6 @@
+(require 'ox-jekyll)
 (require 'ox-html)
+(require 'ox-publish)
 
 (setq org-html-html5-fancy t)
 (setq org-html-doctype "html5")
@@ -45,7 +47,7 @@
          ;; Path to my jekyll project
          :publishing-directory "~/blog/jekyll/"
          :recursive t
-         :publishing-function org-html-publish-to-html
+         :publishing-function org-jekyll-publish-to-html
          :html-extension "html"
          :body-only t
          )
