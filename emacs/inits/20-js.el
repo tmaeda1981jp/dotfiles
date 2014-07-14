@@ -47,7 +47,7 @@ See URL `https://github.com/FND/jslint-reporter'."
 
 (add-hook 'js2-mode-hook
           (lambda ()
-            (local-set-key "\C-cr" 'js-console-execute-region)
+            ;; (local-set-key "\C-cr" 'js-console-execute-region)
             (local-set-key "\C-ci" 'js-doc-insert-function-doc)
             (imenu-add-menubar-index)
             (setq js2-basic-offset 2)
