@@ -98,6 +98,7 @@ alias gri='g rebase -i'
 alias gsl='g stash list'
 alias gss='g stash'
 alias gst='g st'
+alias gbr='g branch'
 
 # svn
 alias sst='svn status'
