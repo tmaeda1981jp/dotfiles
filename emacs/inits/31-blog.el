@@ -1,11 +1,7 @@
-(require 'ox-jekyll)
-(require 'ox-html)
-(require 'ox-publish)
-
 (setq org-html-html5-fancy t)
 (setq org-html-doctype "html5")
 
-(defun org-add-blog-entry ()
+(defun myblog:post ()
   (interactive)
   (let* ((basedir "~/blog/org/_posts")
          (date (read-string "DATE: " (format-time-string "%Y-%m-%d")))
@@ -15,8 +11,45 @@
     (find-file-other-window file)
     (unless (save-excursion
               (goto-char 1)
-              (search-forward "* test\n" nil t))
-      (insert (format "#+TITLE: %s\n#+AUTHOR: tmaeda1981jp\n\n* test :blog:\n" file-name)))))
+              (search-forward "* " nil t))
+      (insert (myblog:blog-header file-name)))))
+
+;; TODO
+;; ----
+;; (defun myblog:draft ()
+;;   (interactive)
+;;   (let* ((basedir "~/blog/org/_drafts")
+;;          (date (read-string "DATE: " (format-time-string "%Y-%m-%d")))
+;;          (file-name (read-string "FILE_NAME: "))
+;;          (file (format "%s/%s-%s.org" basedir date file-name)))
+;;     (shell-command-to-string (format "mkdir -p %s" basedir))
+;;     (find-file-other-window file)
+;;     (unless (save-excursion
+;;               (goto-char 1)
+;;               (search-forward "* test\n" nil t))
+;;       (insert (myblog:blog-header file-name)))))
+
+;; TODO
+;; ----
+;; (defun myblog:draft-to-post ()
+;;   (interactive))
+
+(defun myblog:blog-header (file-name)
+  (mapconcat 'identity (list
+                        ;; (format "#+TITLE: %s" file-name)
+                        ;; "#+AUTHOR: tmaeda1981jp"
+                        "#+OPTIONS: toc:nil"
+                        "#+BEGIN_HTML"
+                        "---"
+                        "layout: layout"
+                        (format "title: %s" file-name)
+                        (format "date: %s" (format-time-string "%Y-%m-%d"))
+                        "tags: []"
+                        "---"
+                        "#+END_HTML"
+                        ""
+                        "* "
+                        ) "\n"))
 
 ;; refs: http://orgmode.org/worg/org-tutorials/org-jekyll.html
 ;;
@@ -24,7 +57,8 @@
 ;; '|   |org
 ;; '|      |_posts
 ;; '|      |-- 2009-11-26-my-first-post.org
-;; '|   |index.org
+;; '|      |_drafts
+;; '|      |-- my-draft.org
 ;; '|   |jekyll
 ;; '|   -- _config.yml
 ;; '|   -- _layouts
@@ -39,22 +73,43 @@
 
 ;; http://orgmode.org/manual/Publishing.html#Publishing
 (setq org-publish-project-alist
-      '(("org"
+      '(("post"
          ;; Path to my org files
-         :base-directory "~/blog/org/"
+         :base-directory "~/blog/org/_posts/"
          :base-extension "org"
-
-         ;; Path to my jekyll project
-         :publishing-directory "~/blog/jekyll/"
+         :publishing-directory "~/blog/jekyll/_posts/"
          :recursive t
-         :publishing-function org-jekyll-publish-to-html
+         :publishing-function org-html-publish-to-html
          :html-extension "html"
          :body-only t
+         :completion-function myblog:run-build-command
          )
+        ;; TODO
+        ;; ----
+        ;; ("draft"
+        ;;  :base-directory "~/blog/org/_posts/"
+        ;;  :base-extension "org"
+        ;;  :publishing-directory "~/blog/jekyll/_drafts/"
+        ;;  :recursive t
+        ;;  :publishing-function org-html-publish-to-html
+        ;;  :html-extension "html"
+        ;;  :body-only t
+        ;;  :completion-function myblog:run-build-command-with-draft-option
+        ;;  )
         ("static"
          :base-directory "~/blog/org/"
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf"
          :publishing-directory "~/blog/"
          :recursive t
          :publishing-function org-publish-attachment)
-        ("myblog" :components ("org" "static"))))
+        ("myblog" :components ("post" "static"))))
+
+(defun myblog:run-build-command ()
+  "Run jekyll command"
+  (shell-command-to-string "cd ~/blog/jekyll && jekyll build"))
+
+;; TODO
+;; ----
+;; (defun myblog:run-build-command-with-draft-option ()
+;;   "Run jekyll command with draft option"
+;;   (shell-command-to-string "cd ~/blog/jekyll && jekyll build --draft"))
