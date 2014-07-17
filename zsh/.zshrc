@@ -10,7 +10,7 @@ zstyle ':completion:*' list-colors $LSCOLORS
 #
 alias ls='ls -G'
 alias lsl='ls -l'
-alias lsa='ls -ltra'
+alias lsa='ls -ltrA'
 alias lstr='ls -ltr'
 alias lsta='ls -ltra'
 alias his='history 1'
