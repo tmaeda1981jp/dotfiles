@@ -5,6 +5,7 @@
   (interactive)
   (let* ((basedir "~/blog/org/_posts")
          (date (read-string "DATE: " (format-time-string "%Y-%m-%d")))
+         (title (read-string "TITLE: "))
          (file-name (read-string "FILE_NAME: "))
          (file (format "%s/%s-%s.org" basedir date file-name)))
     (shell-command-to-string (format "mkdir -p %s" basedir))
@@ -12,7 +13,7 @@
     (unless (save-excursion
               (goto-char 1)
               (search-forward "* " nil t))
-      (insert (myblog:blog-header file-name)))))
+      (insert (myblog:blog-header title)))))
 
 ;; TODO
 ;; ----
@@ -34,15 +35,13 @@
 ;; (defun myblog:draft-to-post ()
 ;;   (interactive))
 
-(defun myblog:blog-header (file-name)
+(defun myblog:blog-header (title)
   (mapconcat 'identity (list
-                        ;; (format "#+TITLE: %s" file-name)
-                        ;; "#+AUTHOR: tmaeda1981jp"
                         "#+OPTIONS: toc:nil"
                         "#+BEGIN_HTML"
                         "---"
-                        "layout: layout"
-                        (format "title: %s" file-name)
+                        "layout: post"
+                        (format "title: %s" title)
                         (format "date: %s" (format-time-string "%Y-%m-%d"))
                         "tags: []"
                         "---"
