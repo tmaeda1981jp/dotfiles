@@ -20,7 +20,7 @@ root: ~/
 
 windows:
   - server:
-      layout: main-vertical
+      layout: even-horizontal
       panes:
         - emacssv
         - cd ~/wiki && gollum
