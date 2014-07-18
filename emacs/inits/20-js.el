@@ -51,6 +51,7 @@ See URL `https://github.com/FND/jslint-reporter'."
             (local-set-key "\C-ci" 'js-doc-insert-function-doc)
             (imenu-add-menubar-index)
             (setq js2-basic-offset 2)
-            (flycheck-select-checker 'javascript-jslint-reporter)
+            ;; (flycheck-select-checker 'javascript-jslint-reporter)
+            (flycheck-add-next-checker 'javascript-jslint-reporter 'javascript-jshint)
             (flycheck-mode)
             (hs-minor-mode 1)))
