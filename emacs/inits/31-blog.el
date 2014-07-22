@@ -1,3 +1,6 @@
+(require 'htmlize)
+(setq org-export-htmlize-output-type 'css)
+
 (setq org-html-html5-fancy t)
 (setq org-html-doctype "html5")
 
@@ -82,6 +85,7 @@
          :html-extension "html"
          :body-only t
          :completion-function myblog:run-build-command
+         :section-numbers nil
          )
         ;; TODO
         ;; ----

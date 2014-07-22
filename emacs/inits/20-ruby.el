@@ -16,11 +16,13 @@
 
 ;; inf-ruby.el
 ;; M-x run-rubyでirbをemcasから使える
-(autoload 'run-ruby "inf-ruby" "Run an inferior Ruby process")
-(autoload 'inf-ruby-keys "inf-ruby" "Set local key defs for inf-ruby in ruby-mode")
+;; (autoload 'run-ruby "inf-ruby" "Run an inferior Ruby process")
+;; (autoload 'inf-ruby-keys "inf-ruby" "Set local key defs for inf-ruby in ruby-mode")
+(autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
+(autoload 'inf-ruby-setup-keybindings "inf-ruby" "" t)
 
 (defun my-ruby-mode-hooks ()
-  (inf-ruby-keys)
+  (inf-ruby-setup-keybindings)
   (ruby-electric-mode t)
   (ruby-block-mode t))
 (add-hook 'ruby-mode-hook 'my-ruby-mode-hooks)
