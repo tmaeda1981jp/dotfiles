@@ -22,7 +22,7 @@ alias del='find . \( -name "*~" -o -name "#*" \) -print | xargs rm'
 alias ag='nocorrect ag -S'
 alias s='source'
 alias o='open'
-alias o.='open .'
+alias o.='open -R .'
 
 alias less='/usr/share/vim/vim73/macros/less.sh'
 alias ctags='/usr/local/bin/ctags'
