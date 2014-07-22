@@ -374,3 +374,6 @@
     (shell-command-to-string (format "open 'https://www.google.co.jp/search?q=%s'" keyword))))
 
 (global-set-key (kbd "C-x g") 'google-search)
+
+;; .gitignoreをconf-modeで開く
+(add-to-list 'auto-mode-alist '("\\.gitignore$" . conf-mode))
