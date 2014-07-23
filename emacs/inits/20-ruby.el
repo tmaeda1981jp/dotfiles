@@ -4,6 +4,7 @@
       (append (list
                '("Rakefile$" . ruby-mode)
                '("Gemfile$" . ruby-mode)
+               '("Guardfile$" . ruby-mode)
                '("gemspec$" . ruby-mode)
                ) auto-mode-alist))
 
