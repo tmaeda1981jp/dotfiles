@@ -1,8 +1,18 @@
-(require 'htmlize)
-(setq org-export-htmlize-output-type 'css)
-
 (setq org-html-html5-fancy t)
 (setq org-html-doctype "html5")
+
+(require 'ox-jekyll)
+
+(defun org-jekyll-src-block (src-block contents info)
+  "override"
+  (if org-jekyll-use-src-plugin
+      (let ((language (org-element-property :language src-block))
+            (value (org-remove-indentation
+                    (org-element-property :value src-block))))
+        (format "{%% highlight %s %%}\n%s{%% endhighlight %%}"
+                language value))
+    (org-export-with-backend 'html src-block contents info)))
+
 
 (defun myblog:post ()
   (interactive)
@@ -74,6 +84,7 @@
 ;; `    -- index.html
 
 ;; http://orgmode.org/manual/Publishing.html#Publishing
+(setq org-jekyll-use-src-plugin t)
 (setq org-publish-project-alist
       '(("post"
          ;; Path to my org files
@@ -81,7 +92,7 @@
          :base-extension "org"
          :publishing-directory "~/blog/jekyll/_posts/"
          :recursive t
-         :publishing-function org-html-publish-to-html
+         :publishing-function org-jekyll-publish-to-html
          :html-extension "html"
          :body-only t
          :completion-function myblog:run-build-command
