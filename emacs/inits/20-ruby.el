@@ -4,6 +4,7 @@
       (append (list
                '("Rakefile$" . ruby-mode)
                '("Gemfile$" . ruby-mode)
+               '("Guardfile$" . ruby-mode)
                '("gemspec$" . ruby-mode)
                ) auto-mode-alist))
 
@@ -35,23 +36,23 @@
     ad-do-it))
 (ad-activate 'rspec-compile)
 
-;; rsense
-(setq rsense-home "/Users/tmaeda/.emacs.d/lang/ruby/rsense-0.3")
-(add-to-list 'load-path (concat rsense-home "/etc"))
-(require 'rsense)
-(define-key ruby-mode-map "\C-ci" 'ac-complete-rsense)
-(define-key ruby-mode-map "\C-ct" 'rsense-type-help)
-(define-key ruby-mode-map "\C-cj" 'rsense-jump-to-definition)
-(add-hook 'ruby-mode-hook
-          (lambda ()
-            ;; .や::を入力直後から補完開始
-            (add-to-list 'ac-sources 'ac-source-rsense-method)
-            (add-to-list 'ac-sources 'ac-source-rsense-constant)
-            ;; C-c .で補完出来るようキーを設定
-            (local-set-key (kbd "C-c .") 'ac-complete-rsense)))
+;; ;; rsense
+;; (setq rsense-home "/Users/tmaeda/.emacs.d/lang/ruby/rsense-0.3")
+;; (add-to-list 'load-path (concat rsense-home "/etc"))
+;; (require 'rsense)
+;; (define-key ruby-mode-map "\C-ci" 'ac-complete-rsense)
+;; (define-key ruby-mode-map "\C-ct" 'rsense-type-help)
+;; (define-key ruby-mode-map "\C-cj" 'rsense-jump-to-definition)
+;; (add-hook 'ruby-mode-hook
+;;           (lambda ()
+;;             ;; .や::を入力直後から補完開始
+;;             (add-to-list 'ac-sources 'ac-source-rsense-method)
+;;             (add-to-list 'ac-sources 'ac-source-rsense-constant)
+;;             ;; C-c .で補完出来るようキーを設定
+;;             (local-set-key (kbd "C-c .") 'ac-complete-rsense)))
 
-(setq rsense-rurema-home (concat rsense-home "/doc/ruby-refm-1.9.2-dynamic-20110629"))
-(setq rsense-rurema-refe "refe-1_9_2")
+;; (setq rsense-rurema-home (concat rsense-home "/doc/ruby-refm-1.9.2-dynamic-20110629"))
+;; (setq rsense-rurema-refe "refe-1_9_2")
 
 ;; Fix indent
 ;; refs: http://willnet.in/13

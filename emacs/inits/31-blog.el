@@ -26,7 +26,7 @@
     (unless (save-excursion
               (goto-char 1)
               (search-forward "* " nil t))
-      (insert (myblog:blog-header title)))))
+      (insert (myblog:blog-header title date)))))
 
 ;; TODO
 ;; ----
@@ -48,14 +48,14 @@
 ;; (defun myblog:draft-to-post ()
 ;;   (interactive))
 
-(defun myblog:blog-header (title)
+(defun myblog:blog-header (title date)
   (mapconcat 'identity (list
                         "#+OPTIONS: toc:nil"
                         "#+BEGIN_HTML"
                         "---"
                         "layout: post"
                         (format "title: %s" title)
-                        (format "date: %s" (format-time-string "%Y-%m-%d"))
+                        (format "date: %s" date)
                         "tags: []"
                         "---"
                         "#+END_HTML"
