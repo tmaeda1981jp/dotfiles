@@ -132,6 +132,24 @@
                     (volatile)
                     (headline "^#")))))
 
+;; org-modeの見出し一覧
+(defun helm-org-headlines ()
+  "Display headlines for the current org file."
+  (interactive)
+  (helm :sources '(((name . "Org Headlines")
+                    (volatile)
+                    (headline "^*")))))
+
+
+(defun helm-myblog-entries ()
+  "Display my blog entries."
+  (interactive)
+  (helm :sources '((name . "My Blog Entries")
+                   (candidates-in-buffer)
+                   (init . (lambda () (helm-init-candidates-in-buffer 'global (shell-command-to-string "ls /Users/tmaeda/blog/org/_posts"))))
+                   ))
+  )
+
 ;; helpをhelmで表示
 (require 'helm-descbinds)
 (helm-descbinds-mode)

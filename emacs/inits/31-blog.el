@@ -13,7 +13,6 @@
                 language value))
     (org-export-with-backend 'html src-block contents info)))
 
-
 (defun myblog:post ()
   (interactive)
   (let* ((basedir "~/blog/org/_posts")
