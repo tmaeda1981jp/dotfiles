@@ -166,12 +166,12 @@
     (insert-file-contents file)
     (setq content (buffer-string))
     (string-match "title: \\(.*\\)\\\n.*date: \\(.*\\)" content)
-    (cons (format "%s %s" (match-string 2 content) (match-string 1 content)) file)))
+    (cons (format "[%s] %s" (match-string 2 content) (match-string 1 content)) file)))
 
 (defun get-entry-titles ()
   (mapcar (lambda (file)
            (get-title file))
-          (get-entry-files)))
+          (reverse (get-entry-files))))
 
 (defun helm-myblog-entries ()
   (interactive)
