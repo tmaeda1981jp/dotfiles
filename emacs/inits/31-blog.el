@@ -27,26 +27,6 @@
               (search-forward "* " nil t))
       (insert (myblog:blog-header title date)))))
 
-;; TODO
-;; ----
-;; (defun myblog:draft ()
-;;   (interactive)
-;;   (let* ((basedir "~/blog/org/_drafts")
-;;          (date (read-string "DATE: " (format-time-string "%Y-%m-%d")))
-;;          (file-name (read-string "FILE_NAME: "))
-;;          (file (format "%s/%s-%s.org" basedir date file-name)))
-;;     (shell-command-to-string (format "mkdir -p %s" basedir))
-;;     (find-file-other-window file)
-;;     (unless (save-excursion
-;;               (goto-char 1)
-;;               (search-forward "* test\n" nil t))
-;;       (insert (myblog:blog-header file-name)))))
-
-;; TODO
-;; ----
-;; (defun myblog:draft-to-post ()
-;;   (interactive))
-
 (defun myblog:blog-header (title date)
   (mapconcat 'identity (list
                         "#+OPTIONS: toc:nil"
@@ -97,18 +77,6 @@
          :completion-function myblog:run-build-command
          :section-numbers nil
          )
-        ;; TODO
-        ;; ----
-        ;; ("draft"
-        ;;  :base-directory "~/blog/org/_posts/"
-        ;;  :base-extension "org"
-        ;;  :publishing-directory "~/blog/jekyll/_drafts/"
-        ;;  :recursive t
-        ;;  :publishing-function org-html-publish-to-html
-        ;;  :html-extension "html"
-        ;;  :body-only t
-        ;;  :completion-function myblog:run-build-command-with-draft-option
-        ;;  )
         ("static"
          :base-directory "~/blog/org/"
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf"
@@ -120,9 +88,3 @@
 (defun myblog:run-build-command ()
   "Run jekyll command"
   (shell-command-to-string "cd ~/blog/jekyll && jekyll build"))
-
-;; TODO
-;; ----
-;; (defun myblog:run-build-command-with-draft-option ()
-;;   "Run jekyll command with draft option"
-;;   (shell-command-to-string "cd ~/blog/jekyll && jekyll build --draft"))
