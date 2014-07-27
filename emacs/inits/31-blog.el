@@ -29,7 +29,7 @@
 
 (defun myblog:blog-header (title date)
   (mapconcat 'identity (list
-                        "#+OPTIONS: toc:nil"
+                        "#+OPTIONS: toc:nil \n:t"
                         "#+BEGIN_HTML"
                         "---"
                         "layout: post"
