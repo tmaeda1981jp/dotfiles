@@ -3,13 +3,22 @@
 
 (require 'ox-jekyll)
 
+(defun org-custom-link-img-export (path desc format)
+  (cond
+   ((eq format 'html)
+    (if (null desc)
+        (setq desc ""))
+    (format "<img src=\"/img/%s\" alt=\"%s\" />" path desc))))
+
+(org-add-link-type "img" 'org-custom-link-img-follow 'org-custom-link-img-export)
+
 (defun org-jekyll-src-block (src-block contents info)
   "override"
   (if org-jekyll-use-src-plugin
       (let ((language (org-element-property :language src-block))
             (value (org-remove-indentation
                     (org-element-property :value src-block))))
-        (format "{%% highlight %s %%}\n%s{%% endhighlight %%}"
+        (format "\n{%% highlight %s %%}\n%s{%% endhighlight %%}"
                 language value))
     (org-export-with-backend 'html src-block contents info)))
 
@@ -79,9 +88,9 @@
          :section-numbers nil
          )
         ("static"
-         :base-directory "~/blog/org/"
+         :base-directory "~/blog/org/_posts/img/"
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf"
-         :publishing-directory "~/blog/"
+         :publishing-directory "~/blog/jekyll/img/"
          :recursive t
          :publishing-function org-publish-attachment)
         ("myblog" :components ("post" "static"))))
