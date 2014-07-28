@@ -3,6 +3,15 @@
 
 (require 'ox-jekyll)
 
+(defun org-custom-link-img-export (path desc format)
+  (cond
+   ((eq format 'html)
+    (if (null desc)
+        (setq desc ""))
+    (format "<img src=\"/img/%s\" alt=\"%s\" />" path desc))))
+
+(org-add-link-type "img" 'org-custom-link-img-follow 'org-custom-link-img-export)
+
 (defun org-jekyll-src-block (src-block contents info)
   "override"
   (if org-jekyll-use-src-plugin
