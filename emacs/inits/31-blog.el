@@ -9,7 +9,7 @@
       (let ((language (org-element-property :language src-block))
             (value (org-remove-indentation
                     (org-element-property :value src-block))))
-        (format "{%% highlight %s %%}\n%s{%% endhighlight %%}"
+        (format "\n{%% highlight %s %%}\n%s{%% endhighlight %%}"
                 language value))
     (org-export-with-backend 'html src-block contents info)))
 
@@ -78,9 +78,9 @@
          :section-numbers nil
          )
         ("static"
-         :base-directory "~/blog/org/"
+         :base-directory "~/blog/org/_posts/img/"
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf"
-         :publishing-directory "~/blog/"
+         :publishing-directory "~/blog/jekyll/img/"
          :recursive t
          :publishing-function org-publish-attachment)
         ("myblog" :components ("post" "static"))))
