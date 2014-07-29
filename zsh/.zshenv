@@ -10,6 +10,7 @@ if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 # php
 export PATH=$HOME/.phpenv/bin:$PATH
 if which phpenv > /dev/null; then eval "$(phpenv init -)"; fi
+export PATH=$HOME/.composer/vendor/bin:$PATH
 
 # js(node)
 export NODEBREW_ROOT=$HOME/.nodebrew
