@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: sv
+# --
+$_SERVER
