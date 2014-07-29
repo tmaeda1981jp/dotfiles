@@ -78,6 +78,9 @@
 ;; C-hを後退に割り当てる
 (global-set-key (kbd "C-h") 'delete-backward-char)
 
+;; スクロールバーを無効にする
+(scroll-bar-mode -1)
+
 ;; yes -> y / no -> n
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -114,8 +117,9 @@
 ;; 現在の関数名をモードラインに表示
 (which-function-mode 1)
 
+;; terminalから使う分には関係ないので無効化
 ;; 85%で透明化
-(set-frame-parameter nil 'alpha 85)
+;;(set-frame-parameter nil 'alpha 85)
 
 ;; ;;; 背景色
 ;; (set-background-color "black")
@@ -165,6 +169,9 @@
 ;; 行番号を表示
 (require 'linum)
 (global-linum-mode t)
+(setq linum-delay t)
+(defadvice linum-schedule (around my-linum-schedule () activate)
+  (run-with-idle-timer 0.2 nil #'linum-update-current))
 
 ;; Ctrl-x oをShift+矢印で移動
 ;; ref: http://murakan.cocolog-nifty.com/blog/2009/01/emacs-tips-3e2b.html

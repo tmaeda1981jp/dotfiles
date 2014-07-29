@@ -72,6 +72,9 @@ alias b='bower'
 alias volo='nocorrect volo'
 alias grunt='nocorrect grunt'
 
+# php
+alias phpunit='phpunit --colors'
+
 # git/svn
 export EDITOR="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
 
