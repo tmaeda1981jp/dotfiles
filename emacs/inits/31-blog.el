@@ -39,6 +39,7 @@
 (defun myblog:blog-header (title date)
   (mapconcat 'identity (list
                         "#+OPTIONS: toc:nil \n:t"
+                        "#+LANGUAGE: ja"
                         "#+BEGIN_HTML"
                         "---"
                         "layout: post"
