@@ -26,19 +26,16 @@
                               "This is My Blog Mode."
                               nil
                               " MyBlog"
-                              '(("\C-ch" . myblog:move-to-draft)
-                                ("\C-cg" . myblog:kill-entry)))
+                              '(("\C-ch" . myblog:move-to-draft)))
 
 (defun myblog:move-to-draft ()
   "Move an article to draft"
   (interactive)
-  ;; (write-file (format "~/blog/jekyll/_posts/%s" buffer-file-name))
-)
-
-(defun myblog:kill-entry ()
-  "Kill this entry"
-  (interactive)
-  (message "Kill this entry!"))
+  (write-file (format "~/blog/jekyll/_drafts/%s" (buffer-name)))
+  (let* ((delete-target (format "~/blog/jekyll/_posts/%s" (buffer-name)))) ;; TODO orgじゃなくてhtmlを移動．単純にmvで移動すればいいだけだった．
+    (when (file-exists-p delete-target)
+      (delete-file delete-target)
+      (kill-buffer delete-target))))
 
 (defun myblog:post ()
   (interactive)
