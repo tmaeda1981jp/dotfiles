@@ -22,6 +22,23 @@
                 language value))
     (org-export-with-backend 'html src-block contents info)))
 
+(easy-mmode-define-minor-mode myblog-mode
+                              "This is My Blog Mode."
+                              nil
+                              " MyBlog"
+                              '(("\C-ch" . myblog:move-to-draft)
+                                ("\C-cg" . myblog:kill-entry)))
+
+(defun myblog:move-to-draft ()
+  "Move an article to draft"
+  (interactive)
+  (message "Move to draft!!!"))
+
+(defun myblog:kill-entry ()
+  "Kill this entry"
+  (interactive)
+  (message "Kill this entry!"))
+
 (defun myblog:post ()
   (interactive)
   (let* ((basedir "~/blog/org/_posts")
@@ -31,6 +48,7 @@
          (file (format "%s/%s-%s.org" basedir date file-name)))
     (shell-command-to-string (format "mkdir -p %s" basedir))
     (find-file-other-window file)
+    (myblog-mode)
     (unless (save-excursion
               (goto-char 1)
               (search-forward "* " nil t))
@@ -38,7 +56,7 @@
 
 (defun myblog:blog-header (title date)
   (mapconcat 'identity (list
-                        "#+OPTIONS: toc:nil \n:t"
+                        "#+OPTIONS: toc:nil \\n:t"
                         "#+LANGUAGE: ja"
                         "#+BEGIN_HTML"
                         "---"
