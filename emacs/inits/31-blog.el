@@ -87,13 +87,13 @@
          :completion-function myblog:run-build-command
          :section-numbers nil
          )
-        ("static"
+        ("images"
          :base-directory "~/blog/org/_posts/img/"
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf"
+         :base-extension "png\\|jpg\\|gif"
          :publishing-directory "~/blog/jekyll/img/"
          :recursive t
          :publishing-function org-publish-attachment)
-        ("myblog" :components ("post" "static"))))
+        ("myblog" :components ("post" "images"))))
 
 (defun myblog:run-build-command ()
   "Run jekyll command"
