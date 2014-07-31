@@ -32,7 +32,8 @@
 (defun myblog:move-to-draft ()
   "Move an article to draft"
   (interactive)
-  (message "Move to draft!!!"))
+  ;; (write-file (format "~/blog/jekyll/_posts/%s" buffer-file-name))
+)
 
 (defun myblog:kill-entry ()
   "Kill this entry"
