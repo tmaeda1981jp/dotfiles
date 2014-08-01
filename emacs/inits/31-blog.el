@@ -31,11 +31,11 @@
 (defun myblog:move-to-draft ()
   "Move an article to draft"
   (interactive)
-  (write-file (format "~/blog/jekyll/_drafts/%s" (buffer-name)))
-  (let* ((delete-target (format "~/blog/jekyll/_posts/%s" (buffer-name)))) ;; TODO orgじゃなくてhtmlを移動．単純にmvで移動すればいいだけだった．
-    (when (file-exists-p delete-target)
-      (delete-file delete-target)
-      (kill-buffer delete-target))))
+  (copy-file
+   (buffer-file-name)
+   (replace-regexp-in-string "_posts" "_drafts" (buffer-file-name)) t)
+  (delete-file (buffer-file-name))
+  (kill-buffer nil))
 
 (defun myblog:post ()
   (interactive)
@@ -75,7 +75,7 @@
 ;; '|      |_posts
 ;; '|      |-- 2009-11-26-my-first-post.org
 ;; '|      |_drafts
-;; '|      |-- my-draft.org
+;; '|      |-- 2009-11-26-my-draft.org
 ;; '|   |jekyll
 ;; '|   -- _config.yml
 ;; '|   -- _layouts
