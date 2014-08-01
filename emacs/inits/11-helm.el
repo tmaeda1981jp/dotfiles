@@ -169,9 +169,13 @@
   (with-temp-buffer
     (insert-file-contents file)
     (setq content (buffer-string))
+    (setq is-draft (eq (string-match "_posts/" file) nil))
     (string-match "title: \\(.*\\)\\\n.*date: \\(.*\\)" content)
     (cons
-     (format "[%s] %s" (match-string 2 content) (match-string 1 content))
+     (cond (is-draft
+            (format "[%s] (DRAFT) %s" (match-string 2 content) (match-string 1 content)))
+           (t
+            (format "[%s] %s" (match-string 2 content) (match-string 1 content))))
      file)))
 
 (defun get-entry-titles ()
