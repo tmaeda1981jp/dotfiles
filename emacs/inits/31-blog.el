@@ -37,6 +37,15 @@
   (delete-file (buffer-file-name))
   (kill-buffer nil))
 
+(defun myblog:move-to-post ()
+  "Move an article to post"
+  (interactive)
+  (copy-file
+   (buffer-file-name)
+   (replace-regexp-in-string "_drafts" "_posts" (buffer-file-name)) t)
+  (delete-file (buffer-file-name))
+  (kill-buffer nil))
+
 (defun myblog:post ()
   (interactive)
   (let* ((basedir "~/blog/org/_posts")
