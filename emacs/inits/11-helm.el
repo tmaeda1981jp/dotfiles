@@ -160,14 +160,19 @@
 (defvar myblog-root-path "/Users/tmaeda/blog/org/")
 
 (defun get-entry-files ()
-  (remove-if-not 'file-regular-p (directory-files (format "%s_posts" myblog-root-path) t "^\\([^.]\\|\\.[^.]\\|\\.\\..\\)")))
+  (remove-if-not 'file-regular-p
+                 (append
+                  (directory-files (format "%s_posts" myblog-root-path) t "^\\([^.]\\|\\.[^.]\\|\\.\\..\\)")
+                  (directory-files (format "%s_drafts" myblog-root-path) t "^\\([^.]\\|\\.[^.]\\|\\.\\..\\)"))))
 
 (defun get-title (file)
   (with-temp-buffer
     (insert-file-contents file)
     (setq content (buffer-string))
     (string-match "title: \\(.*\\)\\\n.*date: \\(.*\\)" content)
-    (cons (format "[%s] %s" (match-string 2 content) (match-string 1 content)) file)))
+    (cons
+     (format "[%s] %s" (match-string 2 content) (match-string 1 content))
+     file)))
 
 (defun get-entry-titles ()
   (mapcar (lambda (file)
