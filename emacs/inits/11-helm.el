@@ -153,38 +153,3 @@
 ;; helpをhelmで表示
 (require 'helm-descbinds)
 (helm-descbinds-mode)
-
-
-
-;; blogの投稿原本を一覧表示 & 選択でファイル編集
-(defvar myblog-root-path "/Users/tmaeda/blog/org/")
-
-(defun get-entry-files ()
-  (remove-if-not 'file-regular-p
-                 (append
-                  (directory-files (format "%s_posts" myblog-root-path) t "^\\([^.]\\|\\.[^.]\\|\\.\\..\\)")
-                  (directory-files (format "%s_drafts" myblog-root-path) t "^\\([^.]\\|\\.[^.]\\|\\.\\..\\)"))))
-
-(defun get-title (file)
-  (with-temp-buffer
-    (insert-file-contents file)
-    (setq content (buffer-string))
-    (setq is-draft (eq (string-match "_posts/" file) nil))
-    (string-match "title: \\(.*\\)\\\n.*date: \\(.*\\)" content)
-    (cons
-     (cond (is-draft
-            (format "[%s] (DRAFT) %s" (match-string 2 content) (match-string 1 content)))
-           (t
-            (format "[%s] %s" (match-string 2 content) (match-string 1 content))))
-     file)))
-
-(defun get-entry-titles ()
-  (mapcar (lambda (file)
-           (get-title file))
-          (reverse (get-entry-files))))
-
-(defun helm-myblog-entries ()
-  (interactive)
-  (helm :sources '((name . "My Blog Entries")
-                  (candidates . get-entry-titles)
-                  (action . find-file))))
