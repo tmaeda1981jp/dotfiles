@@ -132,8 +132,8 @@
 (defun get-entry-files ()
   (remove-if-not 'file-regular-p
                  (append
-                  (directory-files (format "%s_posts" myblog-root-path) t "^\\([^.]\\|\\.[^.]\\|\\.\\..\\)")
-                  (directory-files (format "%s_drafts" myblog-root-path) t "^\\([^.]\\|\\.[^.]\\|\\.\\..\\)"))))
+                  (directory-files (format "%s_posts" myblog-root-path) t "\\.org")
+                  (directory-files (format "%s_drafts" myblog-root-path) t "\\.org"))))
 
 (defun get-title (file)
   (with-temp-buffer

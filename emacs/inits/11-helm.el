@@ -4,9 +4,9 @@
 (defun my:helm ()
   (interactive)
   (helm :sources '(
-                   helm-c-source-recentf
-                   helm-c-source-files-in-current-dir
-                   helm-c-source-buffers-list
+                   helm-source-recentf
+                   helm-source-files-in-current-dir
+                   helm-source-buffers-list
                    helm-source-locate
                    )
         :buffer "*helm*"))
