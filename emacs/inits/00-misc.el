@@ -384,3 +384,15 @@
 
 ;; .gitignoreをconf-modeで開く
 (add-to-list 'auto-mode-alist '("\\.gitignore$" . conf-mode))
+
+;;====================================
+;;; 折り返し表示ON/OFF
+;;; refs: http://ubulog.blogspot.jp/2007/09/emacsonoff.html
+;;====================================
+(defun toggle-truncate-lines ()
+  "折り返し表示をトグル動作します."
+  (interactive)
+  (if truncate-lines
+      (setq truncate-lines nil)
+    (setq truncate-lines t))
+  (recenter))
