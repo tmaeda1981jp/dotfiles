@@ -31,15 +31,23 @@
 (defun myblog:move-to-draft ()
   "Move an article to draft"
   (interactive)
-  (copy-file
-   (buffer-file-name)
-   (replace-regexp-in-string "_posts" "_drafts" (buffer-file-name)) t)
-  (delete-file (buffer-file-name))
-  (kill-buffer nil))
+  (let ((draft-file (replace-regexp-in-string "_posts" "_drafts" buffer-file-name)))
+    (copy-file buffer-file-name draft-file t)
+    (delete-file buffer-file-name)
+    (kill-buffer nil)
+    (find-file draft-file)
+    (message (format "Opend %s" draft-file))))
 
 (defun myblog:move-to-post ()
   "Move an article to post"
   (interactive)
+  (let ((entry-file (replace-regexp-in-string "_drafts" "_posts" buffer-file-name)))
+    (copy-file buffer-file-name entry-file t)
+    (delete-file buffer-file-name)
+    (kill-buffer nil)
+    (find-file entry-file)
+    (message (format "Opend %s" entry-file))))
+
   (copy-file
    (buffer-file-name)
    (replace-regexp-in-string "_drafts" "_posts" (buffer-file-name)) t)
@@ -150,11 +158,11 @@
 
 (defun get-entry-titles ()
   (mapcar (lambda (file)
-           (get-title file))
+            (get-title file))
           (reverse (get-entry-files))))
 
 (defun helm-myblog-entries ()
   (interactive)
   (helm :sources '((name . "My Blog Entries")
-                  (candidates . get-entry-titles)
-                  (action . find-file))))
+                   (candidates . get-entry-titles)
+                   (action . find-file))))
