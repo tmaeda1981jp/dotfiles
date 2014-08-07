@@ -48,12 +48,6 @@
     (find-file entry-file)
     (message (format "Opend %s" entry-file))))
 
-  (copy-file
-   (buffer-file-name)
-   (replace-regexp-in-string "_drafts" "_posts" (buffer-file-name)) t)
-  (delete-file (buffer-file-name))
-  (kill-buffer nil))
-
 (defun myblog:post ()
   (interactive)
   (let* ((basedir "~/blog/org/_posts")
