@@ -5,7 +5,7 @@ export PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$PATH
 
 # python
 export PATH=$HOME/.pyenv/shims:$PATH
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+eval "$(pyenv init -)";
 
 # php
 export PATH=$HOME/.phpenv/bin:$PATH
@@ -31,8 +31,7 @@ export PATH=/Applications/Genymotion.app/Contents/MacOS:$PATH
 export TEXPATH=/usr/local/texlive/2012/bin/universal-darwin
 export PATH=$TEXPATH:$PATH
 
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+export PATH=$PATH:$HOME/bin:/usr/local/bin
 
 # ruby
 export PATH=$HOME/.rbenv/bin:$PATH
