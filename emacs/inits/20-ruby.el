@@ -20,12 +20,12 @@
 ;; (autoload 'run-ruby "inf-ruby" "Run an inferior Ruby process")
 ;; (autoload 'inf-ruby-keys "inf-ruby" "Set local key defs for inf-ruby in ruby-mode")
 (autoload 'inf-ruby "inf-ruby" "Run an inferior Ruby process" t)
-(autoload 'inf-ruby-setup-keybindings "inf-ruby" "" t)
 
 (defun my-ruby-mode-hooks ()
-  (inf-ruby-setup-keybindings)
+  (inf-ruby-minor-mode)
   (ruby-electric-mode t)
   (ruby-block-mode t))
+
 (add-hook 'ruby-mode-hook 'my-ruby-mode-hooks)
 
 ;; rspec-mode
@@ -77,3 +77,13 @@
 
 ;; rhtml
 (require 'rhtml-mode)
+
+;;
+;; https://groups.google.com/forum/#!topic/emacs-on-rails/Cuh_x5eCK_M
+;;
+(defun ruby-insert-end ()
+  "Insert \"end\" at point and reindent current line."
+  (interactive)
+  (insert "end")
+  (ruby-indent-line t)
+  (end-of-line))
