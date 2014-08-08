@@ -37,3 +37,5 @@ export PATH=$PATH:$HOME/bin:/usr/local/bin
 export PATH=$HOME/.rbenv/bin:$PATH
 eval "$(rbenv init -)";
 
+# ansible
+export ANSIBLE_HOSTS=~/ansible_hosts
