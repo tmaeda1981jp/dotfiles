@@ -3,6 +3,10 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export ANT_HOME=/Users/tmaeda/ant
 export PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$PATH
 
+# ruby
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$(rbenv init -)";
+
 # python
 export PATH=$HOME/.pyenv/shims:$PATH
 eval "$(pyenv init -)";
@@ -32,10 +36,6 @@ export TEXPATH=/usr/local/texlive/2012/bin/universal-darwin
 export PATH=$TEXPATH:$PATH
 
 export PATH=$PATH:$HOME/bin:/usr/local/bin
-
-# ruby
-export PATH=$HOME/.rbenv/bin:$PATH
-eval "$(rbenv init -)";
 
 # ansible
 export ANSIBLE_HOSTS=~/ansible_hosts
