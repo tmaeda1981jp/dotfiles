@@ -125,6 +125,19 @@ alias vagrant='nocorrect vagrant'
 alias v='vagrant'
 alias vst='vagrant status'
 
+# ansible
+make_role() {
+    if [ -d 'roles' ]; then
+        mkdir -p ./roles/$1/meta ./roles/$1/handlers ./roles/$1/templates ./roles/$1/tasks
+        touch ./roles/$1/meta/main.yml
+        touch ./roles/$1/handlers/main.yml
+        touch ./roles/$1/tasks/main.yml
+    else
+        echo "No roles directory"
+    fi
+}
+alias mkrole=make_role
+
 # sphinx
 alias mh='make html'
 alias mp='make latexpdfja'
