@@ -36,11 +36,15 @@ fi
 ln -sf `PWD`/python/bpython/config $HOME/.config/bpython/config
 ln -sf `PWD`/python/pylint/.pylintrc $HOME/.pylintrc
 
-# gem
+# ruby
+## gem
 ln -sf `PWD`/ruby/gem/.gemrc $HOME/.gemrc
 
-# rubocop
+## rubocop
 ln -sf `PWD`/ruby/rubocop/.rubocop.yml $HOME/.rubocop.yml
+
+## rspec
+ln -sf `PWD`/ruby/rspec/.rspec $HOME/.rspec
 
 # htmltidy
 ln -sf `PWD`/html/.tidyrc $HOME/.tidyrc
