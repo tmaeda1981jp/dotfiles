@@ -1,3 +1,10 @@
+;; css
+
+(require 'helm-css-scss)
+(setq helm-css-scss-insert-close-comment-depth 2)
+
+;; sass
+
 ;; refs: http://qiita.com/sawamur@github/items/bb50d84af4d01a2eb5c2
 
 (require 'scss-mode)
@@ -12,3 +19,4 @@
   )
 (add-hook 'scss-mode-hook
   '(lambda() (scss-custom)))
+
