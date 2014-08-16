@@ -35,6 +35,10 @@ export PATH=/Applications/Genymotion.app/Contents/MacOS:$PATH
 export TEXPATH=/usr/local/texlive/2012/bin/universal-darwin
 export PATH=$TEXPATH:$PATH
 
+# cask
+export PATH=$HOME/.cask/bin:$PATH
+
+# ~/bin, /usr/local/bin
 export PATH=$PATH:$HOME/bin:/usr/local/bin
 
 # ansible
