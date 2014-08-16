@@ -9,7 +9,6 @@
 (depends-on "anything")
 (depends-on "anzu")
 (depends-on "auto-complete")
-(depends-on "cl-lib")
 (depends-on "coffee-mode")
 (depends-on "color-moccur")
 (depends-on "color-theme")
