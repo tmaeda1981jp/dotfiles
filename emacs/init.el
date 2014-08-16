@@ -17,6 +17,9 @@
 ;; (ex) (add-to-load-path "xxx" "yyy" "zzz")
 (add-to-load-path "site-lisp")
 
+(require 'cask "~/.cask/cask.el")
+(cask-initialize)
+
 (require 'init-loader)
 (init-loader-load "~/.emacs.d/inits")
 (custom-set-variables
