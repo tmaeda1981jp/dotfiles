@@ -3,6 +3,7 @@ emacs/ac-comphist.dat
 emacs/.mc-lists.el
 emacs/eshell
 emacs/bookmarks
+emacs/.cask
 *.elc
 tramp
 .org-id-locations
