@@ -94,28 +94,28 @@
 ;; (define-key global-map [(control ?:)] 'helm-migemo)
 (global-set-key (kbd "C-s") 'helm-occur)
 
-(require 'helm-ag-r)
-;; Specify your favorite ag's configuration
-;; You can change below option by pushing C-o on helm-ag-r's minibuffer.
-(setq helm-ag-r-option-list '("-S -U --hidden" "-S -U -g")
-      ;; start searching from 2 character
-      helm-ag-r-requires-pattern 2
-      ;; Display candidate only you specified number
-      helm-ag-r-candidate-limit 100  ; <- default is helm-candidate-number-limit
-      ;; delay searching from input
-      helm-ag-r-input-idle-delay 0.5)
+;; (require 'helm-ag-r)
+;; ;; Specify your favorite ag's configuration
+;; ;; You can change below option by pushing C-o on helm-ag-r's minibuffer.
+;; (setq helm-ag-r-option-list '("-S -U --hidden" "-S -U -g")
+;;       ;; start searching from 2 character
+;;       helm-ag-r-requires-pattern 2
+;;       ;; Display candidate only you specified number
+;;       helm-ag-r-candidate-limit 100  ; <- default is helm-candidate-number-limit
+;;       ;; delay searching from input
+;;       helm-ag-r-input-idle-delay 0.5)
+;;(global-set-key (kbd "C-c C-s") 'helm-ag-r)
+(global-set-key (kbd "C-c C-s") 'helm-do-ag)
 
-(global-set-key (kbd "C-c C-s") 'helm-ag-r)
-
-(defun helm-ag-r-shell-history ()
-  "Search shell history(I don't make sure without zsh)"
-  (interactive)
-  (helm-ag-r-pype
-   "cat ~/.zsh_history | sed 's/^: [0-9]*:[0-9];//'"
-   '((action . (lambda (line)
-                 (case major-mode
-                   (term-mode (term-send-raw-string line))
-                   (t (insert line))))))))
+;; (defun helm-ag-r-shell-history ()
+;;   "Search shell history(I don't make sure without zsh)"
+;;   (interactive)
+;;   (helm-ag-r-pype
+;;    "cat ~/.zsh_history | sed 's/^: [0-9]*:[0-9];//'"
+;;    '((action . (lambda (line)
+;;                  (case major-mode
+;;                    (term-mode (term-send-raw-string line))
+;;                    (t (insert line))))))))
 
 ;;; helm-c-ysanippet
 ;;; (from mail magazine vol134)

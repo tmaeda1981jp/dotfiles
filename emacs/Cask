@@ -32,7 +32,6 @@
 (depends-on "helm")
 (depends-on "helm-anything")
 (depends-on "helm-ag")
-(depends-on "helm-ag-r")
 (depends-on "helm-c-moccur")
 (depends-on "helm-c-yasnippet")
 (depends-on "helm-css-scss")
