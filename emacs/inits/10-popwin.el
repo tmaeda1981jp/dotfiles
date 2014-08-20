@@ -13,4 +13,5 @@
 (push '("^\*magit: .+\*$" :regexp t) popwin:special-display-config)
 (push '("*Inf-Haskell*") popwin:special-display-config)
 (push '("*Flycheck errors*") popwin:special-display-config)
+(push '("*Codic Result*") popwin:special-display-config)
 (push '("*ert*") popwin:special-display-config)
