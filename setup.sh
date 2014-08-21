@@ -5,6 +5,9 @@ if [ -e $HOME/.emacs.d ]; then
     rm -rf $HOME/.emacs.d
 fi
 ln -sf `PWD`/emacs $HOME/.emacs.d
+cd $HOME/dotfiles/emacs
+cask install
+cd $HOME/dotfiles
 
 # percol
 if [ -e $HOME/.percol.d ]; then
