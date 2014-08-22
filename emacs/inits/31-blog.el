@@ -56,7 +56,7 @@
          (file-name (read-string "FILE_NAME: "))
          (file (format "%s/%s-%s.org" basedir date file-name)))
     (shell-command-to-string (format "mkdir -p %s" basedir))
-    (find-file-other-window file)
+    (find-file file)
     (myblog-mode)
     (unless (save-excursion
               (goto-char 1)
