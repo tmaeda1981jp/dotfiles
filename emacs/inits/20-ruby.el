@@ -8,8 +8,6 @@
                '("gemspec$" . ruby-mode)
                ) auto-mode-alist))
 
-(require 'ruby-end)
-
 ;; ruby-block.el
 ;; endに対応する行のハイライト
 (when (require 'ruby-block nil t)
@@ -87,3 +85,4 @@
   (insert "end")
   (ruby-indent-line t)
   (end-of-line))
+

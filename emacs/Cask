@@ -66,7 +66,6 @@
 (depends-on "rspec-mode")
 (depends-on "ruby-block")
 (depends-on "ruby-electric")
-(depends-on "ruby-end")
 (depends-on "rvm")
 (depends-on "s")
 (depends-on "scss-mode")
