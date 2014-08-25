@@ -396,3 +396,5 @@
       (setq truncate-lines nil)
     (setq truncate-lines t))
   (recenter))
+
+(global-set-key (kbd "C-c C-q") 'toggle-truncate-lines)
