@@ -12,8 +12,6 @@ export PATH=$HOME/.pyenv/shims:$PATH
 eval "$(pyenv init -)";
 
 # php
-export PATH=$HOME/.phpenv/bin:$PATH
-if which phpenv > /dev/null; then eval "$(phpenv init -)"; fi
 export PATH=$HOME/.composer/vendor/bin:$PATH
 
 # js(node)
