@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: y
+# --
+yield $0;
