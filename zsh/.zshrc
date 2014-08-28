@@ -124,6 +124,8 @@ alias tkill='tmux kill-session -t'
 alias vagrant='nocorrect vagrant'
 alias v='vagrant'
 alias vst='vagrant status'
+alias va='vagrant up'
+alias vd='vagrant destroy'
 
 # ansible
 make_role() {
