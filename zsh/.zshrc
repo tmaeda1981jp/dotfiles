@@ -126,6 +126,7 @@ alias v='vagrant'
 alias vst='vagrant status'
 alias va='vagrant up'
 alias vd='vagrant destroy'
+alias vp='vagrant provision'
 
 # ansible
 make_role() {
