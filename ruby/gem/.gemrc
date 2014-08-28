@@ -1,5 +1,5 @@
 ---
-:backtrace: false
+:backtrace: true
 :bulk_threshold: 1000
 :sources:
 - https://rubygems.org/
