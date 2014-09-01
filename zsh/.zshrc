@@ -27,6 +27,7 @@ alias o.='open -R .'
 alias less='/usr/share/vim/vim73/macros/less.sh'
 alias ctags='/usr/local/bin/ctags'
 
+alias emacsclient="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
 alias emacssv="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 alias emacs="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
 alias e='emacs'
