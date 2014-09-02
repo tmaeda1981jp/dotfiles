@@ -3,6 +3,7 @@ emacs/ac-comphist.dat
 emacs/.mc-lists.el
 emacs/eshell
 emacs/bookmarks
+emacs/auto-save-list
 emacs/.cask
 *.elc
 tramp
