@@ -1,5 +1,7 @@
 #!/usr/bin/env zsh
 
+SHELL=/bin/zsh
+
 if [[ ! -o interactive ]]; then
     return
 fi
