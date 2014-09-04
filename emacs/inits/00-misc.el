@@ -326,8 +326,9 @@
                     :foreground "DeepPink"
                     :underline t)
 (set-face-attribute 'whitespace-tab nil
-                    :foreground "LightSkyBlue"
-                    :underline t)
+                    :foreground "Grey"
+                    :background 'unspecified
+                    :underline nil)
 (set-face-attribute 'whitespace-space nil
                     :foreground "red"
                     :weight 'bold)
