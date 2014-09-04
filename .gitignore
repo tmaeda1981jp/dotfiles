@@ -11,3 +11,4 @@ tramp
 .org-id-locations
 *_archive
 *_flymake.*
+tmux/tmuxinator/local.yml
