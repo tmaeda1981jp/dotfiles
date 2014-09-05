@@ -324,6 +324,7 @@
 
 (set-face-attribute 'whitespace-trailing nil
                     :foreground "DeepPink"
+                    :background 'unspecified
                     :underline t)
 (set-face-attribute 'whitespace-tab nil
                     :foreground "Grey"
@@ -331,6 +332,7 @@
                     :underline nil)
 (set-face-attribute 'whitespace-space nil
                     :foreground "red"
+                    :background 'unspecified
                     :weight 'bold)
 
 ;; indent修正
