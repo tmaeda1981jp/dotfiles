@@ -71,6 +71,7 @@
 (depends-on "scss-mode")
 (depends-on "smartrep")
 (depends-on "stylus-mode")
+(depends-on "sudden-death")
 (depends-on "sws-mode")
 (depends-on "web-mode")
 (depends-on "websocket")
