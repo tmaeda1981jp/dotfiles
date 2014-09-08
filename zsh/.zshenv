@@ -39,5 +39,8 @@ export PATH=$HOME/.cask/bin:$PATH
 # ~/bin, /usr/local/bin
 export PATH=$PATH:$HOME/bin:/usr/local/bin
 
+# coreutils
+export PATH=$PATH:/usr/local/opt/coreutils/libexec/gnubin
+
 # ansible
 export ANSIBLE_HOSTS=~/ansible_hosts
