@@ -16,3 +16,5 @@
   :args '("server" "--watch")
   :tags '(blog jekyll)
   :port 4000)
+
+(global-set-key (kbd "C-c C-u") 'prodigy)
