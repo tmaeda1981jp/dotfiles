@@ -99,10 +99,16 @@ alias gpd='g push origin develop'
 alias gmd='g merge develop'
 alias gmdn='g merge develop --no-ff'
 alias gri='g rebase -i'
+alias gsm='g svn master'
 alias gsl='g stash list'
 alias gss='g stash'
 alias gst='g st'
 alias gbr='g branch'
+
+# git svn
+alias gsv='g svn'
+alias gsvr='g svn rebase'
+alias gscommit='g svn dcommit -e'
 
 # svn
 alias sst='svn status'
