@@ -39,6 +39,7 @@
 (depends-on "helm-ls-git")
 (depends-on "helm-migemo")
 (depends-on "helm-projectile")
+(depends-on "ht")
 (depends-on "htmlize")
 (depends-on "inf-ruby")
 (depends-on "jade-mode")
