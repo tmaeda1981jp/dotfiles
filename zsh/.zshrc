@@ -218,6 +218,9 @@ alias clils='nocorrect chrome-cli list tabs'
 # sed
 alias sed='gsed'
 
+# awk
+alias awk='gawk'
+
 alias tree='nocorrect tree'
 
 autoload -Uz add-zsh-hook
