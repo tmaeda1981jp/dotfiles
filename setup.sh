@@ -49,6 +49,10 @@ ln -sf `PWD`/ruby/rubocop/.rubocop.yml $HOME/.rubocop.yml
 ## rspec
 ln -sf `PWD`/ruby/rspec/.rspec $HOME/.rspec
 
+# php
+## boris
+ln -sf `PWD`/php/boris/.borisrc $HOME/.borisrc
+
 # htmltidy
 ln -sf `PWD`/html/.tidyrc $HOME/.tidyrc
 
