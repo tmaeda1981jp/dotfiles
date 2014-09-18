@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: thp
+# --
+.to.have.property('$1');$0
