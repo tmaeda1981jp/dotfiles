@@ -13,7 +13,9 @@ eval "$(pyenv init -)";
 
 # php
 export PATH=$HOME/.composer/vendor/bin:$PATH
-source ~/.phpbrew/bashrc
+if [ -f ~/.phpbrew/bashrc ]; then
+    source ~/.phpbrew/bashrc
+fi
 
 # js(node)
 export NODEBREW_ROOT=$HOME/.nodebrew
