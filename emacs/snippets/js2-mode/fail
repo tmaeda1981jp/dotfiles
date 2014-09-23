@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: fail
+# --
+.fail($1)$0
