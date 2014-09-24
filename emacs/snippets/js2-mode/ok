@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: ok
+# --
+.to.be.ok();$0
