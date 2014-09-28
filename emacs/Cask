@@ -3,6 +3,7 @@
 (source marmalade)
 (source org)
 
+(depends-on "ace-jump-mode")
 (depends-on "ag")
 (depends-on "all")
 (depends-on "all-ext")

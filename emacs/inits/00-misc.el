@@ -104,10 +104,6 @@
 ;; カーソルの位置が何行目かを表示する
 (line-number-mode t)
 
-;; Command-Key and Option-Key
-(setq ns-command-modifier (quote meta))
-(setq ns-alternate-modifier (quote super))
-
 ;; タイトルバーにファイル名を表示する
 (setq frame-title-format (format "emacs@%s : %%f" (system-name)))
 
@@ -156,11 +152,18 @@
 ;; 補完可能なものを随時表示
 (icomplete-mode 1)
 
+;; Command-Key and Option-Key
+(setq ns-command-modifier (quote meta))
+(setq ns-alternate-modifier (quote super))
+
 ;; optionをメタキーにする
 (when is_mac
   (require 'mac-key-mode)
   (mac-key-mode 1)
-  (setq mac-option-modifier 'meta))
+  (setq mac-option-modifier 'meta)
+  (setq mac-right-option-modifier nil))
+
+(define-key function-key-map (kbd "<f8>") 'event-apply-hyper-modifier)
 
 ;; C-x C-fの時にzshライクに候補を表示する
 ;; ref: http://d.hatena.ne.jp/mooz/20101003/p1
