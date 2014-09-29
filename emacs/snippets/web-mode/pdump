@@ -1,0 +1,4 @@
+# -*- mode: snippet -*-
+# name: pdump
+# --
+{$0|@var_dump}
