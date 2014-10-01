@@ -2,7 +2,7 @@
 # name: html
 # インデントが崩れるので注意（jade-modeが原因ぽい）
 # --
-!!! 5
+doctype html
 html(lang="ja")
   head
     meta(charset="utf-8")
@@ -11,8 +11,12 @@ html(lang="ja")
     meta(name="keywords", content="$2")
     meta(name="description", content="$3")
     block css
+      link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css")
       link(rel="stylesheet", href="$4")
-    script(src="js/libs/requirejs/require.js", data-main="js/main")
+    block js
+      script(src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js")
+      script(src="http://cdn.jsdelivr.net/underscorejs/1.7.0/underscore-min.js")
+      script(src="$5")
   body
     #container
 $0
