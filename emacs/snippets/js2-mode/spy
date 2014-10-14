@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: spy
+# --
+sinon.spy();
+$0
