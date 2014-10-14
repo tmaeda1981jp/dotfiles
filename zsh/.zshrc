@@ -23,6 +23,7 @@ alias ag='nocorrect ag -S'
 alias s='source'
 alias o='open'
 alias o.='open -R .'
+alias xargs='gxargs'
 
 alias less='/usr/share/vim/vim73/macros/less.sh'
 alias ctags='/usr/local/bin/ctags'
