@@ -76,6 +76,7 @@
 (depends-on "stylus-mode")
 (depends-on "sudden-death")
 (depends-on "sws-mode")
+(depends-on "tuareg-mode" :git "https://github.com/ocaml/tuareg.git")
 (depends-on "web-mode")
 (depends-on "websocket")
 (depends-on "wrap-region")
