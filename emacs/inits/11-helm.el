@@ -92,7 +92,9 @@
 ;; TODO helm-migemoをrequireするとoccurで絞込みができない．候補が出てこなくなる．
 ;; (require 'helm-migemo)
 ;; (define-key global-map [(control ?:)] 'helm-migemo)
+(require 'all-ext)
 (global-set-key (kbd "C-s") 'helm-occur)
+(define-key helm-map (kbd "C-c C-a") 'all-from-helm-occur)
 
 ;; (require 'helm-ag-r)
 ;; ;; Specify your favorite ag's configuration
