@@ -165,9 +165,10 @@
 
 (define-key function-key-map (kbd "<f8>") 'event-apply-hyper-modifier)
 
+;;;;; emacs 24.4ではfind-fileの挙動が変わったので使わなくてもよさそうな感じ
 ;; C-x C-fの時にzshライクに候補を表示する
 ;; ref: http://d.hatena.ne.jp/mooz/20101003/p1
-(require 'zlc)
+;;(require 'zlc)
 
 ;; 行番号を表示
 (require 'linum)
@@ -404,3 +405,4 @@
   (recenter))
 
 (global-set-key (kbd "C-c C-q") 'toggle-truncate-lines)
+
