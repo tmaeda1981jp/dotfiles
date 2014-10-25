@@ -1,10 +1,13 @@
 (require 'helm-config)
 (require 'helm-ls-git)
+(require 'helm-projectile)
+(helm-projectile-on)
 
 (defun my:helm ()
   (interactive)
   (helm :sources '(
                    helm-source-recentf
+;;                   helm-source-projectile-files-list ;;重い
                    helm-source-files-in-current-dir
                    helm-source-buffers-list
                    helm-source-locate
@@ -19,6 +22,7 @@
   ;;  " *helm*"))
 (global-set-key (kbd "C-l") 'my:helm)
 (setq recentf-max-saved-items 15)
+(setq helm-truncate-lines t)
 
 (require 'helm-anything)
 (helm-anything-set-keys)
@@ -30,9 +34,11 @@
 (global-set-key (kbd "C-r") 'helm-imenu)
 
 ;; ---------------------------------------------------------------
-;; helm-ls-git
+;; helm-projectile
 ;; ---------------------------------------------------------------
-(global-set-key (kbd "C-c C-l") 'helm-ls-git-ls)
+;;(setq projectile-indexing-method 'native)
+(global-set-key (kbd "C-c C-l") 'helm-projectile)
+;;(setq projectile-enable-caching nil)
 
 ;; ---------------------------------------------------------------
 ;; helm-M-x
@@ -142,7 +148,7 @@
                     (volatile)
                     (headline "^*")))))
 
-
+;; my blog entries
 (defun helm-myblog-entries ()
   "Display my blog entries."
   (interactive)
@@ -155,3 +161,9 @@
 ;; helpをhelmで表示
 (require 'helm-descbinds)
 (helm-descbinds-mode)
+
+
+;; helm-swoop
+;; https://github.com/ShingoFukuyama/helm-swoop
+(require 'helm-swoop)
+(global-set-key (kbd "C-c C-a") 'helm-swoop)
