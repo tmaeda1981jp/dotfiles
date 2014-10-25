@@ -253,7 +253,6 @@
   (when (require 'color-theme-molokai)
     (color-theme-molokai)))
 
-
 ;; 同名ファイルを識別しやすくする
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
@@ -318,6 +317,7 @@
 (require 'whitespace)
 
 (setq whitespace-style '(face tabs tab-mark spaces space-mark lines-tail trailing space-before-tab space-after-tab::space))
+(setq whitespace-line-column 120)
 (setq whitespace-space-regexp "\\(\x3000+\\)")
 (setq whitespace-display-mappings
       ;;      '((space-mark ?\x3000 [?\□])
