@@ -17,6 +17,7 @@
 (depends-on "color-theme-solarized")
 (depends-on "color-theme-molokai")
 (depends-on "dash")
+(depends-on "editorconfig")
 (depends-on "el-mock")
 (depends-on "epl")
 (depends-on "ert-expectations")
