@@ -1,3 +1,6 @@
+# homebrew-cask
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 # java
 export JAVA_HOME=$(/usr/libexec/java_home)
 export ANT_HOME=/Users/tmaeda/ant
@@ -5,7 +8,7 @@ export PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$PATH
 
 # ruby
 export PATH=$HOME/.rbenv/bin:$PATH
-eval "$(rbenv init -)";
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # python
 export PATH=$HOME/.pyenv/shims:$PATH

@@ -5,6 +5,7 @@ emacs/eshell
 emacs/bookmarks
 emacs/auto-save-list
 emacs/.cask
+emacs/recentf
 emacs/projectile-bookmarks.eld
 emacs/inits/99-localsettings.el
 *.elc
