@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# brewfile
+ln -sf `PWD`/osx/Brewfile $HOME/Brewfile
+cd $HOME
+brewdle install
+cd $HOME/dotfiles
+
 # emacs
 if [ -e $HOME/.emacs.d ]; then
     rm -rf $HOME/.emacs.d
