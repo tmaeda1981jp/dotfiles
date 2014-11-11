@@ -17,7 +17,7 @@
 ;; (ex) (add-to-load-path "xxx" "yyy" "zzz")
 (add-to-load-path "site-lisp")
 
-(require 'cask "/usr/local/opt/cask/cask.el")
+(require 'cask "~/.cask/cask.el")
 (cask-initialize)
 
 (require 'init-loader)
