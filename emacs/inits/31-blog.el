@@ -128,7 +128,7 @@
 
 
 ;; blogの投稿原本を一覧表示 & 選択でファイル編集
-(defvar myblog-root-path "/Users/tmaeda/blog/org/")
+(defvar myblog-root-path "~/blog/org/")
 
 ;; helm integration
 (defun get-entry-files ()
@@ -160,3 +160,4 @@
   (helm :sources '((name . "My Blog Entries")
                    (candidates . get-entry-titles)
                    (action . find-file))))
+
