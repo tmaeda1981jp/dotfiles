@@ -154,7 +154,7 @@
   (interactive)
   (helm :sources '((name . "My Blog Entries")
                    (candidates-in-buffer)
-                   (init . (lambda () (helm-init-candidates-in-buffer 'global (shell-command-to-string "ls /Users/tmaeda/blog/org/_posts"))))
+                   (init . (lambda () (helm-init-candidates-in-buffer 'global (shell-command-to-string "ls ~/blog/org/_posts"))))
                    ))
   )
 
