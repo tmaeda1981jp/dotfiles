@@ -1,10 +1,16 @@
 #!/bin/bash
 
 # brewfile
-ln -sf `PWD`/osx/Brewfile $HOME/Brewfile
-cd $HOME
-brewdle install
-cd $HOME/dotfiles
+if [ hash brewdle 2>/dev/null ]; then
+    ln -sf `PWD`/osx/Brewfile $HOME/Brewfile
+    cd $HOME
+    brewdle install
+    cd $HOME/dotfiles
+else
+    echo "============"
+    echo "Skip brewdle"
+    echo "============"
+fi
 
 # emacs
 if [ -e $HOME/.emacs.d ]; then
