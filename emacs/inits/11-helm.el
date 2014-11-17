@@ -148,16 +148,6 @@
                     (volatile)
                     (headline "^*")))))
 
-;; my blog entries
-(defun helm-myblog-entries ()
-  "Display my blog entries."
-  (interactive)
-  (helm :sources '((name . "My Blog Entries")
-                   (candidates-in-buffer)
-                   (init . (lambda () (helm-init-candidates-in-buffer 'global (shell-command-to-string "ls /Users/tmaeda/blog/org/_posts"))))
-                   ))
-  )
-
 ;; helpをhelmで表示
 (require 'helm-descbinds)
 (helm-descbinds-mode)
