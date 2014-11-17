@@ -63,8 +63,6 @@ if [ -e $HOME/.zsh ]; then
 fi
 ln -sf `PWD`/zsh/.zsh $HOME/.zsh
 
-source $HOME/.zshrc
-
 # emacs
 if [ -e $HOME/.emacs.d ]; then
     rm -rf $HOME/.emacs.d
