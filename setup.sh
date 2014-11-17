@@ -1,5 +1,22 @@
 #!/bin/bash
 
+# brewfile
+if [ hash brewdle 2>/dev/null ]; then
+    ln -sf `PWD`/osx/Brewfile $HOME/Brewfile
+    cd $HOME
+    brewdle install
+    cd $HOME/dotfiles
+else
+    echo "============"
+    echo "Skip brewdle"
+    echo "============"
+fi
+
+ln -sf `PWD`/emacs $HOME/.emacs.d
+cd $HOME/dotfiles/emacs
+cask install
+cd $HOME/dotfiles
+
 # percol
 if [ -e $HOME/.percol.d ]; then
     rm -rf $HOME/.percol.d
@@ -66,20 +83,4 @@ ln -sf `PWD`/zsh/.zsh $HOME/.zsh
 # emacs
 if [ -e $HOME/.emacs.d ]; then
     rm -rf $HOME/.emacs.d
-fi
-ln -sf `PWD`/emacs $HOME/.emacs.d
-cd $HOME/dotfiles/emacs
-cask install
-cd $HOME/dotfiles
-
-# brewfile
-if [ hash brewdle 2>/dev/null ]; then
-    ln -sf `PWD`/osx/Brewfile $HOME/Brewfile
-    cd $HOME
-    brewdle install
-    cd $HOME/dotfiles
-else
-    echo "============"
-    echo "Skip brewdle"
-    echo "============"
 fi
