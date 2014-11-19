@@ -1,5 +1,5 @@
 (defvar css-file-path "~/.emacs.d/lang/css/github.css")
-(defvar tmp-file-dir "$HOME/tmp")
+(defvar tmp-file-dir "~/tmp")
 (defvar tmp-file-path (format "%s/tmp.html" tmp-file-dir))
 
 (defun gfm-to-html ()
@@ -9,18 +9,23 @@
       (let* ((gfm buffer-file-name))
         (shell-command-to-string
          (mapconcat 'identity
-                    (list "pandoc" "-s" "-t" "html5" "-c" css-file-path "-o" tmp-file-path gfm) " ")))))
+                    (list "pandoc" "-s" "-t" "html5" "-c" css-file-path "-o" (f-full tmp-file-path) gfm) " ")))))
 
 (defun preview-on-browser ()
   "Preview html on browser"
   (interactive)
   (shell-command-to-string
    (mapconcat 'identity
-              (list "open" "-a" "Google\\ Chrome" tmp-file-path) " ")))
+              (list "open" "-a" "Google\\ Chrome" (f-full tmp-file-path)) " ")))
+
+(defun preview-on-eww ()
+  "Preview html on eww browser"
+  (interactive)
+  (eww-open-file (f-full tmp-file-path)))
 
 (add-hook 'markdown-mode-hook
           '(lambda ()
-             (define-key markdown-mode-map (kbd "C-c p") 'preview-on-browser)
+             (define-key markdown-mode-map (kbd "C-c p") 'preview-on-eww)
              (add-hook 'after-save-hook 'gfm-to-html)))
 
 (custom-set-faces
@@ -31,4 +36,3 @@
  '(markdown-header-face-5 ((t (:inherit org-level-5))))
  '(markdown-header-face-6 ((t (:inherit org-level-6))))
  )
-
