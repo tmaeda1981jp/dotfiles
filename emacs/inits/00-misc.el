@@ -316,7 +316,15 @@
 ;; ---------------------------------------------------------------
 (require 'whitespace)
 
-(setq whitespace-style '(face tabs tab-mark spaces space-mark lines-tail trailing space-before-tab space-after-tab::space))
+(setq whitespace-style '(face
+                         tabs
+                         tab-mark
+                         spaces
+                         space-mark
+                         lines-tail
+                         trailing
+                         space-before-tab
+                         space-after-tab::space))
 (setq whitespace-line-column 120)
 (setq whitespace-space-regexp "\\(\x3000+\\)")
 (setq whitespace-display-mappings
@@ -338,6 +346,7 @@
                     :foreground "red"
                     :background 'unspecified
                     :weight 'bold)
+(setq whitespace-action nil)
 
 ;; indent修正
 (defun reindent-whole-buffer ()
@@ -406,3 +415,34 @@
 
 (global-set-key (kbd "C-c C-q") 'toggle-truncate-lines)
 
+
+;; http://d.hatena.ne.jp/syohex/20130617/1371480584
+(defvar my/current-cleanup-state "")
+
+;; 行末のスペース + ファイル末尾の連続する改行の除去を行う
+(defun my/cleanup-for-spaces ()
+  (interactive)
+  (delete-trailing-whitespace)
+  (save-excursion
+    (save-restriction
+      (widen)
+      (goto-char (point-max))
+      (delete-blank-lines))))
+
+(add-hook 'before-save-hook 'my/cleanup-for-spaces)
+
+(setq-default mode-line-format
+              (cons '(:eval my/current-cleanup-state)
+                    mode-line-format))
+
+(defun toggle-cleanup-spaces ()
+  (interactive)
+  (cond ((memq 'my/cleanup-for-spaces before-save-hook)
+         (setq my/current-cleanup-state
+               (propertize "[DT-]" 'face '((:foreground "turquoise1" :weight bold))))
+         (remove-hook 'before-save-hook 'my/cleanup-for-spaces))
+        (t
+         (setq my/current-cleanup-state "")
+         (add-hook 'before-save-hook 'my/cleanup-for-spaces)))
+  (force-mode-line-update))
+(global-set-key (kbd "M-g M-d") 'toggle-cleanup-spaces)
