@@ -37,7 +37,7 @@ alias gcc='nocorrect gcc'
 alias js='nocorrect js'
 
 alias ff='open -a Firefox'
-alias ch='open -a Google\ Chrome'
+alias ch='open /Applications/Google\ Chrome --args'
 alias sf='open -a Safari'
 alias pv='open -a Preview'
 
