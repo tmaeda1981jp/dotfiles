@@ -2,6 +2,7 @@ brew 'caskroom/cask/brew-cask'
 tap 'caskroom/versions'
 tap 'homebrew/dupes'
 tap 'homebrew/php'
+tap 'sanemat/font'
 
 brew 'coreutils'
 brew 'moreutils'
@@ -57,6 +58,7 @@ brew 'composer'
 brew 'boris'
 brew 'gauche'
 brew 'cmigemo'
+brew 'ricty'
 
 # mac apps
 cask 'google-chrome'

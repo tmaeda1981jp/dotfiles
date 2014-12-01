@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # brewfile
-if [ hash brewdle 2>/dev/null ]; then
+if which brewdle > /dev/null; then
     ln -sf `PWD`/osx/Brewfile $HOME/Brewfile
     cd $HOME
     brewdle install
@@ -12,6 +12,10 @@ else
     echo "============"
 fi
 
+# emacs
+if [ -e $HOME/.emacs.d ]; then
+    rm -rf $HOME/.emacs.d
+fi
 ln -sf `PWD`/emacs $HOME/.emacs.d
 cd $HOME/dotfiles/emacs
 cask install
@@ -80,7 +84,4 @@ if [ -e $HOME/.zsh ]; then
 fi
 ln -sf `PWD`/zsh/.zsh $HOME/.zsh
 
-# emacs
-if [ -e $HOME/.emacs.d ]; then
-    rm -rf $HOME/.emacs.d
-fi
+
