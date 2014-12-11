@@ -5,6 +5,7 @@ if which brewdle > /dev/null; then
     ln -sf `PWD`/osx/Brewfile $HOME/Brewfile
     cd $HOME
     brewdle install
+    brew cask alfred link
     cd $HOME/dotfiles
 else
     echo "============"
@@ -83,5 +84,3 @@ if [ -e $HOME/.zsh ]; then
     rm -rf $HOME/.zsh
 fi
 ln -sf `PWD`/zsh/.zsh $HOME/.zsh
-
-
