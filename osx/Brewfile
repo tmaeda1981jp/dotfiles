@@ -59,6 +59,7 @@ brew 'boris'
 brew 'gauche'
 brew 'cmigemo'
 brew 'ricty'
+brew 'graphviz'
 
 # mac apps
 cask 'google-chrome'
