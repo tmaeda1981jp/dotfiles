@@ -46,11 +46,11 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 
 ;; ---------------------------------------------------------------
-;; bufferを常に画面右側に表示させる為の設定
+;; bufferを常に画面下側に表示させる為の設定
 ;; refs: http://stackoverflow.com/questions/9992475/how-to-show-anything-buffers-always-in-new-window
 ;; ---------------------------------------------------------------
 (setq helm-display-function (lambda (buf)
-                              (split-window-horizontally)
+                              (split-window-vertically)
                               (other-window 1)
                               (switch-to-buffer buf)
                               ))
@@ -99,7 +99,7 @@
 ;; (require 'helm-migemo)
 ;; (define-key global-map [(control ?:)] 'helm-migemo)
 (require 'all-ext)
-(global-set-key (kbd "C-s") 'helm-occur)
+(global-set-key (kbd "C-c s") 'helm-occur)
 (define-key helm-map (kbd "C-c C-a") 'all-from-helm-occur)
 
 ;; (require 'helm-ag-r)
@@ -156,4 +156,4 @@
 ;; helm-swoop
 ;; https://github.com/ShingoFukuyama/helm-swoop
 (require 'helm-swoop)
-(global-set-key (kbd "C-c C-a") 'helm-swoop)
+(global-set-key (kbd "C-s") 'helm-swoop)
