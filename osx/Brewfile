@@ -64,6 +64,7 @@ brew 'graphviz'
 # mac apps
 cask 'google-chrome'
 cask 'firefox-ja'
+cask 'starhoshi/starhoshicask/firefoxdeveloperedition-ja'
 cask 'dropbox'
 cask 'totalterminal'
 cask 'virtualbox'
