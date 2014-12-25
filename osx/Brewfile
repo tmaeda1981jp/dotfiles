@@ -60,6 +60,7 @@ brew 'gauche'
 brew 'cmigemo'
 brew 'ricty'
 brew 'graphviz'
+brew 'ctags'
 
 # mac apps
 cask 'google-chrome'
