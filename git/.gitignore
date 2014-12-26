@@ -47,12 +47,12 @@ tmp
 *.war
 *.ear
 
+# js
+node_modules
+
 # other
 *.mo
 *.swp
 .project
 .pydevproject
-
-
-# js
-node_modules
+TAGS

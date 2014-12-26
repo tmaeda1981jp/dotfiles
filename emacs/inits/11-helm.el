@@ -157,3 +157,7 @@
 ;; https://github.com/ShingoFukuyama/helm-swoop
 (require 'helm-swoop)
 (global-set-key (kbd "C-s") 'helm-swoop)
+
+;; helm-etags-select
+(global-set-key (kbd "M-.") 'helm-etags-select)
+(global-set-key (kbd "M-,") 'pop-tag-mark)
