@@ -6,23 +6,33 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export ANT_HOME=/Users/tmaeda/ant
 export PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$PATH
 
-# ruby
-export PATH=$HOME/.rbenv/bin:$PATH
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+# anyenv
+if [ -d ${HOME}/.anyenv ] ; then
+    export PATH="$HOME/.anyenv/bin:$PATH"
+    eval "$(anyenv init -)"
+    for D in `/bin/ls $HOME/.anyenv/envs`
+    do
+        export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
+    done
+fi
 
-# python
-export PATH=$HOME/.pyenv/shims:$PATH
-eval "$(pyenv init -)";
+# # ruby
+# export PATH=$HOME/.rbenv/bin:$PATH
+# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# # python
+# export PATH=$HOME/.pyenv/shims:$PATH
+# eval "$(pyenv init -)";
+
+# # js(node)
+# export NODEBREW_ROOT=$HOME/.nodebrew
+# export PATH=$NODEBREW_ROOT/current/bin:$PATH
 
 # php
 export PATH=$HOME/.composer/vendor/bin:$PATH
 if [ -f ~/.phpbrew/bashrc ]; then
     source ~/.phpbrew/bashrc
 fi
-
-# js(node)
-export NODEBREW_ROOT=$HOME/.nodebrew
-export PATH=$NODEBREW_ROOT/current/bin:$PATH
 
 # haskell
 export HASKELL_HOME=$HOME/Library/Haskell

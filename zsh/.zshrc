@@ -67,9 +67,9 @@ alias pms='python manage.py shell'
 
 # js
 alias n='node'
-alias nodebrew='nocorrect nodebrew'
+#alias nodebrew='nocorrect nodebrew'
 alias npm='nocorrect npm'
-alias nb='nodebrew'
+#alias nb='nodebrew'
 alias b='bower'
 alias volo='nocorrect volo'
 alias grunt='nocorrect grunt'
@@ -298,4 +298,6 @@ setopt nolistbeep
 source ~/.zsh/percol.zsh
 source ~/.zsh/tmuxinator.zsh
 
-launchctl limit maxfiles 10480 10480
+#launchctl limit maxfiles 10480 10480
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
