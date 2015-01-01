@@ -53,35 +53,55 @@ if [ ! -d ${HOME}/.anyenv ] ; then
     # npm
     npm install bower grunt-cli volo jade mocha browserify jslint jshint gulp yo strongloop
     ndenv rehash
-
 else
-    echo "================================="
-    echo "anyenv has been already installed"
-    echo "================================="
+    echo -e "\033[1m[SKIPPED]\033[0m anyenv has been already installed"
 fi
+
+# 時間がかかるのであとでうまくやる方法を考える
+# とりあえずanyenvと一緒にやる
+
+# gem
+# gems=(
+#     bundler
+#     brewdler
+#     tmuxinator
+#     jekyll
+#     middleman
+#     compass
+#     sass
+#     rails
+#     rspec
+# )
+# for gem in ${gems[@]};
+# do
+#     gem install ${gem} --no-ri --no-rdoc
+# done
+# rbenv rehash
+
+# # pip
+# pip install percol ansible virtualenv django
+# pyenv rehash
+
+# # npm
+# npm install bower grunt-cli volo jade mocha browserify jslint jshint gulp yo strongloop
+# ndenv rehash
 
 # homebrew
 if [ ! -x /usr/local/bin/brew ]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 else
-    echo "==================================="
-    echo "Homebrew has been already installed"
-    echo "==================================="
-
+    echo -e "\033[1m[SKIPPED]\033[0m Homebrew has been already installed"
 fi
 
-
 # brewfile
-if which brewdle > /dev/null; then
+if [ ! -x $HOME/.anyenv/envs/rbenv/shims/brewdle ]; then
     ln -sf `PWD`/osx/Brewfile $HOME/Brewfile
     cd $HOME
     brewdle install
     brew cask alfred link
     cd $HOME/dotfiles
 else
-    echo "============"
-    echo "Skip brewdle"
-    echo "============"
+    echo -e "\033[1m[SKIPPED]\033[0m Brewdler has been already installed"
 fi
 
 # emacs
