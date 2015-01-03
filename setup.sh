@@ -28,7 +28,7 @@ if [ ! -d ${HOME}/.anyenv ] ; then
     ndenv install 0.10.35
     ndenv global 0.10.35
 
-    #gem
+    # gem
     gems=(
         bundler
         brewdler
@@ -86,7 +86,6 @@ fi
 # # npm
 # npm install bower grunt-cli volo jade mocha browserify jslint jshint gulp yo strongloop
 # ndenv rehash
-
 
 # homebrew
 if [ ! -x /usr/local/bin/brew ]; then
