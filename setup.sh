@@ -39,6 +39,7 @@ if [ ! -d ${HOME}/.anyenv ] ; then
         sass
         rails
         rspec
+        cocoapods
     )
     for gem in ${gems[@]};
     do
