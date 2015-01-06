@@ -8,13 +8,13 @@ ln -sf `PWD`/zsh/.zshenv $HOME/.zshenv
 if [ ! -d ${HOME}/.anyenv ] ; then
     git clone https://github.com/riywo/anyenv ~/.anyenv
 
-    exec $SHELL -l
+    source ~/.zshenv
 
     anyenv install rbenv
     anyenv install pyenv
     anyenv install ndenv
 
-    exec $SHELL -l
+    source ~/.zshenv
 
     # rbenv
     rbenv install 2.1.0
