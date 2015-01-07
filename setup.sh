@@ -40,6 +40,8 @@ if [ ! -d ${HOME}/.anyenv ] ; then
         rails
         rspec
         cocoapods
+        sinatra
+        sinatra-reloader
     )
     for gem in ${gems[@]};
     do
