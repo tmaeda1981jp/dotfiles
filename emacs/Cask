@@ -66,6 +66,7 @@
 (depends-on "prodigy")
 (depends-on "projectile")
 (depends-on "quickrun")
+(depends-on "restclient")
 (depends-on "rhtml-mode")
 (depends-on "rsense")
 (depends-on "rspec-mode")
@@ -85,4 +86,3 @@
 (depends-on "yaml-mode")
 (depends-on "yasnippet")
 (depends-on "zencoding-mode")
-
