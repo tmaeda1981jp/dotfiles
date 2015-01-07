@@ -14,4 +14,5 @@
 (push '("*Inf-Haskell*") popwin:special-display-config)
 (push '("*Flycheck errors*") popwin:special-display-config)
 (push '("*Codic Result*") popwin:special-display-config)
+(push '("*HTTP Response*") popwin:special-display-config)
 (push '("*ert*") popwin:special-display-config)
