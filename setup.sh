@@ -60,6 +60,14 @@ else
     echo -e "\033[1m[SKIPPED]\033[0m anyenv has been already installed"
 fi
 
+# rbenv-binstubs
+if [ ! -d ${HOME}/.anyenv/envs/rbenv/plugins/rbenv-binstubs ] ; then
+    git clone https://github.com/ianheggie/rbenv-binstubs.git ${HOME}/.anyenv/envs/rbenv/plugins/rbenv-binstubs
+    rbenv rehash
+else
+    echo -e "\033[1m[SKIPPED]\033[0m rbenv-binstubs has been already installed"
+fi
+
 # 時間がかかるのであとでうまくやる方法を考える
 # とりあえずanyenvと一緒にやる
 
