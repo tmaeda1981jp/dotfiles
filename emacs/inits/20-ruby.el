@@ -7,6 +7,7 @@
                '("Brewfile$" . ruby-mode)
                '("Guardfile$" . ruby-mode)
                '("gemspec$" . ruby-mode)
+               '(".irbrc$" . ruby-mode)
                ) auto-mode-alist))
 
 ;; ruby-block.el
