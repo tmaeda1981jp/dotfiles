@@ -57,6 +57,7 @@ brew 'cmigemo'
 brew 'ricty'
 brew 'graphviz'
 brew 'ctags'
+brew 'wp-cli'
 
 # mac apps
 cask 'google-chrome'
