@@ -222,7 +222,13 @@ alias sed='gsed'
 # awk
 alias awk='gawk'
 
+# tree
 alias tree='nocorrect tree'
+
+# cat
+if type pygmentize > /dev/null 2>&1; then
+    alias cat='pygmentize -O style=monokai -f console256 -g'
+fi
 
 autoload -Uz add-zsh-hook
 autoload -Uz colors
