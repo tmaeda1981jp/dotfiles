@@ -59,6 +59,7 @@ brew 'graphviz'
 brew 'ctags'
 brew 'wp-cli'
 brew 'ghostscript'
+brew 'pyenv-virtualenv'
 
 # mac apps
 cask 'google-chrome'
