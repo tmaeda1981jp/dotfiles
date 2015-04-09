@@ -58,6 +58,7 @@ brew 'ricty'
 brew 'graphviz'
 brew 'ctags'
 brew 'wp-cli'
+brew 'ghostscript'
 
 # mac apps
 cask 'google-chrome'
