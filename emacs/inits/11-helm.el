@@ -10,7 +10,8 @@
 ;;                   helm-source-projectile-files-list ;;重い
                    helm-source-files-in-current-dir
                    helm-source-buffers-list
-                   helm-source-locate
+;                   helm-source-locate
+                   helm-source-mac-spotlight
                    )
         :buffer "*helm*"))
   ;; (helm-other-buffer
