@@ -60,6 +60,7 @@ brew 'ctags'
 brew 'wp-cli'
 brew 'ghostscript'
 brew 'pyenv-virtualenv'
+brew 'rsync'
 
 # mac apps
 cask 'google-chrome'
