@@ -253,6 +253,7 @@
   ;; http://qiita.com/items/17464754663936cb7895
   (when (require 'color-theme-molokai)
     (color-theme-molokai)))
+;; TODO http://d.hatena.ne.jp/syohex/20121211/1355231365
 
 ;; 同名ファイルを識別しやすくする
 (require 'uniquify)
