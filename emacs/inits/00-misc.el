@@ -311,6 +311,7 @@
 ;; tramp
 (require 'tramp)
 (setq tramp-default-method "ssh")
+(setq-default tramp-persistency-file-name nil)
 
 ;; ---------------------------------------------------------------
 ;; 半角スペース，全角スペース，タブの見える化

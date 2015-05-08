@@ -61,6 +61,7 @@ brew 'wp-cli'
 brew 'ghostscript'
 brew 'pyenv-virtualenv'
 brew 'ssh-copy-id'
+brew 'rsync'
 
 # mac apps
 cask 'google-chrome'
