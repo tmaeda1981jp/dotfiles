@@ -8,7 +8,7 @@
 
 ;; ~/todoが存在しない場合は以下を評価
 ;; (mkdir "~/todo" t)
-(setq org-default-notes-file "~/wiki/notes/mytodo.org")
+;;(setq org-default-notes-file "~/wiki/notes/mytodo.org")
                                         ;(setq org-agenda-files '("~/todo/mytodo.org"))
 (setq org-directory "~/wiki/notes")
 (setq org-agenda-files (list org-directory))
@@ -24,26 +24,10 @@
       '((sequence "TODO(t)" "WAIT(w)" "|" "DONE(d)" "SOMEDAY(s)")))
 
 (setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/wiki/notes/mytodo.org" "Tasks")
+      '(("t" "inbox" entry (file+headline "~/Dropbox/inbox.org" "inbox")
          "**** TODO %?\n   %i\n  %t\n")
-        ("m" "Memo" entry (file+headline "~/wiki/notes/memo.org" "Memo")
-         "**** %U - %?\n  %i\n" :prepend t :empty-lines 1)
-        ;; ("d" "Diary" entry (file+headline "~/wiki/notes/diary.org" "Dialy")
-        ;;  "**** %U - %^{Title} :Diary:\n" :prepend t :empty-lines 1)
-        ("k" "Book" entry (file+headline "~/wiki/notes/books.org" "Books")
-         "**** %U - %^{Title} :Books:\n" :prepend t :empty-lines 1)
-        ("v" "Movie" entry (file+headline "~/wiki/notes/movies.org" "Movies")
-         "**** %U - %^{Title} :Movies:\n" :prepend t :empty-lines 1)
-
-        ;; (org-captureは1file=1記事の前提がない)
-        ;; ("b" "Blog" entry (file ((lambda ()
-        ;;                            (let ((basedir "~/blog/")
-        ;;                                  (date (read-string "DATE: " (format-time-string "%Y/%m/%d")))
-        ;;                                  (title (read-string "FILE_NAME: ")))
-        ;;                              (shell-command-to-string (format "mkdir -p %s/%s" basedir date))
-        ;;                              (format "%s/%s/%s.%s.org" basedir date title (format-time-string "%Y%m%d%H%M%S"))))) "Blog")
-        ;;  "* :Blog:\n\n%U" :append t :empty-lines 1)
-        ))
+        ("m" "memo" entry (file+headline "~/wiki/notes/memo.org" "memo")
+         "**** %U - %?\n  %i\n" :prepend t :empty-lines 1)))
 
 ;; CLOSEの時にtimestamp
 (setq org-log-done 'time)
@@ -52,6 +36,27 @@
 
 ;; S-upの設定
 (define-key input-decode-map "\e[1;2A" [S-up])
+(define-key input-decode-map "\e[1;2B" [S-down])
+(define-key input-decode-map "\e[1;2C" [S-right])
+(define-key input-decode-map "\e[1;2D" [S-left])
 
 ;; コードブロックをその言語のモードでハイライトする
 (setq org-src-fontify-natively t)
+
+;; from emacsメルマガ
+;;; 時刻の記録をagendaに表示させる
+(setq org-agenda-start-with-log-mode t)
+(setq org-agenda-span 30)
+;;(setq org-agenda-files '("~/Dropbox/org/inbox.org" "~/Dropbox/org/daily-projects.org"))
+(setq org-directory "~/Dropbox/org/")
+(setq org-agenda-files (list org-directory))
+;;; C-c a aでagendaのメニューを表示する
+;;; agendaには、習慣・スケジュール・TODOを表示させる
+(setq org-agenda-custom-commands
+      '(("a" "Agenda and all TODO's"
+         ((tags "project-CLOCK=>\"<today>\"|repeatable") (agenda "") (alltodo)))))
+;;; <f6>で直接org習慣仕事術用agendaを起動させる
+(defun org-agenda-default ()
+  (interactive)
+  (org-agenda nil "a"))
+(global-set-key (kbd "<f6>") 'org-agenda-default)
