@@ -53,3 +53,47 @@
   (interactive)
   (org-agenda nil "a"))
 (global-set-key (kbd "<f6>") 'org-agenda-default)
+
+(add-to-list 'org-agenda-custom-commands
+             '("D" agenda ""
+               (;; 1日分だけ表示する
+                (org-agenda-span 1)
+                ;; agenda各行の行頭のスペースをなくす
+                (org-agenda-prefix-format '((agenda . "%?-12t% s")))
+                ;; グリッドを表示しない
+                (org-agenda-use-time-grid nil)
+                ;; clockを表示する
+                (org-agenda-start-with-log-mode t)
+                (org-agenda-show-log 'clockcheck)
+                ;; clockの総計を表でまとめる
+                (org-agenda-start-with-clockreport-mode t)
+                (org-agenda-clockreport-mode t))))
+
+
+(defvar org-review-diary-file "~/Dropbox/org/review-diary.org")
+(defvar org-review-diary-use-follow-mode nil)
+(defun org-review-diary ()
+  (interactive)
+  (find-file org-review-diary-file)     ; ファイルを開き
+  (goto-char (point-max))               ; 末尾に移動し
+  (recenter 0)                          ; 画面最上部に持っていき
+  (when org-review-diary-use-follow-mode ;後述
+    (follow-mode-setup))
+  (insert "* ")                         ;新しい見出し作成
+  (save-excursion
+    (org-insert-time-stamp (current-time) t t) ;現在時刻
+    (insert "\n#+BEGIN_QUOTE\n")        ;QUOTEブロックで
+    (let (org-agenda-sticky)            ;agendaを囲む
+      (insert (save-window-excursion    ;裏でagenda (D)を
+                (org-agenda nil "D")    ;起動して
+                (unwind-protect
+                    (buffer-string)     ;*Org Agenda*バッファの内容を
+                  (kill-this-buffer))))) ;挿入してからバッファを削除
+    (insert "#+END_QUOTE\n\n")))
+
+(setq org-review-diary-use-follow-mode t)
+(defun follow-mode-setup ()
+  (interactive)
+  (delete-other-windows)
+  (split-window-horizontally)
+  (follow-mode 1))
