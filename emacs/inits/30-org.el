@@ -18,9 +18,11 @@
 
 (setq org-capture-templates
       '(("t" "inbox" entry (file+headline "~/Dropbox/org/inbox.org" "inbox")
-         "**** TODO %?\n   %i\n  %t\n")
+         "** TODO %?\n   %i\n  %t\n")
         ("m" "memo" entry (file+headline "~/wiki/notes/memo.org" "memo")
-         "**** %U - %?\n  %i\n" :prepend t :empty-lines 1)))
+         "** %U - %?\n  %i\n" :prepend t :empty-lines 1)
+        ("b" "buy" entry (file+headline "~/Dropbox/org/buy.org" "buy")
+         "** TODO %?\n   %i\n")))
 
 ;; CLOSEの時にtimestamp
 (setq org-log-done 'time)
@@ -39,7 +41,7 @@
 ;; from emacsメルマガ
 ;;; 時刻の記録をagendaに表示させる
 (setq org-agenda-start-with-log-mode t)
-(setq org-agenda-span 30)
+(setq org-agenda-span 15)
 ;;(setq org-agenda-files '("~/Dropbox/org/inbox.org" "~/Dropbox/org/daily-projects.org"))
 (setq org-directory "~/Dropbox/org/")
 (setq org-agenda-files (list org-directory))
