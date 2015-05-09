@@ -35,3 +35,5 @@
  ;; If there is more than one, they won't work right.
  )
 (put 'downcase-region 'disabled nil)
+
+(setq magit-last-seen-setup-instructions "1.4.0")
