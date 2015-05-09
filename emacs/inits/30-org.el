@@ -17,7 +17,7 @@
       '((sequence "TODO(t)" "WAIT(w)" "|" "DONE(d)" "SOMEDAY(s)")))
 
 (setq org-capture-templates
-      '(("t" "inbox" entry (file+headline "~/Dropbox/inbox.org" "inbox")
+      '(("t" "inbox" entry (file+headline "~/Dropbox/org/inbox.org" "inbox")
          "**** TODO %?\n   %i\n  %t\n")
         ("m" "memo" entry (file+headline "~/wiki/notes/memo.org" "memo")
          "**** %U - %?\n  %i\n" :prepend t :empty-lines 1)))
