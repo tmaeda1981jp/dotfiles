@@ -8,6 +8,7 @@ emacs/.cask
 emacs/recentf
 emacs/projectile-bookmarks.eld
 emacs/inits/99-localsettings.el
+emacs/var
 *.elc
 tramp
 .org-id-locations

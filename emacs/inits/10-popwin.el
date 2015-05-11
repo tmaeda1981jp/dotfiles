@@ -11,6 +11,7 @@
 (push '("*markdown-output*") popwin:special-display-config)
 (push '("*magit-edit-log*") popwin:special-display-config)
 (push '("^\*magit: .+\*$" :regexp t) popwin:special-display-config)
+(push '("^\*gist .+\*$" :regexp t) popwin:special-display-config)
 (push '("*Inf-Haskell*") popwin:special-display-config)
 (push '("*Flycheck errors*") popwin:special-display-config)
 (push '("*Codic Result*") popwin:special-display-config)
