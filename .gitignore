@@ -9,6 +9,9 @@ emacs/recentf
 emacs/projectile-bookmarks.eld
 emacs/inits/99-localsettings.el
 emacs/var
+emacs/org-gcal
+emacs/secret-lisp
+emacs/inits/31-calendar.el
 *.elc
 tramp
 .org-id-locations

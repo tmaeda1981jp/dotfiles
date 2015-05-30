@@ -60,6 +60,7 @@
 (depends-on "multiple-cursors")
 (depends-on "nodejs-repl")
 (depends-on "open-junk-file")
+(depends-on "org-gcal")
 (depends-on "org-plus-contrib")
 (depends-on "paredit")
 (depends-on "php-mode")
