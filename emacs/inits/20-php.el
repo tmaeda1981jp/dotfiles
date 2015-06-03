@@ -1,4 +1,6 @@
-(setq php-mode-coding-style (quote psr2))
+;; php-modeのコーディングスタイル設定
+;; 保存時に自動整形したい場合はコメントアウト
+;;(setq php-mode-coding-style (quote psr2))
 (require 'php-mode)
 (scroll-bar-mode -1)
 (add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
