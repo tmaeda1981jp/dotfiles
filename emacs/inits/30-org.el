@@ -22,7 +22,12 @@
         ("m" "memo" entry (file+headline "~/wiki/notes/memo.org" "memo")
          "** %U - %?\n  %i\n" :prepend t :empty-lines 1)
         ("b" "buy" entry (file+headline "~/Dropbox/org/buy.org" "buy")
-         "** TODO %?\n   %i\n")))
+         "** TODO %?\n   %i\n")
+        ("w" "blog" entry (file+headline "~/Dropbox/org/blog.org" "blog")
+         "** TODO %?\n   %i\n")
+        ("f" "food" entry (file+headline "~/Dropbox/org/food.org" "food")
+         "** %U - %?\n  %i\n" :prepend t :empty-lines 1)
+        ))
 
 ;; CLOSEの時にtimestamp
 (setq org-log-done 'time)
