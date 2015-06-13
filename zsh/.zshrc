@@ -106,6 +106,7 @@ alias gsl='g stash list'
 alias gss='g stash'
 alias gst='g st'
 alias gbr='g branch'
+alias gpl='g pull'
 
 # git svn
 alias gsv='g svn'
