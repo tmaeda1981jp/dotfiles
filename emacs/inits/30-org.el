@@ -16,10 +16,11 @@
 (setq org-todo-keywords
       '((sequence "TODO(t)" "WAIT(w)" "|" "DONE(d)" "SOMEDAY(s)")))
 
+(setq today (format-time-string "%Y-%m-%d"))
 (setq org-capture-templates
       '(("t" "inbox" entry (file+headline "~/Dropbox/org/inbox.org" "inbox")
          "** TODO %?\n   %i\n  %t\n")
-        ("m" "memo" entry (file+headline "~/wiki/notes/memo.org" "memo")
+        ("m" "memo" entry (file+headline (format "~/Dropbox/org/%s-memo.org" today) "memo")
          "** %U - %?\n  %i\n" :prepend t :empty-lines 1)
         ("b" "buy" entry (file+headline "~/Dropbox/org/buy.org" "buy")
          "** TODO %?\n   %i\n")
