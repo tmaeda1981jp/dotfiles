@@ -49,6 +49,7 @@ alias rg='r g'
 alias rc='r c'
 alias rgs='r g scaffold'
 alias rake="noglob rake"
+alias be='bundle exec'
 
 # python
 alias bpython='nocorrect bpython'
