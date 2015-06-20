@@ -17,6 +17,8 @@
       '((sequence "TODO(t)" "WAIT(w)" "|" "DONE(d)" "SOMEDAY(s)")))
 
 (setq today (format-time-string "%Y-%m-%d"))
+(defun my-notes-capture-template ()
+  (format "#+TITLE: %%?\n#+DATE: %s\n#+CATEGORY: misc\n#+LAYOUT: post\n" (format-time-string "%Y-%m-%d %H:%M:%S")))
 (setq org-capture-templates
       '(("t" "inbox" entry (file+headline "~/Dropbox/org/inbox.org" "inbox")
          "** TODO %?\n   %i\n  %t\n")
@@ -28,7 +30,9 @@
          "** TODO %?\n   %i\n")
         ("f" "food" entry (file+headline "~/Dropbox/org/food.org" "food")
          "** %U - %?\n  %i\n" :prepend t :empty-lines 1)
-        ))
+        ("c" "lifelog" plain (file (format "~/notes/_posts/%s.org" (format-time-string "%Y-%m-%d-%H%M%S")) "lifelog")
+         (function my-notes-capture-template)
+        )))
 
 ;; CLOSEの時にtimestamp
 (setq org-log-done 'time)
