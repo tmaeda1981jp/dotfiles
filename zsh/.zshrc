@@ -159,6 +159,7 @@ alias mp='make latexpdfja'
 # jekyll
 alias j='jekyll'
 alias jb='jekyll build'
+alias jsv='jekyll s'
 alias jw='jekyll serve --watch'
 
 # mac
