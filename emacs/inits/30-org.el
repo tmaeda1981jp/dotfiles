@@ -56,7 +56,7 @@
         ("m" "movie" plain (file (format "~/notes/_posts/%s_movie.org" (format-time-string "%Y-%m-%d-%H%M%S")) "movie")
          (function my-notes-capture-template)
          :category "movie")
-        ("m" "misc" plain (file (format "~/notes/_posts/%s_misc.org" (format-time-string "%Y-%m-%d-%H%M%S")) "misc")
+        ("x" "misc" plain (file (format "~/notes/_posts/%s_misc.org" (format-time-string "%Y-%m-%d-%H%M%S")) "misc")
          (function my-notes-capture-template)
          :category "misc")
         ))
