@@ -450,3 +450,6 @@
   (force-mode-line-update))
 (global-set-key (kbd "M-g M-d") 'toggle-cleanup-spaces)
 (toggle-cleanup-spaces)
+
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
