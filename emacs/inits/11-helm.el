@@ -63,7 +63,12 @@
 ;; ---------------------------------------------------------------
 (eval-after-load 'helm
   '(progn
-     (define-key helm-map (kbd "C-h") 'delete-backward-char)))
+     (define-key helm-map (kbd "C-h") 'delete-backward-char)
+     (define-key helm-read-file-map (kbd "C-h") 'delete-backward-char)
+     (define-key helm-find-files-map (kbd "C-h") 'delete-backward-char)
+     (define-key helm-find-files-map (kbd "TAB") 'helm-execute-persistent-action)
+     (define-key helm-read-file-map (kbd "TAB") 'helm-execute-persistent-action)
+     ))
 
 ;; ---------------------------------------------------------------
 ;; mini-bufferでC-kを押すと先頭から削除される問題の対処
@@ -162,3 +167,6 @@
 ;; helm-etags-select
 (global-set-key (kbd "M-.") 'helm-etags-select)
 (global-set-key (kbd "M-,") 'pop-tag-mark)
+
+;; C-x C-fでhelm-find-files
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
