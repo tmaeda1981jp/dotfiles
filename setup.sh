@@ -50,7 +50,7 @@ if [ ! -d ${HOME}/.anyenv ] ; then
     rbenv rehash
 
     # pip
-    pip install percol ansible virtualenv django pygments
+    pip install percol ansible virtualenv django pygments awscli
     pyenv rehash
 
     # npm
