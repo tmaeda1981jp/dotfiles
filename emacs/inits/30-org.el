@@ -137,3 +137,9 @@
   (delete-other-windows)
   (split-window-horizontally)
   (follow-mode 1))
+
+(setq org-mode-hook 'turn-on-auto-fill)
+(add-hook 'org-mode-hook
+          '(lambda ()
+             (progn (set-fill-column 60)
+                    (turn-on-auto-fill))))
