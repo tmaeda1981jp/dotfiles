@@ -137,6 +137,7 @@ ln -sf `PWD`/vim/.vimrc $HOME/.vimrc
 # git
 ln -sf `PWD`/git/.gitignore $HOME/.gitignore
 ln -sf `PWD`/git/.gitconfig $HOME/.gitconfig
+ln -sf `PWD`/git/.tigrc $HOME/.tigrc
 
 # tmux
 ln -sf `PWD`/tmux/.tmux.conf $HOME/.tmux.conf
