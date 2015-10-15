@@ -62,6 +62,7 @@ brew 'ghostscript'
 brew 'pyenv-virtualenv'
 brew 'ssh-copy-id'
 brew 'rsync'
+brew 'icdiff'
 
 # mac apps
 cask 'google-chrome'
