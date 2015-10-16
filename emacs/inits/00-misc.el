@@ -275,8 +275,7 @@
 (key-chord-mode 1)
 (setq key-chord-two-keys-delay 0.05)
 
-(key-chord-define-global "gl" 'goto-line)
-(key-chord-define-global "rt" 'replace-string)
+(key-chord-define-global ";r" 'replace-string)
 
 (global-set-key (kbd "C-c l") 'recenter)
 
