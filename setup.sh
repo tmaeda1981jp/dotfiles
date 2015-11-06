@@ -54,7 +54,7 @@ if [ ! -d ${HOME}/.anyenv ] ; then
     pyenv rehash
 
     # npm
-    npm install bower grunt-cli volo jade mocha browserify jslint jshint gulp yo express-generator strongloop
+    npm install bower grunt-cli volo jade mocha browserify jslint jshint gulp yo
     ndenv rehash
 else
     echo -e "\033[1m[SKIPPED]\033[0m anyenv has been already installed"
