@@ -78,6 +78,8 @@ alias grunt='nocorrect grunt'
 # php
 alias phpunit='phpunit --colors'
 alias pa='php artisan'
+alias pam='php artisan migrate'
+alias pamm='php artisan make:migration'
 
 # git/svn
 export EDITOR="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
