@@ -6,6 +6,9 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export ANT_HOME=/Users/tmaeda/ant
 export PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$PATH
 
+# go
+export GOPATH=$HOME/.go
+
 # anyenv
 if [ -d ${HOME}/.anyenv ] ; then
     export PATH="$HOME/.anyenv/bin:$PATH"
