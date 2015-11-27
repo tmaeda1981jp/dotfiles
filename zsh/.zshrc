@@ -223,7 +223,7 @@ alias clih='nocorrect chrome-cli --help'
 alias clils='nocorrect chrome-cli list tabs'
 
 # sed
-alias sed='gsed'
+#alias sed='gsed'
 
 # awk
 alias awk='gawk'
