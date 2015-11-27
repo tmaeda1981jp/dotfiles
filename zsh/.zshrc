@@ -78,6 +78,8 @@ alias grunt='nocorrect grunt'
 # php
 alias phpunit='phpunit --colors'
 alias pa='php artisan'
+alias pam='php artisan migrate'
+alias pamm='php artisan make:migration'
 
 # git/svn
 export EDITOR="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
@@ -221,7 +223,7 @@ alias clih='nocorrect chrome-cli --help'
 alias clils='nocorrect chrome-cli list tabs'
 
 # sed
-alias sed='gsed'
+#alias sed='gsed'
 
 # awk
 alias awk='gawk'
@@ -233,6 +235,9 @@ alias tree='nocorrect tree'
 if type pygmentize > /dev/null 2>&1; then
     alias cat='pygmentize -O style=monokai -f console256 -g'
 fi
+
+# awscli
+alias aws='nocorrect aws'
 
 autoload -Uz add-zsh-hook
 autoload -Uz colors

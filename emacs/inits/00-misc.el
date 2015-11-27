@@ -11,8 +11,9 @@
 ;; -----------------------------------------------
 ;; encoding
 ;; -----------------------------------------------
-(setq file-name-coding-system 'utf-8)
-(setq locale-coding-system 'utf-8)
+(prefer-coding-system 'utf-8-unix)
+(setq file-name-coding-system 'utf-8-unix)
+(setq locale-coding-system 'utf-8-unix)
 (setq system-uses-terminfo nil)
 
 ;; -----------------------------------------------
@@ -274,8 +275,7 @@
 (key-chord-mode 1)
 (setq key-chord-two-keys-delay 0.05)
 
-(key-chord-define-global "gl" 'goto-line)
-(key-chord-define-global "rt" 'replace-string)
+(key-chord-define-global ";r" 'replace-string)
 
 (global-set-key (kbd "C-c l") 'recenter)
 
