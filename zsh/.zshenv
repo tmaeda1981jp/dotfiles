@@ -31,6 +31,9 @@ fi
 # export NODEBREW_ROOT=$HOME/.nodebrew
 # export PATH=$NODEBREW_ROOT/current/bin:$PATH
 
+#hub
+eval "$(hub alias -s)"
+
 # gettext
 export PATH=/usr/local/opt/gettext/bin:$PATH
 
