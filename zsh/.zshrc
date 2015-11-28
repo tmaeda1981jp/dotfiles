@@ -111,6 +111,10 @@ alias gst='g st'
 alias gbr='g branch'
 alias gpl='g pull'
 
+# hub
+alias bug='hub issue create -l bug -m '
+alias is='hub issue create -m '
+
 # git svn
 alias gsv='g svn'
 alias gsvr='g svn rebase'
