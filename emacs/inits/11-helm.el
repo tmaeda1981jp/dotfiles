@@ -9,7 +9,7 @@
                    helm-source-recentf
 ;;                   helm-source-projectile-files-list ;;重い
                    helm-source-files-in-current-dir
-                   helm-source-buffers-list
+;;                   helm-source-buffers-list
 ;                   helm-source-locate
                    helm-source-mac-spotlight
                    )
@@ -22,7 +22,8 @@
   ;;    )
   ;;  " *helm*"))
 (global-set-key (kbd "C-l") 'my:helm)
-(setq recentf-max-saved-items 15)
+(global-set-key (kbd "M-l") 'helm-buffers-list)
+(setq recentf-max-saved-items 30)
 (setq helm-truncate-lines t)
 
 (require 'helm-anything)
