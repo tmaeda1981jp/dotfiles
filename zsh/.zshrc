@@ -112,7 +112,7 @@ alias gbr='g branch'
 alias gpl='g pull'
 
 # hub
-alias bug='hub issue create -l bug -m '
+alias bug='hub issue create -l 不具合 -m '
 alias is='hub issue create -m '
 
 # git svn
