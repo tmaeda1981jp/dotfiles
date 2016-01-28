@@ -5,10 +5,11 @@
 (eval-after-load "flycheck"
   '(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))
 
+(eval-after-load 'flycheck
+  '(define-key flycheck-mode-map (kbd "C-c C-y") 'helm-flycheck))
+
 (global-set-key "\M-e" 'flycheck-next-error)
 (global-set-key "\M-E" 'flycheck-prev-error)
-(global-set-key "\C-c\C-y" 'list-flycheck-errors)
-
 (setq flycheck-display-errors-delay 0.3)
 
 ;; ;; setting for js

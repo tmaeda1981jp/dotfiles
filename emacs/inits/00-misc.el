@@ -66,11 +66,11 @@
 (setq gc-cons-threshold (* 10 gc-cons-threshold))
 
 ;; タブ幅を2に設定
-(setq-default tab-width 2)
+(setq-default tab-width 4)
 
 ;; タブ幅の倍数を設定
 (setq tab-stop-list
-      '(2 4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
+      '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60 64 68 72 76 80 84 88 92 96 100 104 108 112 116 120))
 
 ;; タブではなくスペースを使う
 (setq-default indent-tabs-mode nil)
@@ -453,3 +453,4 @@
 
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
+(setq neo-smart-open t)
