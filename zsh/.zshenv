@@ -8,6 +8,7 @@ export PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$PATH
 
 # go
 export GOPATH=$HOME/.go
+export PATH=$GOPATH/bin:$PATH
 
 # anyenv
 if [ -d ${HOME}/.anyenv ] ; then
