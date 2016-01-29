@@ -6,10 +6,6 @@ export JAVA_HOME=$(/usr/libexec/java_home)
 export ANT_HOME=/Users/tmaeda/ant
 export PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$PATH
 
-# go
-export GOPATH=$HOME/.go
-export PATH=$GOPATH/bin:$PATH
-
 # anyenv
 if [ -d ${HOME}/.anyenv ] ; then
     export PATH="$HOME/.anyenv/bin:$PATH"
@@ -19,6 +15,16 @@ if [ -d ${HOME}/.anyenv ] ; then
         export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
     done
 fi
+
+# go
+export GOPATH=$HOME/.go
+export PATH=$HOME/.go/bin:$PATH
+export GOROOT=/usr/local/opt/go/libexec
+export GOENVGOROOT=$HOME/.goenvs
+export GOENVTARGET=$HOME/bin
+export GOENVHOME=$HOME/work/go
+source $GOPATH/src/bitbucket.org/ymotongpoo/goenv/shellscripts/goenvwrapper.sh
+
 
 # # ruby
 # export PATH=$HOME/.rbenv/bin:$PATH
