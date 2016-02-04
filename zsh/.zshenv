@@ -17,26 +17,18 @@ if [ -d ${HOME}/.anyenv ] ; then
 fi
 
 # go
-export GOPATH=$HOME/.go
-export PATH=$HOME/.go/bin:$PATH
 export GOROOT=/usr/local/opt/go/libexec
+export PATH=$GOROOT/bin:$PATH
+
 export GOENVGOROOT=$HOME/.goenvs
 export GOENVTARGET=$HOME/bin
 export GOENVHOME=$HOME/work/go
-source $GOPATH/src/bitbucket.org/ymotongpoo/goenv/shellscripts/goenvwrapper.sh
 
-
-# # ruby
-# export PATH=$HOME/.rbenv/bin:$PATH
-# if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# # python
-# export PATH=$HOME/.pyenv/shims:$PATH
-# eval "$(pyenv init -)";
-
-# # js(node)
-# export NODEBREW_ROOT=$HOME/.nodebrew
-# export PATH=$NODEBREW_ROOT/current/bin:$PATH
+#source $HOME/goenv/shellscripts/goenvwrapper.sh
+# TODO goofを使うために必要だけれど、読み込む際に以下のエラー
+# /Users/tmaeda1981jp/goenv/shellscripts/goenvwrapper.sh:436: command not found: compdef
+# とりあえずエラー出力を無視する
+source $HOME/goenv/shellscripts/goenvwrapper.sh 2> /dev/null
 
 #hub
 eval "$(hub alias -s)"
