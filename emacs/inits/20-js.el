@@ -4,6 +4,7 @@
 ;; ------------------------------------------------------------------------------
 (autoload 'js2-mode "js2-mode" nil t)
 (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx$'" . js2-jsx-mode))
 
 (eval-after-load 'js2-mode
   '(progn
@@ -55,3 +56,6 @@ See URL `https://github.com/FND/jslint-reporter'."
             (flycheck-add-next-checker 'javascript-jslint-reporter 'javascript-jshint)
             (flycheck-mode)
             (hs-minor-mode 1)))
+
+(flycheck-add-mode 'javascript-eslint 'js2-jsx-mode)
+(add-hook 'js2-jsx-mode-hook 'flycheck-mode)
