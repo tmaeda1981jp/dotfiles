@@ -27,13 +27,38 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(safe-local-variable-values (quote ((encoding . utf-8)))))
+ '(add-log-full-name "tmaeda1981jp")
+ '(add-log-mailing-address "tmaeda1981jp@gmail.com")
+ '(anzu-deactivate-region t)
+ '(anzu-mode-lighter "")
+ '(anzu-search-threshold 1000)
+ '(google-translate-default-source-language "ja")
+ '(google-translate-default-target-language "en")
+ '(haskell-notify-p t)
+ '(haskell-stylish-on-save t)
+ '(haskell-tags-on-save t)
+ '(rst-level-face-base-light 50)
+ '(safe-local-variable-values (quote ((encoding . utf-8))))
+ '(yas-trigger-key "TAB"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(markdown-header-face-1 ((t (:inherit org-level-1))))
+ '(markdown-header-face-2 ((t (:inherit org-level-2))))
+ '(markdown-header-face-3 ((t (:inherit org-level-3))))
+ '(markdown-header-face-4 ((t (:inherit org-level-4))))
+ '(markdown-header-face-5 ((t (:inherit org-level-5))))
+ '(markdown-header-face-6 ((t (:inherit org-level-6))))
+ '(rst-level-1-face ((t (:foreground "LightSkyBlue"))) t)
+ '(rst-level-2-face ((t (:foreground "LightGoldenrod"))) t)
+ '(rst-level-3-face ((t (:foreground "Cyan1"))) t)
+ '(rst-level-4-face ((t (:foreground "chocolate1"))) t)
+ '(rst-level-5-face ((t (:foreground "PaleGreen"))) t)
+ '(rst-level-6-face ((t (:foreground "Aquamarine"))) t)
+ '(whitespace-space-after-tab ((t (:background "color-234" :foreground "yellow"))))
+ '(whitespace-space-before-tab ((t (:background "color-234" :foreground "yellow")))))
 (put 'downcase-region 'disabled nil)
 
 (setq magit-last-seen-setup-instructions "1.4.0")
