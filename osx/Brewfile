@@ -65,6 +65,7 @@ brew 'ssh-copy-id'
 brew 'rsync'
 brew 'icdiff'
 brew 'hub'
+brew 'ip'
 
 # mac apps
 cask 'google-chrome'
