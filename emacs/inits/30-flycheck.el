@@ -2,11 +2,12 @@
 
 (require 'flycheck-color-mode-line)
 
-(eval-after-load "flycheck"
+(eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook 'flycheck-color-mode-line-mode))
 
 (eval-after-load 'flycheck
-  '(define-key flycheck-mode-map (kbd "C-c C-y") 'helm-flycheck))
+  '(define-key flycheck-mode-map (kbd "C-c C-y") 'flycheck-list-errors))
+  ;; '(define-key flycheck-mode-map (kbd "C-c C-y") 'helm-flycheck))
 
 (global-set-key "\M-e" 'flycheck-next-error)
 (global-set-key "\M-E" 'flycheck-prev-error)
