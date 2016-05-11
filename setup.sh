@@ -144,7 +144,7 @@ fi
 ln -sf `PWD`/tmux/tmuxinator $HOME/.tmuxinator
 
 # bower
-ln -sf `PWD`/bower/.bowerrc $HOME/.bowerrc
+#ln -sf `PWD`/bower/.bowerrc $HOME/.bowerrc
 
 # python
 if [ ! -d $HOME/.config/bpython ]; then
@@ -158,20 +158,20 @@ ln -sf `PWD`/python/pylint/.pylintrc $HOME/.pylintrc
 ln -sf `PWD`/ruby/gem/.gemrc $HOME/.gemrc
 
 ## rubocop
-ln -sf `PWD`/ruby/rubocop/.rubocop.yml $HOME/.rubocop.yml
+#ln -sf `PWD`/ruby/rubocop/.rubocop.yml $HOME/.rubocop.yml
 
 ## rspec
-ln -sf `PWD`/ruby/rspec/.rspec $HOME/.rspec
+#ln -sf `PWD`/ruby/rspec/.rspec $HOME/.rspec
 
 # php
 ## boris
 ln -sf `PWD`/php/boris/.borisrc $HOME/.borisrc
 
 # htmltidy
-ln -sf `PWD`/html/.tidyrc $HOME/.tidyrc
+#ln -sf `PWD`/html/.tidyrc $HOME/.tidyrc
 
 # ag
-ln -sf `PWD`/ag/.agignore $HOME/.agignore
+#ln -sf `PWD`/ag/.agignore $HOME/.agignore
 
 # ghci
 ln -sf `PWD`/ghci/.ghci $HOME/.ghci
