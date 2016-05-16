@@ -108,7 +108,7 @@ alias grm='g rebase master'
 alias gsl='g stash list'
 alias gss='g stash'
 alias gs='g st'
-alias gst='g st --uno'
+alias gst='g st -uno'
 alias gbr='g branch'
 alias gpl='g pull'
 
