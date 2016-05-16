@@ -9,7 +9,7 @@ zstyle ':completion:*' list-colors $LSCOLORS
 # alias
 #
 alias ls='ls -G'
-alias lsl='ls -l'
+alias ll='ls -l'
 alias lsa='ls -ltrA'
 alias lstr='ls -ltr'
 alias lsta='ls -ltra'
@@ -107,7 +107,8 @@ alias gri='g rebase -i'
 alias grm='g rebase master'
 alias gsl='g stash list'
 alias gss='g stash'
-alias gst='g st'
+alias gs='g st'
+alias gst='g st --uno'
 alias gbr='g branch'
 alias gpl='g pull'
 

@@ -9,7 +9,7 @@ export PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$PATH
 # anyenv
 if [ -d ${HOME}/.anyenv ] ; then
     export PATH="$HOME/.anyenv/bin:$PATH"
-    eval "$(anyenv init -)"
+    eval "$(anyenv init - zsh)"
     for D in `/bin/ls $HOME/.anyenv/envs`
     do
         export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
@@ -31,7 +31,7 @@ export GOENVHOME=$HOME/work/go
 source $HOME/goenv/shellscripts/goenvwrapper.sh 2> /dev/null
 
 #hub
-eval "$(hub alias -s)"
+#eval "$(hub alias -s)"
 
 # gettext
 export PATH=/usr/local/opt/gettext/bin:$PATH
