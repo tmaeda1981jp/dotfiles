@@ -1,3 +1,5 @@
+setopt no_global_rcs
+
 # homebrew-cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
