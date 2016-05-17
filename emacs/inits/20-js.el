@@ -53,6 +53,7 @@ See URL `https://github.com/FND/jslint-reporter'."
             (imenu-add-menubar-index)
             (setq js2-basic-offset 2)
             ;; (flycheck-select-checker 'javascript-jslint-reporter)
+            (flycheck-disable-checker 'javascript-jscs)
             (flycheck-add-next-checker 'javascript-jslint-reporter 'javascript-jshint)
             (flycheck-mode)
             (hs-minor-mode 1)))

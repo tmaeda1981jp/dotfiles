@@ -16,7 +16,6 @@
             (flycheck-mode t)
             (flycheck-typescript-tslint-setup)
             (setq flycheck-check-syntax-automatically '(save mode-enabled))
-            (setq typescript-indent-level 2)
             (eldoc-mode t)
             (company-mode-on)))
 
