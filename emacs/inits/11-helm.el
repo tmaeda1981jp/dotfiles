@@ -1,3 +1,4 @@
+(require 'recentf)
 (require 'helm-config)
 (require 'helm-ls-git)
 (require 'helm-projectile)
