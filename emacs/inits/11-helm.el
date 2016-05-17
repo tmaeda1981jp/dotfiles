@@ -29,7 +29,8 @@
 ;; helm-projectile
 ;; ---------------------------------------------------------------
 ;;(setq projectile-indexing-method 'native)
-(global-set-key (kbd "C-c C-l") 'helm-projectile)
+;;(global-set-key (kbd "C-c C-l") 'helm-projectile)
+(global-set-key (kbd "C-c C-l") 'helm-ls-git-ls)
 ;;(setq projectile-enable-caching nil)
 
 ;; ---------------------------------------------------------------
