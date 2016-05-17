@@ -17,16 +17,17 @@ if [ ! -d ${HOME}/.anyenv ] ; then
     source ~/.zshenv
 
     # rbenv
-    rbenv install 2.1.0
-    rbenv global 2.1.0
+    rbenv install 2.2.2
+    rbenv global 2.2.2
 
     # pyenv
-    pyenv install 2.7.8
-    pyenv global 2.7.8
+    pyenv install 2.7.11
+    pyenv install 3.4.3
+    pyenv global 2.7.11
 
     # ndenv
-    ndenv install 0.10.35
-    ndenv global 0.10.35
+    ndenv install 4.4.4
+    ndenv global 4.4.4
 
     # gem
     gems=(
@@ -37,9 +38,6 @@ if [ ! -d ${HOME}/.anyenv ] ; then
         middleman
         compass
         sass
-        rails
-        rspec
-        cocoapods
         sinatra
         sinatra-reloader
     )
@@ -54,7 +52,7 @@ if [ ! -d ${HOME}/.anyenv ] ; then
     pyenv rehash
 
     # npm
-    npm install bower grunt-cli volo jade mocha browserify jslint jshint gulp yo
+    npm install bower grunt-cli jade mocha browserify jslint jshint eslint eslint-plugin-react babel-eslint gulp watchify envify uglifyjs nodemon -g
     ndenv rehash
 else
     echo -e "\033[1m[SKIPPED]\033[0m anyenv has been already installed"
@@ -147,7 +145,7 @@ fi
 ln -sf `PWD`/tmux/tmuxinator $HOME/.tmuxinator
 
 # bower
-ln -sf `PWD`/bower/.bowerrc $HOME/.bowerrc
+#ln -sf `PWD`/bower/.bowerrc $HOME/.bowerrc
 
 # python
 if [ ! -d $HOME/.config/bpython ]; then
@@ -161,20 +159,20 @@ ln -sf `PWD`/python/pylint/.pylintrc $HOME/.pylintrc
 ln -sf `PWD`/ruby/gem/.gemrc $HOME/.gemrc
 
 ## rubocop
-ln -sf `PWD`/ruby/rubocop/.rubocop.yml $HOME/.rubocop.yml
+#ln -sf `PWD`/ruby/rubocop/.rubocop.yml $HOME/.rubocop.yml
 
 ## rspec
-ln -sf `PWD`/ruby/rspec/.rspec $HOME/.rspec
+#ln -sf `PWD`/ruby/rspec/.rspec $HOME/.rspec
 
 # php
 ## boris
 ln -sf `PWD`/php/boris/.borisrc $HOME/.borisrc
 
 # htmltidy
-ln -sf `PWD`/html/.tidyrc $HOME/.tidyrc
+#ln -sf `PWD`/html/.tidyrc $HOME/.tidyrc
 
 # ag
-ln -sf `PWD`/ag/.agignore $HOME/.agignore
+#ln -sf `PWD`/ag/.agignore $HOME/.agignore
 
 # ghci
 ln -sf `PWD`/ghci/.ghci $HOME/.ghci
