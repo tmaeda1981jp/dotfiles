@@ -21,8 +21,9 @@ if [ ! -d ${HOME}/.anyenv ] ; then
     rbenv global 2.2.2
 
     # pyenv
+    pyenv install 2.7.11
     pyenv install 3.4.3
-    pyenv global 3.4.3
+    pyenv global 2.7.11
 
     # ndenv
     ndenv install 4.4.4
