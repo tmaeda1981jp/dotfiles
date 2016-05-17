@@ -10,6 +10,7 @@
 (depends-on "anything")
 (depends-on "anzu")
 (depends-on "auto-complete")
+(depends-on "bpr")
 (depends-on "calfw")
 (depends-on "codic")
 (depends-on "coffee-mode")
