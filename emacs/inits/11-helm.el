@@ -1,4 +1,3 @@
-(require 'recentf)
 (require 'helm-config)
 (require 'helm-ls-git)
 (require 'helm-projectile)
@@ -24,7 +23,7 @@
   ;;  " *helm*"))
 (global-set-key (kbd "C-l") 'my:helm)
 (global-set-key (kbd "M-l") 'helm-buffers-list)
-(setq recentf-max-saved-items 30)
+(setq recentf-max-saved-items 5)
 (setq helm-truncate-lines t)
 
 (require 'helm-anything)
