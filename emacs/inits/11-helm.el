@@ -1,29 +1,19 @@
 (require 'helm-config)
 (require 'helm-ls-git)
 (require 'helm-projectile)
+(require 'recentf-ext)
 (helm-projectile-on)
 
-(defun my:helm ()
-  (interactive)
-  (helm :sources '(
-                   helm-source-recentf
-;;                   helm-source-projectile-files-list ;;重い
-                   helm-source-files-in-current-dir
-;;                   helm-source-buffers-list
-;                   helm-source-locate
-                   helm-source-mac-spotlight
-                   )
-        :buffer "*helm*"))
-  ;; (helm-other-buffer
-  ;;  '(
-  ;;    helm-c-source-files-in-current-dir
-  ;;    helm-c-source-recentf
-  ;;    helm-c-source-buffers-list
-  ;;    )
-  ;;  " *helm*"))
-(global-set-key (kbd "C-l") 'my:helm)
+(setq helm-for-files-preferred-list
+      '(helm-source-recentf
+        helm-source-buffers-list
+        helm-source-file-cache
+        helm-source-files-in-current-dir
+        helm-source-locate))
+
+(global-set-key (kbd "C-l") 'helm-for-files)
 (global-set-key (kbd "M-l") 'helm-buffers-list)
-(setq recentf-max-saved-items 5)
+(setq recentf-max-saved-items 10)
 (setq helm-truncate-lines t)
 
 (require 'helm-anything)

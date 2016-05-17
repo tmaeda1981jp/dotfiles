@@ -75,6 +75,7 @@
 (depends-on "prodigy")
 (depends-on "projectile")
 (depends-on "quickrun")
+(depends-on "recentf-ext")
 (depends-on "restclient")
 (depends-on "rhtml-mode")
 (depends-on "rsense")
