@@ -172,8 +172,8 @@
 (global-set-key (kbd "C-s") 'helm-swoop)
 
 ;; helm-etags-select
-(global-set-key (kbd "M-.") 'helm-etags-select)
-(global-set-key (kbd "M-,") 'pop-tag-mark)
+(global-set-key (kbd "M-.") 'helm-gtags-dwim)
+(global-set-key (kbd "M-,") 'helm-gtags-pop-stack)
 
 ;; C-x C-fでhelm-find-files
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
