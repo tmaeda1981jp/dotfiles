@@ -33,7 +33,7 @@ if [ ! -d ${HOME}/.anyenv ] ; then
     # gem
     gems=(
         bundler
-        brewdler
+#        brewdler
         tmuxinator
         jekyll
         middleman
