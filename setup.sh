@@ -27,7 +27,7 @@ if [ ! -d ${HOME}/.anyenv ] ; then
 
     # ndenv
     ndenv install 4.5.0
-    ndenv isntall 6.6.0
+    ndenv install 6.6.0
     ndenv global 6.6.0
 
     # gem
