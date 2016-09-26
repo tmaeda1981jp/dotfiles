@@ -245,16 +245,8 @@
     (other-window -1)))
 (global-set-key "\C-x9" 'window-toggle-division)
 
-;;
-;; color-theme
-;;
-(when (require 'color-theme)
-  (color-theme-initialize)
-  ;; color-theme-molokai
-  ;; http://qiita.com/items/17464754663936cb7895
-  (when (require 'color-theme-molokai)
-    (color-theme-molokai)))
-;; TODO http://d.hatena.ne.jp/syohex/20121211/1355231365
+;; color
+(load-theme 'monokai t)
 
 ;; 同名ファイルを識別しやすくする
 (require 'uniquify)
