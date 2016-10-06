@@ -245,9 +245,6 @@
     (other-window -1)))
 (global-set-key "\C-x9" 'window-toggle-division)
 
-;; color
-(load-theme 'monokai t)
-
 ;; 同名ファイルを識別しやすくする
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
@@ -328,19 +325,6 @@
         (tab-mark   ?\t   [?\xBB ?\t])
         ))
 (global-whitespace-mode t)
-
-(set-face-attribute 'whitespace-trailing nil
-                    :foreground "DeepPink"
-                    :background 'unspecified
-                    :underline t)
-(set-face-attribute 'whitespace-tab nil
-                    :foreground "Grey"
-                    :background 'unspecified
-                    :underline nil)
-(set-face-attribute 'whitespace-space nil
-                    :foreground "red"
-                    :background 'unspecified
-                    :weight 'bold)
 (setq whitespace-action nil)
 
 ;; indent修正
@@ -449,3 +433,33 @@
 (setq neo-window-position 'right)
 
 (setq vc-follow-symlinks t)
+
+;; color
+(load-theme 'monokai t)
+(set-face-attribute 'whitespace-trailing nil
+                    :foreground "DeepPink"
+                    :background 'unspecified
+                    :underline t)
+(set-face-attribute 'whitespace-tab nil
+                    :foreground "Grey"
+                    :background 'unspecified
+                    :underline nil)
+(set-face-attribute 'whitespace-space nil
+                    :foreground "red"
+                    :background 'unspecified
+                    :weight 'bold)
+(set-face-attribute 'flycheck-warning nil
+                    :foreground "#FFFF87"
+                    :background "#878700"
+                    :weight 'bold
+                    :underline nil)
+(set-face-attribute 'flycheck-fringe-warning nil
+                    :background 'unspecified
+                    :underline nil)
+(set-face-attribute 'flycheck-fringe-error nil
+                    :background 'unspecified
+                    :underline nil)
+(set-face-attribute 'whitespace-space-after-tab nil
+                    :foreground "#1B1E1C"
+                    :background "Yellow"
+                    :underline nil)
