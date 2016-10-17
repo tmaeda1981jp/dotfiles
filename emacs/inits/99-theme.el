@@ -4,8 +4,8 @@
 (eval-after-load 'whitespace
   '(progn
      (set-face-attribute 'whitespace-trailing nil
-                         :foreground "DeepPink"
-                         :background 'unspecified
+                         :foreground "#1B1E1C"
+                         :background "Grey"
                          :underline t)
      (set-face-attribute 'whitespace-tab nil
                          :foreground "Grey"
