@@ -9,7 +9,7 @@
 ;;(autoload 'typescript-mode "TypeScript" "Major mode for editing typescript." t)
 
 ;; refs: https://github.com/ananthakumaran/tide
-(require 'tide)
+;;(require 'tide)
 (add-hook 'typescript-mode-hook
           (lambda ()
             (tide-setup)
@@ -18,4 +18,3 @@
             (setq flycheck-check-syntax-automatically '(save mode-enabled))
             (eldoc-mode t)
             (company-mode-on)))
-

@@ -17,22 +17,23 @@ if [ ! -d ${HOME}/.anyenv ] ; then
     source ~/.zshenv
 
     # rbenv
-    rbenv install 2.2.2
-    rbenv global 2.2.2
+    rbenv install 2.3.1
+    rbenv global 2.3.1
 
     # pyenv
-    pyenv install 2.7.11
-    pyenv install 3.4.3
-    pyenv global 2.7.11
+    pyenv install 2.7.12
+    pyenv install 3.5.2
+    pyenv global 2.7.12
 
     # ndenv
-    ndenv install 4.4.4
-    ndenv global 4.4.4
+    ndenv install 4.5.0
+    ndenv install 6.6.0
+    ndenv global 6.6.0
 
     # gem
     gems=(
         bundler
-        brewdler
+#        brewdler
         tmuxinator
         jekyll
         middleman
