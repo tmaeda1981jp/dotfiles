@@ -237,9 +237,9 @@ alias awk='gawk'
 alias tree='nocorrect tree'
 
 # cat
-if type pygmentize > /dev/null 2>&1; then
-    alias cat='pygmentize -O style=monokai -f console256 -g'
-fi
+#if type pygmentize > /dev/null 2>&1; then
+#    alias cat='pygmentize -O style=monokai -f console256 -g'
+#fi
 
 # awscli
 alias aws='nocorrect aws'
