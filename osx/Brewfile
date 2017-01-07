@@ -67,6 +67,7 @@ brew 'rsync'
 brew 'icdiff'
 brew 'hub'
 brew 'yarn'
+brew 'grip'
 
 # mac apps
 cask 'google-chrome'
