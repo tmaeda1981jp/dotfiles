@@ -322,7 +322,7 @@
 (setq whitespace-display-mappings
       ;;      '((space-mark ?\x3000 [?\□])
       '((space-mark ?\x3000 [?\❏])
-        (tab-mark   ?\t   [?\xBB ?\t])
+        ;; (tab-mark   ?\t   [?\xBB ?\t])
         ))
 (global-whitespace-mode t)
 (setq whitespace-action nil)
