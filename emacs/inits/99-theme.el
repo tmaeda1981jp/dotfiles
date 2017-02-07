@@ -10,7 +10,7 @@
      (set-face-attribute 'whitespace-tab nil
                          :foreground "DimGrey"
                          :background 'unspecified
-                         :underline t)
+                         :underline nil)
      (set-face-attribute 'whitespace-space nil
                          :foreground "white"
                          :background 'unspecified
