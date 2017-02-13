@@ -143,3 +143,9 @@
           '(lambda ()
              (progn (set-fill-column 60)
                     (turn-on-auto-fill))))
+
+(defun insert-timestamp ()
+  "Insert timestamp."
+  (interactive)
+  (insert (format-time-string "[%Y-%m-%d %a %H:%M]")))
+(global-set-key (kbd "C-x ,") 'insert-timestamp)
