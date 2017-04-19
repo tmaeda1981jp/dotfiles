@@ -71,5 +71,9 @@ export PATH=$PATH:/usr/local/opt/coreutils/libexec/gnubin
 # ansible
 export ANSIBLE_HOSTS=~/ansible_hosts
 
+# yarn
+export PATH="$PATH:`yarn global bin`"
+
 # OCaml(opam)
 . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+

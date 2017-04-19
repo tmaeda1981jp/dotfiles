@@ -8,7 +8,7 @@
                          :background "Grey"
                          :underline t)
      (set-face-attribute 'whitespace-tab nil
-                         :foreground "Grey"
+                         :foreground "DimGrey"
                          :background 'unspecified
                          :underline nil)
      (set-face-attribute 'whitespace-space nil

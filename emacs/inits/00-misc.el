@@ -323,7 +323,9 @@
       ;;      '((space-mark ?\x3000 [?\□])
       '((space-mark ?\x3000 [?\❏])
         (tab-mark   ?\t   [?\xBB ?\t])
+        ;; (tab-mark   ?\t   [?\x5E ?\t])
         ))
+
 (global-whitespace-mode t)
 (setq whitespace-action nil)
 
