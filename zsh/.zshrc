@@ -26,7 +26,7 @@ alias o.='open -R .'
 alias xargs='gxargs'
 alias fn='find . -name '
 
-alias less='/usr/share/vim/vim73/macros/less.sh'
+# alias less='/usr/share/vim/vim73/macros/less.sh'
 alias ctags='/usr/local/bin/ctags'
 
 alias emacsclient="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
@@ -238,9 +238,9 @@ alias awk='gawk'
 alias tree='nocorrect tree'
 
 # cat
-if type pygmentize > /dev/null 2>&1; then
-    alias cat='pygmentize -O style=monokai -f console256 -g'
-fi
+#if type pygmentize > /dev/null 2>&1; then
+#    alias cat='pygmentize -O style=monokai -f console256 -g'
+#fi
 
 # awscli
 alias aws='nocorrect aws'

@@ -37,6 +37,7 @@
  '(haskell-notify-p t)
  '(haskell-stylish-on-save t)
  '(haskell-tags-on-save t)
+ '(package-selected-packages (quote (package-build shut-up epl git commander f dash s)))
  '(rst-level-face-base-light 50)
  '(safe-local-variable-values (quote ((encoding . utf-8))))
  '(yas-trigger-key "TAB"))
