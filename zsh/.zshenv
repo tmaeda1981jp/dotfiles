@@ -39,6 +39,7 @@ source $HOME/goenv/shellscripts/goenvwrapper.sh 2> /dev/null
 export PATH=/usr/local/opt/gettext/bin:$PATH
 
 # php
+export PATH="$(brew --prefix homebrew/php/php70)/bin:$PATH"
 export PATH=$HOME/.composer/vendor/bin:$PATH
 if [ -f ~/.phpbrew/bashrc ]; then
     source ~/.phpbrew/bashrc
@@ -77,3 +78,9 @@ export PATH="$PATH:`yarn global bin`"
 # OCaml(opam)
 . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
+# Rust
+export PATH=$PATH:$HOME/.cargo/env
+
+
+# PostgreSQL
+export PGDATA=/usr/local/var/postgres
