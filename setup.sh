@@ -50,7 +50,7 @@ if [ ! -d ${HOME}/.anyenv ] ; then
     pyenv rehash
 
     # npm
-    npm install mocha eslint eslint-plugin-react babel-eslint gulp watchify envify uglifyjs nodemon create-react-app -g
+    npm install mocha eslint eslint-plugin-react babel-eslint gulp watchify envify uglifyjs nodemon create-react-app firebase-tools -g
     ndenv rehash
 else
     echo -e "\033[1m[SKIPPED]\033[0m anyenv has been already installed"
