@@ -17,28 +17,25 @@ if [ ! -d ${HOME}/.anyenv ] ; then
     source ~/.zshenv
 
     # rbenv
-    rbenv install 2.3.1
-    rbenv global 2.3.1
+    rbenv install 2.5.0
+    rbenv global 2.5.0
 
     # pyenv
-    pyenv install 2.7.12
-    pyenv install 3.5.2
-    pyenv global 2.7.12
+    pyenv install 2.7.14
+    pyenv install 3.6.4
+    pyenv global 3.6.4
 
     # ndenv
-    ndenv install 4.5.0
-    ndenv install 6.6.0
-    ndenv global 6.6.0
+    ndenv install 8.9.3
+    ndenv install 9.3.0
+    ndenv global 8.9.3
 
     # gem
     gems=(
         bundler
-#        brewdler
         tmuxinator
         jekyll
         middleman
-        compass
-        sass
         sinatra
         sinatra-reloader
     )
@@ -53,7 +50,7 @@ if [ ! -d ${HOME}/.anyenv ] ; then
     pyenv rehash
 
     # npm
-    npm install bower grunt-cli jade mocha browserify jslint jshint eslint eslint-plugin-react babel-eslint gulp watchify envify uglifyjs nodemon -g
+    npm install mocha eslint eslint-plugin-react babel-eslint gulp watchify envify uglifyjs nodemon create-react-app -g
     ndenv rehash
 else
     echo -e "\033[1m[SKIPPED]\033[0m anyenv has been already installed"
