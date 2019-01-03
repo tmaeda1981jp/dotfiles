@@ -1,0 +1,122 @@
+diff --git a/runcoms/zpreztorc b/runcoms/zpreztorc
+index 28b6005..6119468 100644
+--- a/runcoms/zpreztorc
++++ b/runcoms/zpreztorc
+@@ -35,6 +35,9 @@ zstyle ':prezto:load' pmodule \
+   'spectrum' \
+   'utility' \
+   'completion' \
++  'syntax-highlighting' \
++  'autosuggestions' \
++  'git' \
+   'prompt'
+ 
+ #
+@@ -113,7 +116,8 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
+ # Set the prompt theme to load.
+ # Setting it to 'random' loads a random theme.
+ # Auto set to 'off' on dumb terminals.
+-zstyle ':prezto:module:prompt' theme 'sorin'
++zstyle ':prezto:module:prompt' theme 'pure'
++PURE_PROMPT_SYMBOL='>>> '
+ 
+ # Set the working directory prompt display length.
+ # By default, it is set to 'short'. Set it to 'long' (without '~' expansion)
+diff --git a/runcoms/zprofile b/runcoms/zprofile
+index acd7742..33fb864 100644
+--- a/runcoms/zprofile
++++ b/runcoms/zprofile
+@@ -61,3 +61,5 @@ export LESS='-F -g -i -M -R -S -w -X -z-4'
+ if (( $#commands[(i)lesspipe(|.sh)] )); then
+   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
+ fi
++export PATH="$HOME/.anyenv/bin:$PATH"
++eval "$(anyenv init -)"
+diff --git a/runcoms/zshenv b/runcoms/zshenv
+index 2dbf12a..7a82f82 100644
+--- a/runcoms/zshenv
++++ b/runcoms/zshenv
+@@ -9,3 +9,14 @@
+ if [[ ( "$SHLVL" -eq 1 && ! -o LOGIN ) && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
+   source "${ZDOTDIR:-$HOME}/.zprofile"
+ fi
++
++
++# anyenv
++if [ -d ${HOME}/.anyenv ] ; then
++    export PATH="$HOME/.anyenv/bin:$PATH"
++    eval "$(anyenv init - zsh)"
++    for D in `/bin/ls $HOME/.anyenv/envs`
++    do
++        export PATH="$HOME/.anyenv/envs/$D/shims:$PATH"
++    done
++fi
+diff --git a/runcoms/zshrc b/runcoms/zshrc
+index 039b882..a83f302 100644
+--- a/runcoms/zshrc
++++ b/runcoms/zshrc
+@@ -5,9 +5,63 @@
+ #   Sorin Ionescu <sorin.ionescu@gmail.com>
+ #
+ 
++#
++# lang and colors
++#
++export LANG=ja_JP.UTF-8
++export LSCOLORS=gxfxcxdxbxegedabagacad
++zstyle ':completion:*' list-colors $LSCOLORS
++
++
++#
++# keybind configuration
++# emacs like keybind
++#
++bindkey -e
++
++#
++# history
++#
++autoload history-search-end
++zle -N history-beginning-search-backward-end history-search-end
++zle -N history-beginning-search-forward-end history-search-end
++bindkey "^P" history-beginning-search-backward-end
++bindkey "^N" history-beginning-search-forward-end
++HISTFILE=~/.zsh_history
++HISTSIZE=5000000
++SAVEHIST=1000000
++setopt share_history        # share command history data
++setopt hist_ignore_dups     # ignore duplication command history list
++setopt hist_ignore_all_dups
++setopt hist_save_no_dups
++setopt hist_find_no_dups
++setopt hist_expire_dups_first
++
++autoload -U compinit
++compinit
++
++autoload zmv
++
++setopt auto_cd
++setopt correct
++setopt list_packed
++setopt nolistbeep
++
++setopt no_rm_star_silent
++
+ # Source Prezto.
+ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+ fi
+ 
+ # Customize to your needs...
++if [[ -f ~/.alias ]]; then
++  . ~/.alias
++fi
++
++# z
++#. /Users/tmaeda1981jp/.z/z.sh
++. `brew --prefix`/etc/profile.d/z.sh
++
++[[ -f /Users/tmaeda1981jp/work/ener-auction-backend/lambda/chat/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/tmaeda1981jp/work/ener-auction-backend/lambda/chat/node_modules/tabtab/.completions/serverless.zsh
++[[ -f /Users/tmaeda1981jp/work/ener-auction-backend/lambda/chat/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/tmaeda1981jp/work/ener-auction-backend/lambda/chat/node_modules/tabtab/.completions/sls.zsh
+\ No newline at end of file

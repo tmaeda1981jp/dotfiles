@@ -1,0 +1,140 @@
+#
+# lang and colors
+#
+export LANG=ja_JP.UTF-8
+export LSCOLORS=gxfxcxdxbxegedabagacad
+zstyle ':completion:*' list-colors $LSCOLORS
+
+#
+# alias
+#
+unalias rm
+alias ls='ls -G'
+alias ll='ls -l'
+alias lsl='ll'
+alias lsa='ls -ltrA'
+alias lstr='ls -ltr'
+alias lsta='ls -ltra'
+alias his='history 1'
+alias grep='grep -n --color'
+alias egrep='egrep -n --color'
+alias fgrep='fgrep -n --color'
+alias hisgrep='his | grep'
+alias del='find . \( -name "*~" -o -name "#*" \) -print | xargs rm'
+alias ag='nocorrect ag -S'
+alias s='source'
+alias o='open'
+alias o.='open -R .'
+alias xargs='gxargs'
+alias fn='find . -name '
+
+alias emacsclient="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient"
+alias emacssv="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+alias emacs="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
+alias e='emacs'
+
+# ruby
+alias rspec='rspec -c'
+alias r='rails'
+alias rs='r s'
+alias rc='r c'
+alias rgs='r g scaffold'
+alias rake="noglob rake"
+alias be='bundle exec'
+
+# python
+alias pe='pyenv'
+alias pr='pyenv rehash'
+alias pls='pyenv versions'
+alias pl='pyenv local'
+alias pv='pyenv virtualenv'
+alias pf='pip freeze'
+
+# php
+alias phpunit='phpunit --colors'
+alias pa='php artisan'
+alias pam='php artisan migrate'
+alias pamm='php artisan make:migration'
+
+# git/svn
+export EDITOR="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
+
+# git
+alias g='git'
+alias ga='g add .'
+alias gc='g ci -m'
+alias gca='g commit --amend -C HEAD'
+alias gff='g flow feature'
+alias gfr='g flow release'
+alias gfh='g flow hotfix'
+alias giff='git diff'
+alias giffh='giff HEAD'
+alias giffw='git diff --word-diff'
+alias glog='g log1 --decorate'
+alias gla='glog --author'
+alias glogn='glog --numstat'
+alias gp='g push'
+alias gpm='g push origin master'
+alias gpd='g push origin develop'
+alias gri='g rebase -i'
+alias grm='g rebase master'
+alias gsl='g stash list'
+alias gss='g stash'
+alias gst='g status'
+alias gs='g st -uno'
+alias gbr='g branch'
+alias gpl='g pull --rebase'
+
+# tmux
+alias tls='tmux ls'
+alias ta='tmux attach-session -t'
+alias tn='tmux new -s'
+alias tkill='tmux kill-session -t'
+
+# vagrant
+alias vagrant='nocorrect vagrant'
+alias va='vagrant up'
+alias vd='vagrant destroy'
+alias vp='vagrant provision'
+
+# ansible
+make_role() {
+    if [ -d 'roles' ]; then
+        mkdir -p ./roles/$1/meta ./roles/$1/handlers ./roles/$1/templates ./roles/$1/tasks
+        touch ./roles/$1/meta/main.yml
+        touch ./roles/$1/handlers/main.yml
+        touch ./roles/$1/tasks/main.yml
+    else
+        echo "No roles directory"
+    fi
+}
+alias mkrole=make_role
+
+# sphinx
+alias mh='make html'
+alias mp='make latexpdfja'
+
+# jekyll
+alias j='jekyll'
+alias jb='jekyll build'
+alias jsv='jekyll s'
+alias jw='jekyll serve --watch'
+
+alias jq='nocorrect jq'
+
+# sed
+#alias sed='gsed'
+
+# awk
+alias awk='gawk'
+
+# tree
+alias tree='nocorrect tree'
+
+# cat
+#if type pygmentize > /dev/null 2>&1; then
+#    alias cat='pygmentize -O style=monokai -f console256 -g'
+#fi
+
+# awscli
+alias aws='nocorrect aws'
