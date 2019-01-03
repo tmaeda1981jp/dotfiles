@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: use strict statement
-# --
-'use strict';

@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: rel
-# --
-rel="$1"$0

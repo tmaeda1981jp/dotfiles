@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: img tag
-# --
-img(src="$1", alt="$2")$0

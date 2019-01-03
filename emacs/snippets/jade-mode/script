@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: script tag
-# --
-script(type="text/javascript", src="$1")$0

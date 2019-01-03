@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: href
-# --
-href="$1"$0

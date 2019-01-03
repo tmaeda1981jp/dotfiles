@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: role
-# --
-role="$1"$0

@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: rq
-# --
-require("$1")$0

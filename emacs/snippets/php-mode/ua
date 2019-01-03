@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: ua
-# --
-$_SERVER['HTTP_USER_AGENT'];

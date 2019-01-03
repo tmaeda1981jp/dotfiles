@@ -1,5 +1,0 @@
-# -*- mode: snippet -*-
-# name: css link
-# --
-<link rel="stylesheet" href="$1.css" media="all">
-$0

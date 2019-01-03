@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: ucd
-# --
-def __unicode__(self):
-    return self.$1
-$0

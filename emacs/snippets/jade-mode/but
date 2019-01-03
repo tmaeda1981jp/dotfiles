@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: button
-# --
-button(type="button", $1)$0

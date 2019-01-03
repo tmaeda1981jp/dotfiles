@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: underscore
-# --
-_.$1;$0

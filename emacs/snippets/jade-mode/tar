@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: target
-# --
-target="$1"$0

@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: form
-# --
-textarea($1)$0

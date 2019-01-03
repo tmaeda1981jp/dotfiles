@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: css tag
-# --
-link(rel="stylesheet", type="text/css", href="$1")$0

@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: file
-# --
-File.open('$1', 'r').each do |line|
-  $0
-end

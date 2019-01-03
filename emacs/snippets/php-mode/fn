@@ -1,7 +1,0 @@
-# -*- mode: snippet -*-
-# name: fn
-# --
-public function $1()
-{
-    $0
-}

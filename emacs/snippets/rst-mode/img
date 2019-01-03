@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: img
-# --
-.. image:: _static/imgs/$1.png
-   :width: 200px
-$0

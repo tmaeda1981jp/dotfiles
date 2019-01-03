@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: mixin
-# --
-mixin $1($2)$0

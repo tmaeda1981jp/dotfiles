@@ -1,4 +1,0 @@
-# -*- mode: snippet -*-
-# name: iitemprop
-# --
-itemprop="$1"$0

@@ -1,6 +1,0 @@
-# -*- mode: snippet -*-
-# name: jQuery.each
-# --
-\$.each($1, function(i, v) {
-  $0  
-});
