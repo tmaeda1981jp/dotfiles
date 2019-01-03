@@ -64,35 +64,6 @@ else
     echo -e "\033[1m[SKIPPED]\033[0m rbenv-binstubs has been already installed"
 fi
 
-# 時間がかかるのであとでうまくやる方法を考える
-# とりあえずanyenvと一緒にやる
-
-# gem
-# gems=(
-#     bundler
-#     brewdler
-#     tmuxinator
-#     jekyll
-#     middleman
-#     compass
-#     sass
-#     rails
-#     rspec
-# )
-# for gem in ${gems[@]};
-# do
-#     gem install ${gem} --no-ri --no-rdoc
-# done
-# rbenv rehash
-
-# # pip
-# pip install percol ansible virtualenv django
-# pyenv rehash
-
-# # npm
-# npm install bower grunt-cli volo jade mocha browserify jslint jshint gulp yo strongloop
-# ndenv rehash
-
 # homebrew
 if [ ! -x /usr/local/bin/brew ]; then
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -116,9 +87,6 @@ if [ -e $HOME/.emacs.d ]; then
     rm -rf $HOME/.emacs.d
 fi
 ln -sf `PWD`/emacs $HOME/.emacs.d
-ln -sf /usr/local/opt/cask $HOME/.cask
-cd $HOME/dotfiles/emacs
-cask install
 cd $HOME/dotfiles
 
 # percol
@@ -142,9 +110,6 @@ if [ -e $HOME/.tmuxinator ]; then
 fi
 ln -sf `PWD`/tmux/tmuxinator $HOME/.tmuxinator
 
-# bower
-#ln -sf `PWD`/bower/.bowerrc $HOME/.bowerrc
-
 # python
 if [ ! -d $HOME/.config/bpython ]; then
     mkdir -p $HOME/.config/bpython
@@ -156,21 +121,9 @@ ln -sf `PWD`/python/pylint/.pylintrc $HOME/.pylintrc
 ## gem
 ln -sf `PWD`/ruby/gem/.gemrc $HOME/.gemrc
 
-## rubocop
-#ln -sf `PWD`/ruby/rubocop/.rubocop.yml $HOME/.rubocop.yml
-
-## rspec
-#ln -sf `PWD`/ruby/rspec/.rspec $HOME/.rspec
-
 # php
 ## boris
 ln -sf `PWD`/php/boris/.borisrc $HOME/.borisrc
-
-# htmltidy
-#ln -sf `PWD`/html/.tidyrc $HOME/.tidyrc
-
-# ag
-#ln -sf `PWD`/ag/.agignore $HOME/.agignore
 
 # ghci
 ln -sf `PWD`/ghci/.ghci $HOME/.ghci
