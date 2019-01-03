@@ -13,3 +13,4 @@
 - pylint
 - ghci
 - gem
+- iTerm2
