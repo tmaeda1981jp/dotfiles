@@ -1,7 +1,0 @@
-char-encoding: utf8
-indent: auto
-indent-spaces: 2
-new-blocklevel-tags: section,article,aside,hgroup,header,footer,nav,figure,figcaption,video,audio,canvas
-new-empty-tags: source,command,embed,keygen,track,wbr
-new-inline-tags: mark,progress,meter,time,ruby,rt,rp,bdi,bdo,summary,datalist,output
-quiet: yes
