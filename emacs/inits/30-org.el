@@ -11,21 +11,32 @@
   (setq org-capture-templates
         '(
           ("i" "Inbox" entry (file "~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/inbox.org")
-           "* TODO %?\n%U")))
+           "* TODO %?\n%U")
+          ("w" "Wish Books" entry (file "~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/wish_books.org")
+           "* SOMEDAY %? :book:\n%U\n")
+          ("r" "Reading Books" entry (file "~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/reading_books.org")
+           "* READING %? :book:\n%U\n")
+          ("b" "Buy" entry (file "~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/buy.org")
+           "* TODO %? :buy:\n%U")
+          ))
 
   (setq org-refile-use-outline-path 'file)
   (setq org-refile-targets '(("~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/gtd.org" :maxlevel . 3)
-                             ("~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/books.org" :maxlevel . 3)
+                             ("~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/wish_books.org" :maxlevel . 3)
+                             ("~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/reading_books.org" :maxlevel . 3)
+                             ("~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/buy.org" :maxlevel . 3)
                              ("~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/someday.org" :level . 1)))
 
   (setq org-agenda-files '("~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/gtd.org"
-                           "~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/books.org"))
+                           "~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/wish_books.org"
+                           "~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/reading_bookss.org"
+                           "~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/buy.org"
+                           ))
 
   (setq org-archive-location (concat "~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/"
                                      (format-time-string "%Y%m" (current-time))
                                      ".org_archive::"))
   
-  :bind (
-         ("C-c c" . org-capture)
+  :bind (("C-c c" . org-capture)
          ("C-c a" . org-agenda))
   :mode (("\\.org?\\'" . org-mode)))
