@@ -18,3 +18,4 @@ tramp
 *_archive
 *_flymake.*
 tmux/tmuxinator/local.yml
+straight
