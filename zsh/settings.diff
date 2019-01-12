@@ -55,7 +55,7 @@ diff --git a/runcoms/zshrc b/runcoms/zshrc
 index 039b882..a83f302 100644
 --- a/runcoms/zshrc
 +++ b/runcoms/zshrc
-@@ -5,9 +5,63 @@
+@@ -5,9 +5,61 @@
  #   Sorin Ionescu <sorin.ionescu@gmail.com>
  #
  
@@ -117,6 +117,3 @@ index 039b882..a83f302 100644
 +#. /Users/tmaeda1981jp/.z/z.sh
 +. `brew --prefix`/etc/profile.d/z.sh
 +
-+[[ -f /Users/tmaeda1981jp/work/ener-auction-backend/lambda/chat/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/tmaeda1981jp/work/ener-auction-backend/lambda/chat/node_modules/tabtab/.completions/serverless.zsh
-+[[ -f /Users/tmaeda1981jp/work/ener-auction-backend/lambda/chat/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/tmaeda1981jp/work/ener-auction-backend/lambda/chat/node_modules/tabtab/.completions/sls.zsh
-\ No newline at end of file
