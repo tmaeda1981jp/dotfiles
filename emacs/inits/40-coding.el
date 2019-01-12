@@ -1,3 +1,4 @@
+;; elisp
 (use-package lispxmp
   :init
   (define-key emacs-lisp-mode-map (kbd "C-c C-d") 'lispxmp))
@@ -14,3 +15,8 @@
          (ielm-mode . enable-paredit-mode)))
 
 (find-function-setup-keys)
+
+;; javascript
+(use-package rjsx-mode
+  :mode (("\\.js\\'" . rjsx-mode))
+  :interpreter (("node" . rjsx-mode)))
