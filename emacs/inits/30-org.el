@@ -29,7 +29,7 @@
 
   (setq org-agenda-files '("~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/gtd.org"
                            "~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/wish_books.org"
-                           "~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/reading_bookss.org"
+                           "~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/reading_books.org"
                            "~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/buy.org"
                            ))
 
