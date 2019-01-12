@@ -1,3 +1,8 @@
+;; editorcofing
+(use-package editorconfig
+  :config
+  (editorconfig-mode 1))
+
 ;; elisp
 (use-package lispxmp
   :init
