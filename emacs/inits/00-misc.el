@@ -189,3 +189,8 @@
 
 ;; C-v C-M-vによるスクロール操作の微調整
 (setq scroll-error-top-bottom 'true)
+
+;; cua-mode
+(cua-mode t)
+(setq cua-enable-cua-keys nil)
+(global-set-key [?\C-c ?\C-@] 'cua-set-rectangle-mark)
