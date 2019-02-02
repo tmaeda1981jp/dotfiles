@@ -2,12 +2,14 @@
   :init
   (require 'helm-config)
   (setq helm-for-files-preferred-list
-        '(helm-source-recentf
-          helm-source-buffers-list
+        '(helm-source-buffers-list
+          helm-source-recentf
           helm-source-file-cache
           helm-source-files-in-current-dir
-          helm-source-locate))
+          ;;helm-source-locate
+          ))
   (setq helm-truncate-lines t)
+  (setq helm-split-window-in-side-p t)
   :bind
   (
    ("M-x" . helm-M-x)
