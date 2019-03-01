@@ -42,3 +42,20 @@
     (kill-new (buffer-substring (point) (field-end))))
   )
 
+
+(use-package helm-swoop
+  :bind
+  (("C-s" . helm-swoop))
+  :config
+  (setq helm-swoop-split-with-multiple-windows t))
+
+(use-package helm-ag
+  :bind
+  (("C-c C-s" . helm-do-ag)))
+
+(use-package all-ext
+  :bind
+  (
+   ("C-c s" . helm-occur)
+   ("C-c C-a" . all-from-helm-occur)
+   ))

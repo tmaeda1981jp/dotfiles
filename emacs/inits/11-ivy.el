@@ -16,6 +16,6 @@
   (defvar counsel-find-file-ignore-regexp (regexp-opt '("./" "../"))))
 
 
-(use-package swiper
-  :init
-  (global-set-key "\C-s" 'swiper))
+;; (use-package swiper
+;;   :init
+;;   (global-set-key "\C-s" 'swiper))
