@@ -25,3 +25,8 @@
 (use-package rjsx-mode
   :mode (("\\.js\\'" . rjsx-mode))
   :interpreter (("node" . rjsx-mode)))
+
+;; php
+(use-package php-mode
+  :mode (("\\.php\\'" . php-mode))
+  :interpreter (("php" . php-mode)))
