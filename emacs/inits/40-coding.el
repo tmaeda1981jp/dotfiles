@@ -30,3 +30,10 @@
 (use-package php-mode
   :mode (("\\.php\\'" . php-mode))
   :interpreter (("php" . php-mode)))
+
+;; other
+(use-package csv-mode
+  :mode ("\\.csv$" . csv-mode))
+
+(use-package yaml-mode
+  :mode (("\\.yml\\'" . yaml-mode)))
