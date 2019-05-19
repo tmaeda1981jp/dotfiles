@@ -37,3 +37,6 @@
 
 (use-package yaml-mode
   :mode (("\\.yml\\'" . yaml-mode)))
+
+(use-package flycheck
+  :init (global-flycheck-mode))
