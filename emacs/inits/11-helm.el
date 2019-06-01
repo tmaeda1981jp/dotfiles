@@ -14,6 +14,7 @@
   (
    ("M-x" . helm-M-x)
    ("C-l" . helm-for-files)
+   ("C-s" . helm-occur)
    ("M-l" . helm-buffers-list))
   :config
   ;; --------------------------------------------------------------
@@ -43,11 +44,11 @@
   )
 
 
-(use-package helm-swoop
-  :bind
-  (("C-s" . helm-swoop))
-  :config
-  (setq helm-swoop-split-with-multiple-windows t))
+;; (use-package helm-swoop
+;;   :bind
+;;   (("C-s" . helm-swoop))
+;;   :config
+;;   (setq helm-swoop-split-with-multiple-windows t))
 
 (use-package helm-ag
   :bind
@@ -55,7 +56,4 @@
 
 (use-package all-ext
   :bind
-  (
-   ("C-c s" . helm-occur)
-   ("C-c C-a" . all-from-helm-occur)
-   ))
+  (("C-c C-a" . all-from-helm-occur)))
