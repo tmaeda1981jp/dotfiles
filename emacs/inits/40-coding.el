@@ -25,6 +25,11 @@
   :mode (("\\.js\\'" . rjsx-mode))
   :interpreter (("node" . rjsx-mode)))
 
+;; https://stackoverflow.com/questions/35162106/how-to-disable-js2-mode-syntax-checking-globally-in-spacemacs
+;; Turn off js2 mode errors & warnings (we lean on eslint/standard)
+(setq js2-mode-show-parse-errors nil)
+(setq js2-mode-show-strict-warnings nil)
+
 (use-package php-mode
   :mode (("\\.php\\'" . php-mode))
   :interpreter (("php" . php-mode)))
