@@ -1,5 +1,5 @@
 diff --git a/runcoms/zpreztorc b/runcoms/zpreztorc
-index 28b6005..6119468 100644
+index 28b6005..8ea3b1d 100644
 --- a/runcoms/zpreztorc
 +++ b/runcoms/zpreztorc
 @@ -35,6 +35,9 @@ zstyle ':prezto:load' pmodule \
@@ -12,13 +12,18 @@ index 28b6005..6119468 100644
    'prompt'
  
  #
-@@ -113,7 +116,8 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
+@@ -113,7 +116,13 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
  # Set the prompt theme to load.
  # Setting it to 'random' loads a random theme.
  # Auto set to 'off' on dumb terminals.
 -zstyle ':prezto:module:prompt' theme 'sorin'
-+zstyle ':prezto:module:prompt' theme 'pure'
-+PURE_PROMPT_SYMBOL='>>> '
++export TERM="xterm-256color"
++
++# https://github.com/romkatv/powerlevel10k/blob/master/README.md#i-cannot-make-powerlevel10k-work-with-my-plugin-manager-help
++zstyle :prezto:module:prompt theme off
++
++# git clone https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
++# echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
  
  # Set the working directory prompt display length.
  # By default, it is set to 'short'. Set it to 'long' (without '~' expansion)
@@ -52,10 +57,10 @@ index 2dbf12a..7a82f82 100644
 +    done
 +fi
 diff --git a/runcoms/zshrc b/runcoms/zshrc
-index 039b882..a83f302 100644
+index 039b882..a361ecd 100644
 --- a/runcoms/zshrc
 +++ b/runcoms/zshrc
-@@ -5,9 +5,61 @@
+@@ -5,9 +5,62 @@
  #   Sorin Ionescu <sorin.ionescu@gmail.com>
  #
  
@@ -117,3 +122,4 @@ index 039b882..a83f302 100644
 +#. /Users/tmaeda1981jp/.z/z.sh
 +. `brew --prefix`/etc/profile.d/z.sh
 +
++source ~/powerlevel10k/powerlevel10k.zsh-theme
