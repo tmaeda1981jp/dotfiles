@@ -12,6 +12,7 @@ emacs/var
 emacs/org-gcal
 emacs/secret-lisp
 emacs/inits/31-calendar.el
+emacs/transient
 *.elc
 tramp
 .org-id-locations

@@ -20,7 +20,7 @@ root: ~/
 
 windows:
   - emacssv: emacssv
-  - dotfiles: cd ~/work/dotfiles
+  - dotfiles: cd ~/dotfiles
   # - xxx:
   #     layout: even-horizontal
   #     panes:
