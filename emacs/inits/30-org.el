@@ -36,7 +36,11 @@
   (setq org-archive-location (concat "~/Library/Mobile Documents/iCloud\~com\~appsonthemove\~beorg/Documents/org/"
                                      (format-time-string "%Y%m" (current-time))
                                      ".org_archive::"))
+
+  ;; short-cut for #+BEGIN_SRC #+BEGIN_END
+  (use-package org-tempo :straight nil)
   
   :bind (("C-c c" . org-capture)
          ("C-c a" . org-agenda))
   :mode (("\\.org?\\'" . org-mode)))
+
