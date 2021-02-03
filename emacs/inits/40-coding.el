@@ -43,5 +43,14 @@
 (use-package yaml-mode
   :mode (("\\.yml\\'" . yaml-mode)))
 
+(use-package pug-mode
+  :mode (("\\.pug\\'" . pug-mode)))
+
+(use-package markdown-mode
+  :mode (("\\.md\\'" . gfm-mode)))
+
+(use-package typescript-mode
+  :mode (("\\.ts\\'" . gfm-mode)))
+
 (use-package flycheck
   :init (global-flycheck-mode))

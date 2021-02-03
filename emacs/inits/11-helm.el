@@ -44,11 +44,11 @@
   )
 
 
-;; (use-package helm-swoop
-;;   :bind
-;;   (("C-s" . helm-swoop))
-;;   :config
-;;   (setq helm-swoop-split-with-multiple-windows t))
+(use-package helm-swoop
+  :bind
+  (("C-s" . helm-swoop))
+  :config
+  (setq helm-swoop-split-with-multiple-windows t))
 
 (use-package helm-ag
   :bind

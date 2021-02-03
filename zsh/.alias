@@ -55,6 +55,7 @@ alias phpunit='phpunit --colors'
 alias pa='php artisan'
 alias pam='php artisan migrate'
 alias pamm='php artisan make:migration'
+alias composer="php -d memory_limit=-1 /usr/local/bin/composer"
 
 # git/svn
 export EDITOR="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw"
